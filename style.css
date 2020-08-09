@@ -1,0 +1,53 @@
+pre {
+   background-color: #F4ECF7;
+  border: thin solid;
+  box-shadow: 5px 5px #E5E8E8; 
+  font-family: monospace;
+  line-height: 1em;
+  padding: 0.25em;
+  
+  /*For adding line numbers to code*/
+  counter-reset: line;
+}
+
+code{
+    counter-increment: line;
+}
+
+code:before{
+    content: counter(line, decimal-leading-zero);
+    /* Border to separate line numbers from code
+    border-right-style: dashed;
+    border-right-width: thin; */
+    padding-right: 0.5em;
+  
+}
+
+code:after{
+	content: "\0000a";
+}
+
+code:before{
+    -webkit-user-select: none;
+}
+.textbox.code-ex {
+  font-family: sans-serif;
+  width: 80%;
+  margin-left: 10%;
+  background-color: #F4ECF7;
+  padding: 0.5em;
+  box-shadow: 2px 2px grey;
+  font-family: Consolas, monospace;
+  padding: 0.5em;
+}
+
+.cx{
+  font-family: sans-serif;
+  width: 80%;
+  margin-left: 10%;
+  background-color: #F4ECF7;
+  padding: 0.5em;
+  box-shadow: 2px 2px grey;
+  font-family: Consolas, monospace;
+  padding: 0.5em;
+}
