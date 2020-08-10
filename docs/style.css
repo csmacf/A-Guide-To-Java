@@ -1,16 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
 
+
 body{
-	font-family: 'Noto Sans KR', sans-serif; 
+	background-color: #FEF9E7;
+	font-family: 'Open Sans', sans-serif;
 }
 pre {
-   background-color: #F4ECF7;
+  background-color: #F4ECF7;
   border: thin solid;
-  box-shadow: 5px 5px #E5E8E8; 
+  box-shadow: 5px 5px #E5E8E8;
   font-family: monospace;
   line-height: 1em;
   padding: 0.25em;
-  
+
   /*For adding line numbers to code*/
   counter-reset: line;
 }
@@ -25,7 +27,7 @@ code:before{
     border-right-style: dashed;
     border-right-width: thin; */
     padding-right: 0.5em;
-  
+
 }
 
 code:after{
@@ -35,16 +37,28 @@ code:after{
 code:before{
     -webkit-user-select: none;
 }
-.textbox.code-ex {
-  font-family: sans-serif;
-  width: 80%;
-  margin-left: 10%;
-  background-color: #F4ECF7;
-  padding: 0.5em;
-  box-shadow: 2px 2px grey;
-  font-family: Consolas, monospace;
-  padding: 0.5em;
+button {
+  background-color: white;
+  color: black;
+  border: 2px solid #4CAF50; /* Green */
+	margin: 10px;
+	border-radius: 8px;
 }
+.main-div{
+	margin-left:5%;
+	margin-right: 5%;
+	background-color: white;
+	padding: 5%;
+	border-style: ridge;
+	border-color: #7D6608;
+	border-radius: 12px;
+}
+
+.mono{
+	font-family: Consolas, monospace;
+	font-weight: bold;
+}
+
 
 .cx{
   font-family: sans-serif;
@@ -55,4 +69,12 @@ code:before{
   box-shadow: 2px 2px grey;
   font-family: Consolas, monospace;
   padding: 0.5em;
+}
+
+.chap-num{
+	color: #F4ECF7;
+}
+
+.chap-nav{
+
 }
