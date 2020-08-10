@@ -10,6 +10,7 @@ body{
 
 code{
     counter-increment: line;
+		text-overflow: ellipsis;
 }
 
 code:before{
@@ -64,7 +65,6 @@ button {
 
   /*For adding line numbers to code*/
   counter-reset: line;
-  margin-left: 10%;
   background-color: #F4ECF7;
   padding: 0.5em;
   box-shadow: 2px 2px grey;
@@ -75,10 +75,7 @@ button {
 .console{
 	border: thin solid;
   line-height: 1em;
-
-  margin-left: 10%;
   background-color: #F0F3F3;
-  padding: 0.5em;
   box-shadow: 2px 2px grey;
   font-family: Consolas, monospace;
   padding: 0.5em;
