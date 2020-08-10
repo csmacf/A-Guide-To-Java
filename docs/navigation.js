@@ -4,7 +4,7 @@ $(document).ready(function(){
   chapter = parseInt($('#chap-num').text());
   console.log(chapter);
   //add chapter number to top div
-  $('div.title-header').append("  Chapter" + chapter);
+  $('div.title-header').append(" - Chapter " + chapter);
   //create buttons
   const indexbutton = '<button type="button" id="index-button" >Index</button>';
   const nextbutton = '<button type="button" id="next-button" >Next</button>';

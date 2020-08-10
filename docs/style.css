@@ -30,12 +30,15 @@ code:before{
 button {
   background-color: white;
   color: black;
+	font-family: Consolas, monospace;
 	font-size: 20px;
   border: 2px solid #000;
 	margin: 10px;
 	border-radius: 8px;
 }
+
 .main-div{
+	top:24px;
 	margin-left:5%;
 	margin-right: 5%;
 	background-color: white;
@@ -50,14 +53,16 @@ button {
 	font-weight: bold;
 }
 
-
+.single-output{
+	font-family: Consolas, monospace;
+	font-weight: normal;
+}
 .cx{
   border: thin solid;
   line-height: 1em;
 
   /*For adding line numbers to code*/
   counter-reset: line;
-  font-family: sans-serif;
   width: 80%;
   margin-left: 10%;
   background-color: #F4ECF7;
@@ -67,6 +72,18 @@ button {
   padding: 0.5em;
 }
 
+.console{
+	border: thin solid;
+  line-height: 1em;
+
+  width: 80%;
+  margin-left: 10%;
+  background-color: #F0F3F3;
+  padding: 0.5em;
+  box-shadow: 2px 2px grey;
+  font-family: Consolas, monospace;
+  padding: 0.5em;
+}
 .chap-num{
 	color: #F4ECF7;
 }
@@ -90,8 +107,9 @@ button {
 }
 
 .title-font{
+	padding: 5px;
 	font-size: 16px;
 	text-shadow: 2px 2px #000;
 	color: #FFF;
-	font-family: font-family: 'Open Sans', sans-serif;
+	font-family: Consolas, monospace;
 }
