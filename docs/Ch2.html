@@ -7,7 +7,32 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
-<h2> Chapter <span id = 'chap-num'>2</span></h2>
+<h2> Chapter <span id = 'chap-num'>2</h2>
+<div main-div>
+<h1>Comments</h1>
+<h2>1. For documentation</h2>
+<p>Anything preceded by two forward slashes // (up to the end of a line) or enclosed between /* and */ (which can span multiple lines) is ignored by the compiler. These are <em>comments</em>-- to be read by you and other programmers. Typically, all methods (other than main) are preceded by a multi-line comment explaining the purpose of the method. Other lines of code that would benefit from a brief explanation are given single-line comments either on the previous line (i.e., above the code, <em>not</em> below it) or on the space remaining after the line.</p>
+<pre class='cx'>
+  <code>/*</code>
+  <code>* This is a multiple-line comment.</code>
+  <code>* The extra asterisks at the beginning of these lines are not required,</code>
+  <code>* but they are helpful visually.</code>
+  <code>*/</code>
+  <code>public class First</code>
+  <code>{</code>
+  <code>  public static void main(String[] args)</code>
+  <code>  {</code>
+  <code>    //Print a message (this is a single-line comment explaining the line of code below</code>
+  <code>    System.out.println("Hello, World!"); //this is another single-line comment</code>
+  <code>    //System.out.println("This line won't run. It is commented out");</code>
+  <code>  }</code>
+  <code>}</code>
+</pre>
+<p>Note that there is third type of comment called a Javadoc comment that starts with /** (note the extra asterisk). Its purpose is to auto-generate documentation for code. This is not covered in this course, but I mention it because you will see if often in examples.</p>
+<h2>For debugging</h2>
+<p>Commenting can be beneficial in <em>debugging</em> (i.e., identifying errors in) code, as well. You can prevent specific lines of code from running (while testing your code) by putting // </strong>at their beginning; this is often referred to as &ldquo;commenting out&rdquo; the code. If you are not sure whether a particular line of code is causing a problem, you can comment it out to see if the code runs fine otherwise. For example, the last line of code in the previous example is commented out and will not run.</p>
+</div>
+<div class = 'chap-nav'></div>
 <script src = 'navigation.js'></script>
 </body>
 </html>

@@ -27,21 +27,21 @@
 </ul>
 <p>By convention, class names start with an uppercase letter.  Identifiers with more than word are written in <em>camel case</em>, meaning there are no spaces and each new word in the name starts with a capital letter (e.g., CoffeeCup or IncomeTaxForm).</p>
 <p>Within a class, we also have <em>methods</em>.  Think of these for now as smaller units of code.  Unlike class names, method identifiers usually begin lowercase. Like class names, use camel case for names with multiple words (e.g., printTicket or setDeviceHeight).</p>
-<p>A very  important method is called <code>main</code> and has the <em>header</em> (or <em>declaration</em>)
-<pre>public static void main(String[] args)</pre>
+<p>A very  important method is called <pre>main</pre> and has the <em>header</em> (or <em>declaration</em>)
+<pre class="cx">public static void main(String[] args)</pre>
 Don't worry about what that all means right now, but do know that you need to put your code within a main method (which, in turn, is within a class).<p>
 
 <p>Curly braces { } are used to begin and end blocks of code.  Note how they are used both for the class and the main method here.</p>
-<pre class='cx'> <code> public class First</code> <code>{</code> <code>   public static void main(String[] args)</code> <code>   {</code> <code>    System.out.println("Hello, World!");</code> <code>   }</code> <code>}</code></pre>
+<pre class="cx"> <code> public class First</code> <code>{</code> <code>   public static void main(String[] args)</code> <code>   {</code> <code>    System.out.println("Hello, World!");</code> <code>   }</code> <code>}</code></pre>
 <p>There are two ways that curly braces can be written.  When you are first learning to program, it can be clearer to line up opening and closing braces vertically (as shown in the previous example on lines 2 and 7).  However, it is also common to place the opening brace on the same line that introduces a class or method, with the closing brace on its own line and aligned left with the opening, as shown below.</p>
-<pre> <code>public class First{</code> <code>{</code> <code>   public static void main(String[] args){</code> <code>      System.out.println("Hello, World!");</code> <code>   }</code> <code>}</code></pre>
+<pre class="cx"> <code>public class First{</code> <code>{</code> <code>   public static void main(String[] args){</code> <code>      System.out.println("Hello, World!");</code> <code>   }</code> <code>}</code></pre>
 <p>You will see both styles used when looking at others' examples (although the latter is more commonly used);  it's a good idea to be consistent within your own code, using the style that you prefer.</p>
 <h1>Style</h1>
 
 <p>Speaking of style, you might be wondering if the indentation (of the main method declaration relative to the class declaration, etc.) is required (as it is in the Python programming language, for example).  It is not (nor is white space-- such as an extra blank line between lines of code), but it makes the code more readable by humans. The compiler would be just as happy with...</p>
-<pre><code>public class First{public static void main(String[] args){System.out.println("Hello...</code></pre>
+<pre class="cx"><code>public class First{public static void main(String[] args){System.out.println("Hello...</code></pre>
 <p>..., etc. or</p>
-<pre> <code>public class First{</code> <code>                           public </code> <code>static </code> <code>          void main(</code> <code>            String[] args)          {</code> <code>System. </code> <code>out.println      </code> <code></code> <code></code> <code>("Hello, World!");</code> <code>}</code> <code></code> <code>}</code></pre>
+<pre class="cx"> <code>public class First{</code> <code>                           public </code> <code>static </code> <code>          void main(</code> <code>            String[] args)          {</code> <code>System. </code> <code>out.println      </code> <code></code> <code></code> <code>("Hello, World!");</code> <code>}</code> <code></code> <code>}</code></pre>
 <p>...but please don't write your code that way!</p>
 
 <p>Particularly if you are collaborating on code with others, following a set of style rules is helpful. If you are interested in learning about best style practices for code, you can look at the <a href="https://google.github.io/styleguide/javaguide.html">Google reference</a>.</p>

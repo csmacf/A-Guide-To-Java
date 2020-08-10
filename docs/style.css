@@ -5,17 +5,7 @@ body{
 	background-color: #FEF9E7;
 	font-family: 'Open Sans', sans-serif;
 }
-pre {
-  background-color: #F4ECF7;
-  border: thin solid;
-  box-shadow: 5px 5px #E5E8E8;
-  font-family: monospace;
-  line-height: 1em;
-  padding: 0.25em;
 
-  /*For adding line numbers to code*/
-  counter-reset: line;
-}
 
 code{
     counter-increment: line;
@@ -26,7 +16,7 @@ code:before{
     /* Border to separate line numbers from code
     border-right-style: dashed;
     border-right-width: thin; */
-    padding-right: 0.5em;
+    padding-right: 1em;
 
 }
 
@@ -40,7 +30,8 @@ code:before{
 button {
   background-color: white;
   color: black;
-  border: 2px solid #4CAF50; /* Green */
+	font-size: 20px;
+  border: 2px solid #000;
 	margin: 10px;
 	border-radius: 8px;
 }
@@ -61,6 +52,11 @@ button {
 
 
 .cx{
+  border: thin solid;
+  line-height: 1em;
+
+  /*For adding line numbers to code*/
+  counter-reset: line;
   font-family: sans-serif;
   width: 80%;
   margin-left: 10%;
@@ -76,5 +72,10 @@ button {
 }
 
 .chap-nav{
-
+	  background-color: #7D6608;
+		position: fixed;
+	  left: 0;
+	  bottom: 0;
+	  width: 100%;
+	  text-align: center;
 }

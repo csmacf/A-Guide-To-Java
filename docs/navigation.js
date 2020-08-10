@@ -18,15 +18,18 @@ if(chapter < 2){
 }
   //add handlers
   $( "#index-button" ).click(function() {
-    console.log("got it");
+    window.location.href = "TOC.html";
 });
 
 $( "#next-button" ).click(function() {
+
   window.location.href = ("Ch" + (chapter + 1) + ".html");
 });
 
-$( "#previous-button" ).click(function() {
-  console.log("got it");
+$( "#prev-button" ).click(function() {
+
+  window.location.href = ("Ch" + (chapter - 1) + ".html");
+
 });
 
 });
