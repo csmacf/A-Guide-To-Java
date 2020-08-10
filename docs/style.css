@@ -7,6 +7,9 @@ body{
 
 }
 
+em{
+	font-weight: bolder;
+}
 pre{
 	overflow-x: auto;
 white-space: pre-wrap;
@@ -115,4 +118,11 @@ button {
 	text-shadow: 2px 2px #000;
 	color: #FFF;
 	font-family: Consolas, monospace;
+}
+.tip{
+	background-color: #FFDC00;
+	padding: 4px;
+	width: 80%;
+	margin-left: 10%;
+
 }

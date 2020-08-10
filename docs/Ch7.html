@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href = 'style.css' type = 'text/css' rel = 'stylesheet'>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+<div class = 'title-header title-font'>A Guide to Java</div>
+<div class = 'main-div'>
+  <!-- insert chapter number-->
+<h2> Chapter <span id = 'chap-num'>7</span></h2>
+<!-- Chapter content here -->
+<h1>Branching</h1>
+<h2>If Statements</h2>
+<p>If statements cause code to execute only if a given condition is true. The syntax is:</p>
+
+<p><span class = 'mono'>if</span>([<em>condition to test</em>])</p>
+<p>{</p>
+<p>[<em>code block</em>]</p>
+<p>}</p>
+
+<p>For example, this code snippet will print "More than 20" if variable x &gt; 20.</p>
+
+<pre class = 'cx'>
+<code>if (x>20)</code>
+<code>{</code>
+<code>  System.out.println("More than 20");</code>
+<code>}</code>
+</pre>
+<p>Notes:</p>
+<ul>
+<li>There is no semicolon after the parentheses in <span class = 'mono'>if()</span>. Like a method header, if is the start of a block of code.</li>
+<li>Curly braces { } are optional if there is only a single line of code to execute (such as the example above). They are required if there are multiple lines of code. It is best practice to use them always.</li>
+</ul>
+
+<h2><em>Conditions you can test</em></h2>
+<h3>Comparing primitive types:</h3>
+<table>
+<tr><td><span class = 'mono'>==</span> </td><td>equals (note the difference between this and =, which is used to assign values)</td></tr>
+<tr><td><span class = 'mono'>&lt;</span> </td><td>is less than</td></tr>
+<tr><td><span class = 'mono'>&gt;</span> </td><td>is greater than</td></tr>
+<tr><td><span class = 'mono'>&lt;</span>= </td><td>is less than or equal to</td></tr>
+<tr><td><span class = 'mono'>&gt;</span>= </td><td>is greater than or equal to</td></tr>
+<tr><td><span class = 'mono'>!=</span> </td><td>is not equal to<</td></tr>
+</table>
+<p>Examples:</p>
+
+<pre class = 'cx'>
+<code>if (age >= 18)</code>
+<code>System.out.println("You are old enough to vote”);</code>
+<code></code>
+<code>if (jerseyNumber == 13)    // {} optional here because only one statement</code>
+<code></code>
+<code>{</code>
+<code>  String label = "Thirteen";</code>
+<code>}</code>
+<code></code>
+<code>if (floorNumber != 1)      // {} required here because of multiple statements</code>
+<code></code>
+<code></code>
+<code>{</code>
+<code>  System.out.println(“This is not the first floor”);</code>
+<code>  System.out.println(“Please proceed to the first floor”);</code>
+<code>}</code>
+</pre>
+
+<h3>Comparing Strings (and other objects):</h3>
+<p>Note that you cannot use the symbols above to compare Strings (and other reference types). Instead, use the <span class = 'mono'>equals</span> or compareTo</span> method. For strings, <span class = 'mono'>equals</span> returns either true (if two strings have the exact same characters) or false. You will learn about <span class = 'mono'>compareTo</span> in a later chapter.</p>
+
+<pre class='cx'>
+<code>if (country.equals("Australia"))</code>
+<code>greeting = "G'day, mate!";</code>
+</pre>
+
+<h2>If-Else</h2>
+<p>The optional else statement is used to perform an alternative action when the preceding if condition is not met.</p>
+<p>For example:</p>
+
+<pre class = 'cx'>
+<code>if (x>20)</code>
+<code>{</code>
+<code>  System.out.println("More than 20");</code>
+<code>}</code>
+<code>else</code>
+<code>{</code>
+<code>  System.out.println("Not more than 20");</code>
+<code>}</code>
+</pre>
+
+<p>Notes:</p>
+<p>The else statement is not required.</p>
+<p>There is no stated condition for else (meaning, do <em>not</em> write parentheses after else). It simply executes whenever the if condition is false.</p>
+
+<h2>Nested If Statements</h2>
+<p>Sometimes, one condition is nested inside another. For example, consider</p>
+
+<pre class = 'cx'>
+<code>if (x!=0)</code>
+<code>{</code>
+<code>if(x>5) // we only get to this "if" when x!=0</code>
+<code>{</code>
+<code>System.out.println("More than 5");</code>
+<code>}</code>
+<code>else // this "else" goes with the nearest unmatched "if", which is "if(x>5)")</code>
+<code>{</code>
+<code>System.out.println("Less than 5");</code>
+<code>}</code>
+<code>else</code>
+<code>{</code>
+<code>System.out.println("Equals zero"); //this else goes with the first if</code>
+<code>}</code>
+</pre>
+
+
+<p>Note how, if the first condition (on line 1) is met (i.e., if x does not equal 0), then the if statement on line 3 is tested. If not (i.e., if x equals 0), it will skip down to the final else on line 11. Typically, indentation is used to make this clearer, as in</p>
+
+<pre class = 'cx'>
+<code>if (x!=0)</code>
+<code>{</code>
+<code>  if(x>5) // we only get to this "if" when x!=0</code>
+<code>  {</code>
+<code>    System.out.println("More than 5");</code>
+<code>  }</code>
+<code>  else // this "else" goes with the nearest unmatched "if", which is "if(x>5)")</code>
+<code>  {</code>
+<code>    System.out.println("Less than 5");</code>
+<code>}</code>
+<code>else</code>
+<code>{</code>
+<code>  System.out.println("Equals zero"); //this else goes with the first if</code>
+<code>}</code>
+</pre>
+
+<h2>Using And, Or, and Not</h2>
+<p>You can also test multiple conditions using <span class = 'mono'>and</span> and <span class = 'mono'>or</span>. For &ldquo;and&rdquo;, use &amp;&amp; and for &ldquo;or&rdquo; use || (Shift-backslash on a computer keyboard). &amp;&amp; means that both conditions must be true and || means that one (or both) conditions must be true (this is called the <em>inclusive or</em>, as opposed to <em>exclusive or).</em></p>
+
+<pre class = 'cx'>
+<code>int courseCode = 2271;</code>
+<code>String campus = "Montpelier"; </code>
+<code>if (courseCode == 2271 && campus.equals("Winooski")) //false,  campus is Montpelier</code>
+<code>System.out.println("You're in course 2271 at Winooski"); //won’t print</code>
+<code>if (courseCode == 2271 || courseCode==2270) //true, this is an “or” statement</code>
+<code>System.out.println("You're in a computer course"); //will print</code>
+</pre>
+
+<p>! on its own is the <em>negation</em> of any logical statement. It creates a condition that is false when the original condition is true, and vice verse. ! is written before the statement, not after. For example,</p>
+<p>!(x==4 || y&gt;8) translates to: "it is not true that x equals 4 or y is greater than 8." Notice how the original statement is enclosed in parentheses and the ! is written outside of these.</p>
+<h2>Else if ("chaining" or "cascading" if)</h2>
+<p>You can use else if statements to proceed through a series of conditions.</p>
+<p>The syntax is:</p>
+
+<pre class = 'cx'>
+
+<code>if ([condition a])</code>
+<code>{</code>
+<code>  //code			//note that if a is true, all following else statements are skipped</code>
+<code>}</code>
+<code></code>
+<code>else if([condition b])	//note that you get here only if a is false</code>
+<code>{</code>
+<code>  //code</code>
+<code>}</code>
+<code></code>
+<code>else if([condition c])	//note that you only get here if both a and b are false</code>
+<code>{</code>
+<code>  //code</code>
+<code>}</code>
+<code></code>
+<code>/*</code>
+<code>The "else" below goes with the nearest unmatched "if" (i.e., condition c, in this case).</code>
+<code>So, this means that none of the conditions above were met. </code>
+<code>*/</code>
+<code>else</code>
+<code>{</code>
+<code>  //code</code>
+<code>}</code>
+</pre>
+
+<p>Example in use:</p>
+
+<pre class = 'cx'>
+<code></code>
+<code>if (temp >= 90)</code>
+<code>System.out.println("Very hot");</code>
+<code></code>
+<code>else if (temp >= 80) //No need to say (temp < 90), because we wouldn't get here otherwise.</code>
+<code>System.out.println("Hot"):</code>
+<code></code>
+<code>else if(temp >= 60)</code>
+<code>System.out.println("Mild");</code>
+<code></code>
+<code>else // meaning (temp <60)</code>
+<code>System.out.println("Cool");</code>
+</pre>
+
+<p>An important note about the code above-- you might be wondering why we don&rsquo;t write instead</p>
+
+<pre class = 'cx'>
+<code>if (temp >= 90)</code>
+<code>System.out.println("Very hot");</code>
+<code></code>
+<code>if (temp < 90 && temp >= 80) </code>
+<code>System.out.println("Hot"):</code>
+<code></code>
+<code>if(temp < 80 && temp >= 60)</code>
+<code>System.out.println("Mild");</code>
+<code></code>
+<code>if (temp <60)</code>
+<code>System.out.println("Cool");</code>
+</pre>
+
+<p>Even though this code would yield the same results as the original, it is inefficient. Why? Suppose the temperature is 92. We would want the code to print &ldquo;Very hot&rdquo; and be done with it. But, in the second version, it would still test all the other conditions. The advantage of &ldquo;else if&rdquo; is that once a condition is met, all other conditions are skipped.</p>
+<h2>Switch statements and ternary operators</h2>
+<p>Two other ways to control program flow based on conditions are the<a href="https://docs.oracle.com/javase/tutorial/java/nutsandbolts/switch.html"> <span class = 'mono'>switch</span> statement</a> and the <a href="https://www.baeldung.com/java-ternary-operator"><span class = 'mono'>ternary</span> operator</a>. We do not use these in our course, however, they each offer another way to branch.</p>
+</div>
+<div class = 'chap-nav'></div>
+<script src = 'navigation.js'></script>
+</body>
+</html>
