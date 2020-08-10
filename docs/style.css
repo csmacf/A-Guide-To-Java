@@ -4,13 +4,20 @@
 body{
 	background-color: #FEF9E7;
 	font-family: 'Open Sans', sans-serif;
-	overflow-
+
 }
 
-
+pre{
+	overflow-x: auto;
+white-space: pre-wrap;
+white-space: -moz-pre-wrap;
+            white-space: -pre-wrap;
+            white-space: -o-pre-wrap;
+            word-wrap: break-word;
+}
 code{
     counter-increment: line;
-		text-overflow: ellipsis;
+
 }
 
 code:before{
