@@ -79,3 +79,19 @@ button {
 	  width: 100%;
 	  text-align: center;
 }
+.title-header{
+	background-color: #7D6608;
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	text-align: center;
+
+}
+
+.title-font{
+	font-size: 16px;
+	text-shadow: 2px 2px #000;
+	color: #FFF;
+	font-family: font-family: 'Open Sans', sans-serif;
+}
