@@ -4,6 +4,7 @@
 body{
 	background-color: #FEF9E7;
 	font-family: 'Open Sans', sans-serif;
+	overflow-
 }
 
 
@@ -63,7 +64,6 @@ button {
 
   /*For adding line numbers to code*/
   counter-reset: line;
-  width: 80%;
   margin-left: 10%;
   background-color: #F4ECF7;
   padding: 0.5em;
@@ -76,7 +76,6 @@ button {
 	border: thin solid;
   line-height: 1em;
 
-  width: 80%;
   margin-left: 10%;
   background-color: #F0F3F3;
   padding: 0.5em;
