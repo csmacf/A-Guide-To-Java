@@ -11,8 +11,235 @@
 <div class = 'title-header title-font'>A Guide to Java</div>
 <div class = 'main-div'>
   <!-- insert chapter number-->
-<h2> Chapter <span id = 'chap-num'></span></h2>
+<h2> Chapter <span id = 'chap-num'>8</span></h2>
 <!-- Chapter content here -->
+<h1>Loops</h1>
+<p>A <em>loop</em> is a block of code that executes repeatedly as long as a given condition is true. For example, a quiz application might present a question, accept user input, then ask the user if they want to try another question-- continuing to present questions until the user chooses to stop.</p>
+<p>The important distinction between an &ldquo;if&rdquo; statement and a loop is that an if statement only checks a condition once; a loop <strong>keeps</strong> checking until it is no longer true.</p>
+<h2><em>While loops</em></h2>
+<p>A <span class='mono'>while</span> loop executes a block of code repeatedly as long as a given condition is true (or until the condition becomes false).</p>
+<p>The syntax is:</p>
+<pre class='cx'>
+<code>while (<em>condition</em>)</code>
+<code>{</code>
+<code><em>  [code to execute]</em></code>
+<code>}</code>
+</pre>
+<p>Example 1: this will keep multiplying x by 5 as long as the user enters yes.</p>
+
+<pre class='cx'>
+<code>String answer = "yes";</code>
+<code>while (answer.equals("yes")) //note the use of .equals (rather than ==) for String</code>
+<code>{</code>
+<code>  x = 5*x;</code>
+<code>  System.out.print("Again? Enter yes or no:);</code>
+<code>  answer = kbd.nextLine();</code>
+<code>}  //at this point, we go back to the beginning of the loop and check if answer is still &ldquo;yes&rdquo;</code>
+</pre>
+
+<p>Example 2: this will display all the integers from 1 to 10.</p>
+
+<pre class='cx'>
+<code>int x=1;</code>
+<code>while (x &lt;= 10)</code>
+<code>{</code>
+<code>  System.out.println(x);</code>
+<code>  x = x+1; //could also write x++ here</code>
+<code>}</code>
+</pre>
+
+<div class='tip'><p>Note- it is essential to change (or give the user the ability to change) the value of the condition inside the loop; otherwise, it will run forever!</p>
+</div>
+<h2><em>For Loop</em></h2>
+<p>The <span class='mono'>for</span> keyword provides another way to create a loop. It combines the elements of a while loop into a single line. Here is Example 2 from above rewritten as a for loop.</p>
+
+<pre class='cx'>
+<code>int x=1;</code>
+<code>while (x &lt;= 10)</code>
+
+<code>{</code>
+<code>  System.out.println(x);</code>
+<code>  x= x+1;  // could also write x++ here.</code>
+<code>}</code>
+</pre>
+
+<p>...becomes...</p>
+
+<pre class='cx'>
+<code>for(int x = 1; x&lt;=10; x=x+1) // or for(int x=1; x&lt;=10; x++)</code>
+<code>{</code>
+<code>  System.out.println(x);</code>
+<code>/*</code>
+<code>Do NOT change the value of the counter variable inside the loop--it's already done in the parentheses!</code>
+<code>*/</code>
+<code>}</code>
+</pre>
+<p>Note how lines 1, 2, and 5 from the <span class='mono'>while</span> example are all combined into line line 1 in the <span class='mono'>for</span> syntax. Here&rsquo;s how <span class='mono'>for</span> loop are set up (written on separate lines for ease of reading):</p>
+<ul>
+<p><span class='mono'>for</span>([set a (controlling) variable equal to a starting value];</p>
+<p>[give the condition to test each time the loop runs];</p>
+<p>[change the value of the variable after each execution of the loop])</p>
+
+<div class='tip'><p>Important notes:</p>
+<ul>
+<li>Use semicolons between each part (not commas).</li>
+<li>There is no semicolon after the parentheses (just as with while)</li>
+</ul>
+</div>
+<p>The controlling variable can be used purely to count how many times the loop has executed, or it can be used within the body of the loop, as shown in these examples:</p>
+
+<pre class='cx'>
+<code>//A for loop that uses the controlling variable (count) within the loop body</code>
+<code>for(int count = 1; count &lt;=10; count=count+1){</code>
+<code>  System.out.println("This is round number " + round);</code>
+<code>}</code>
+<code>//A for loop that does not use the controlling variable (day) within the loop body</code>
+<code>for(int day = 20; day&gt;0; day = day-1){</code>
+<code>  savings = savings - 10;</code>
+<code>  System.out.println("You now have " + savings);</code>
+<code>}</code>
+</pre>
+
+<p>Each part of the condition is optional, however you will typically use all three. For example, for(int a = 15;;) is valid. In this case, the variable would be set to 15 initially, and we would expect that the "missing" parts are handled in the code block.</p>
+<h2><em>10.3 When to use While Vs. For.</em></h2>
+<p>For loops work better when you know how many times the loop will run and/or there is a fixed pattern (involving numbers or counters). For example, a for loop would be appropriate for running a block of code exactly 5 times, or for working with every even number from 10 to 20. These situations are referred to as counter controlled loops.</p>
+
+<pre class='cx'>
+<code>//A counter controlled loop</code>
+<code>System.out.println("Printing the square roots of the numbers 1 - 100");</code>
+<code>System.out.println("x \t sqrt(x)"); // use \t for tab between the numbers</code>
+<code>for(int num=1; num&lt;=100; num=num+1){</code>
+<code>  System.out.print(num + "\t: " + Math.sqrt(num));</code>
+<code>}</code>
+</pre>
+
+<p><span class='mono'>while</span> loops are better when you&rsquo;re waiting for some condition to be met, but don&rsquo;t have any other information about when that will happen. For example, a while loop can be used to read in data from a file one line at a time (until a blank line is reached) or for validating user input (running until the user enters a valid value). These situations are referred to as <em>sentinel controlled</em> loops (think of a sentinel like a guard or watchout waiting for something to occur).</p>
+
+<pre class='cx'>
+<code>//A sentinel controlled loop</code>
+<code>System.out.println("Enter a number between 100 and 200");</code>
+<code>int entry = kbd.nextInt();</code>
+<code>kbd.nextLine();</code>
+<code>//This loop will (repeatedly) execute if the user enters bad input.</code>
+<code>while(entry &lt; 100 || enter &gt;200){</code>
+<code>  System.out.println("Invalid entry. Please try again.");</code>
+<code>}</code>
+</pre>
+
+<h2><em>Do while Loops</em></h2>
+<p>If you want to be sure that a loop executes at least once, use a do-while loop. The loop body will run once and <em>then</em> the condition will be checked to determine if it should repeat. The syntax is:</p>
+
+<pre class='cx'>
+<code>do</code>
+<code>{</code>
+<code>  [execute some code]</code>
+<code>} while([condition to test]); //note the semicolon here</code>
+</pre>
+<div class='tip'><p>Note the semicolon after the while statement in a <span class='mono'>do-while</span> loop.</p></div>
+<h2><em>10.5 Break and Continue</em></h2>
+<p>You can add code to break out of a loop if a certain condition is met within the loop body. The keyword <span class='mono'>break</span> exits the loop completely and moves onto the code following the loop. The <span class='mono'>continue</span> keyword breaks out of the <em>current iteration</em> of the loop and starts the next iteration (i.e., ignores any remaining statements in the loop body and starts the loop again).</p>
+
+<p><span class='mono'>break</span> and <span class='mono'>continue</span> can be used with any type of loop. Here is how each might be used:</p>
+<pre class='cx'>
+<code>//Using continue</code>
+<code>Scanner scan = new Scanner(System.in);</code>
+<code>double weight = 50;</code>
+<code>while (weight &gt; 0){</code>
+<code>  System.out.println("Enter weight to purchase");</code>
+<code>  desiredWeight = scan.nextDouble();</code>
+<code>  scan.nextLine();</code>
+<code>  if(desiredWeight &lt; 0){</code>
+<code>    continue; //go to beginning of loop body- skip line 11</code>
+<code>  }</code>
+<code>  weight = weight - desiredWeight;</code>
+<code>}</code>
+</pre>
+
+<pre class='cx'>
+<code>//Using break</code>
+<code>Scanner scan = new Scanner(System.in);</code>
+<code>double weight = 50;</code>
+<code>while (weight &gt; 0){</code>
+<code>  System.out.println("Enter weight to purchase or a negative number to exit");</code>
+<code>  desiredWeight = scan.nextDouble();</code>
+<code>  scan.nextLine();</code>
+<code>  if(desiredWeight &lt; 0){</code>
+<code>    break; //exit the loop. Go to line 13</code>
+<code>  }</code>
+<code>  weight = weight - desiredWeight;</code>
+<code>  }</code>
+<code>//code to execute immediately after break or after the loop terminates</code>
+</pre>
+
+<h2><em>Nested Loops</em></h2>
+<p>Just as with if statements, loops can be nested inside one another. Here&rsquo;s an example:</p>
+
+<pre class='cx'>
+<code>int i = 0;</code>
+<code>while (i &lt; 5)</code>
+<code>{</code>
+<code>  int j = 3;</code>
+
+<code>  while (j &gt;= 0)</code>
+<code>  {</code>
+<code>    System.out.println("i is " + i + " and j is " + j);</code>
+<code>    j--;</code>
+<code>  }</code>
+
+<code>  i++; </code>
+<code>}</code>
+</pre>
+
+
+<p>Output:</p>
+<div class='console'>
+<p>i is 0 and j is 3</p>
+<p>i is 0 and j is 2</p>
+<p>i is 0 and j is 1</p>
+<p>i is 0 and j is 0 (note that i stays at 0 until the inner loop completes execution)</p>
+<p>i is 1 and j is 3</p>
+<p>i is 1 and j is 2</p>
+<p>i is 1 and j is 1</p>
+<p>i is 1 and j is 0</p>
+<p>i is 2 and j is 3</p>
+<p>i is 2 and j is 2</p>
+<p>i is 2 and j is 1</p>
+<p>&hellip;[skipping some]...</p>
+<p>i is 4 and j is 2</p>
+<p>i is 4 and j is 1</p>
+<p>i is 4 and j is 0</p>
+</div>
+<div class='tip'>
+<p>You might wonder why the second line of output isn&rsquo;t &ldquo;i is 1 and j is 2.&rdquo; This is because the loop on the inside (the one involving the variable <span class='mono'>j</span>) runs through its entire course for each iteration of the outer loop (with the variable <span class='mono'>i</span>).</p></div>
+<h2>Assignment Operators</h2>
+<p>In the previous sections, we&rsquo;ve seen the use of <span class='mono'>++</span> to add 1 to a variable. This is called <em>incrementing</em>. Here are a few more shortcuts. Note that these are never required (you can always write them the longer way), but you will encounter them frequently when reading code, so it is good to know them.</p>
+
+<p><span class='mono'>a++</span> is the same as <span class='mono'>a=a+1</span></p>
+<p><span class='mono'>a--</span> is the same as <span class='mono'>a=a-1</span></p>
+<p>______________________________</p>
+<p><span class='mono'>a+=b</span> is the same as <span class='mono'>a=a+b</span></p>
+<p><span class='mono'>a-=b</span> is the same as <span class='mono'>a=a-b</span></p>
+
+<p>This notation also works with the <span class='mono'>*, /,</span> and <span class='mono'>%</span> operators.</p>
+<p>You can also write <span class='mono'>++x</span> in place of <span class='mono'>x++</span>. In both cases, x will increase by 1. In the case of <span class='mono'>++x</span>, the program will first increment x, then use the value, whereas with <span class='mono'>x++</span>, it will first use the value, then increment.</p>
+<p>For example, this code snippet:</p>
+
+<pre class='cx'>
+<code>int x=12, y=25;</code>
+
+<code>System.out.println(x++);</code>
+<code>System.out.println(++y);</code>
+<code>System.out.println(x);</code>
+<code>System.out.println(y);</code>
+</pre>
+
+<p>produces the output:</p>
+<div class='console'>
+<p>12</p>
+<p>26 (y is <em>first</em> incremented, then printed)</p>
+<p>13 (x was incremented <em>after</em> being printed)</p>
+<p>26</p>
+</div>
 </div>
 <div class = 'chap-nav'></div>
 <script src = 'navigation.js'></script>
