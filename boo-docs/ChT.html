@@ -1,0 +1,76 @@
+<!doctype HTML>
+<html>
+<head>
+  <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/sticky-footer/">
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <link href="sticky-footer.css" rel="stylesheet">
+    <!-- My custom style -->
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body>
+<!-- Begin page content -->
+    <main role="main" class="container-fluid">
+      <h2> Chapter <span id = 'chap-num'>1</span></h2>
+      <h1>How it works</h1>
+      <p>Java is a high-level programming language, meaning what you write (called <em>source code</em>) is far removed from the 1s and 0s that a computer understands (called <em>machine code</em>). <em>Compilers</em> and <em>interpreters</em> are both tools that convert from source code to machine code. A compiler translates all the code at once, creating a new file that runs on the operating system of the computer. Interpreters, by contrast, translate code line by line.</p>
+      <p>Most programming languages tend to be strictly compiled or interpreted, but running Java applications actually involves both processes. First, your source code (contained in a .<em>java</em> file) is compiled into <em>byte code</em> (creating a .<em>class</em> file). At this point, you can no longer read the code. The <em>Java Virtual Machine (JVM</em>) then translates the byte code into machine code for the operating system on your device. This means that you need to have the correct JVM installed on your computer for Java code to run. It is because of the JVM that Java is cross-platform.</p>
+
+      <img class="aligncenter wp-image-22 size-full" src="https://pressbooks.com/app/uploads/sites/127599/2020/06/A-Guide-to-Java-4th-Ed-e1592014390274.png" alt="Java compiler and interpreter" width="694" height="178" />
+
+      <p>If the compiler runs into a problem translating the source code, this results in a <em>compile-time error</em>. If the interpreter runs into trouble, you will get a <em>run-time error.</em> Always read the description of errors in the console (the output window)! Sometimes you won't understand all the terms, but you will usually be able to get at least a hint as to what the issue is.</p>
+      <img src="../img/reading-errors.png" alt = "Reading code errors" width = 80%></img>
+      <h1>A simple application</h1>
+      <p>Everything used within a Java program must be part of a <em>class</em>. For now, think of a class as being a unit of code. Later, you will have a much deeper understanding of classes.</p>
+      <p>Java classes are named using any valid name, or <em>identifier</em>. The rules for identifiers in Java are:</p>
+      <ul>
+       	<li >Identifiers may contain letters, digits, underscores, and dollar signs.</li>
+       	<li >They may not start with a digit or contain spaces.</li>
+       	<li >There are certain <em><a href="http://docs.oracle.com/javase/tutorial/java/nutsandbolts/_keywords.html">keywords</a></em> in Java (such as <code>this</code> and <code>while</code>) that may not be used as identifiers.</li>
+      </ul>
+      <p>By convention, class names start with an uppercase letter. Identifiers with more than word are written in <em>camel case</em>, meaning there are no spaces and each new word in the name starts with a capital letter (e.g., CoffeeCup or IncomeTaxForm).</p>
+      <p>Within a class, we also have <em>methods</em>.Think of these for now as smaller units of code.Unlike class names, method identifiers usually begin lowercase. Like class names, use camel case for names with multiple words (e.g., printTicket or setDeviceHeight).</p>
+      <p>A very important method is called <code>main</code> and has the <em>header</em> (or <em>declaration</em>)
+      <pre >public static void main(String[] args)</pre>
+      Don't worry about what that all means right now, but do know that you need to put your code within a main method (which, in turn, is within a class).<p>
+
+      <p>Curly braces { } are used to begin and end blocks of code. Note how they are used both for the class and the main method here.</p>
+      <div class= "jumbotron">
+      <pre >
+        <code>public class First</code>
+        <code>{</code>
+        <code>   public static void main(String[] args)</code>
+        <code>   {</code>
+        <code>    System.out.println("Hello, World!");</code>
+        <code>   }</code>
+        <code>}</code>
+      </pre>
+    </div>
+      <div class = 'jumbotron'><p class='lead'>Note the numbers (01, 02, 03, etc.) at the beginning of each line.  These are used solely to identify parts of the program. You do not write these in your source code (typically, an IDE will provide them, however). You can still copy and paste code from this text to try it out-- you should find that the line numbers do not get copied.</p></div>
+      <p>There are two ways that curly braces can be written. When you are first learning to program, it can be clearer to line up opening and closing braces vertically (as shown in the previous example on lines 2 and 7). However, it is also common to place the opening brace on the same line that introduces a class or method, with the closing brace on its own line and aligned left with the opening, as shown below.</p>
+      <pre > <code>public class First{</code> <code>{</code> <code>   public static void main(String[] args){</code> <code>      System.out.println("Hello, World!");</code> <code>   }</code> <code>}</code></pre>
+      <p>You will see both styles used when looking at others' examples (although the latter is more commonly used); it's a good idea to be consistent within your own code, using the style that you prefer.</p>
+      <h1>Style</h1>
+
+      <p>Speaking of style, you might be wondering if the indentation (of the main method declaration relative to the class declaration, etc.) is required (as it is in the Python programming language, for example). It is not (nor is white space-- such as an extra blank line between lines of code), but it makes the code more readable by humans. The compiler would be just as happy with...</p>
+      <pre ><code>public class First{public static void main(String[] args){System.out.println("Hello...</code></pre>
+      <p>..., etc. or</p>
+      <pre > <code>public class First{</code> <code>public</code> <code>static</code> <code>void main(</code> <code>   String[] args)     {</code> <code>System.</code> <code>out.println</code><code></code> <code></code> <code>("Hello, World!");</code> <code>}</code> <code></code> <code>}</code></pre>
+      <p>...but please don't write your code that way!</p>
+
+      <p>Particularly if you are collaborating on code with others, following a set of style rules is helpful. If you are interested in learning about best style practices for code, you can look at the <a href="https://google.github.io/styleguide/javaguide.html">Google reference</a>.</p>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class = 'chap-nav'></div>
+      </div>
+    </footer>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src = 'navigation.js'></script>
+</body>
