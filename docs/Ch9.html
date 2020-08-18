@@ -25,19 +25,19 @@
 <p>The first question to ask about our book is <em>what data does it have</em>? Well, a book has a title. It also has a certain number of pages. It might be hardcover or might not be. Let&rsquo;s define variables to hold all this information for a <span class='mono'>Book</span> object. Note that I&rsquo;ve not included author as a field, but I certainly could have. These kinds of decisions are up to you as the programmer.</p>
 
 <pre class='cx'>
-<code>//First we declare the class (in a header). For now, declare classes as public.</code>
-<code>//By convention, class names are capitalized</code>
-<code></code>
-<code>public class Book</code>
-<code>{</code>
-<code>  //after a curly brace, we define our instance variables (or data fields, instance data)</code>
-<code>  //use camelCasing for variable names</code>
-<code>  //note that these variables are not static, because they will be different for each book</code>
-<code>  private String title;</code>
-<code>  private int numPages;</code>
-<code>  private boolean isHardcover;</code>
-<code></code>
-<code>}</code>
+<code class='ex'>//First we declare the class (in a header). For now, declare classes as public.</code>
+<code class='ex'>//By convention, class names are capitalized</code>
+<code class='ex'></code>
+<code class='ex'>public class Book</code>
+<code class='ex'>{</code>
+<code class='ex'>  //after a curly brace, we define our instance variables (or data fields, instance data)</code>
+<code class='ex'>  //use camelCasing for variable names</code>
+<code class='ex'>  //note that these variables are not static, because they will be different for each book</code>
+<code class='ex'>  private String title;</code>
+<code class='ex'>  private int numPages;</code>
+<code class='ex'>  private boolean isHardcover;</code>
+<code class='ex'></code>
+<code class='ex'>}</code>
 </pre>
 
 <p>Instance variables can be of any type-- int (integer), double (decimal), String (text), boolean (true/ false), or even non-primitive types from other classes. Note that String is uppercase (because a String is itself an object from the String class); the others are lowercase. Note that they are not declared static. This is because each Book object that we create will have its own data (a different title, etc.). Static variables apply to the whole class rather than individual objects (recall the use of static methods and data in the Math class, for instance).</p>
@@ -49,12 +49,12 @@
 <p>The constructor header consists of the keyword <span class='mono'>public</span>, followed by the exact name of the class and a set of parentheses. It might look like this for our <span class='mono'>Book</span> class:</p>
 
 <pre class='cx'>
-<code>public Book() //this MUST be the same as the name of the class.</code>
-<code>{</code>
-<code>  title = "Untitled Book"; //set the title of the book. etc</code>
-<code>  numpages = 0;</code>
-<code>  isHardcover = true;</code>
-<code>}</code>
+<code class='ex'>public Book() //this MUST be the same as the name of the class.</code>
+<code class='ex'>{</code>
+<code class='ex'>  title = "Untitled Book"; //set the title of the book. etc</code>
+<code class='ex'>  numpages = 0;</code>
+<code class='ex'>  isHardcover = true;</code>
+<code class='ex'>}</code>
 </pre>
 
 <p>You might be wondering how the constructor gets called/invoked. You&rsquo;ve actually already done this without realizing it. Every time you write the keyword <span class='mono'>new</span>, as in <span class='mono'>Scanner kbd = new Scanner(System.in)</span>, the <span class='mono'>new</span> keyword tells the compiler: 1) Find a class called <span class='mono'>Scanner</span> and 2) Run its constructor (in this case, passing in the parameter <span class='mono'>System.in</span>).</p>
@@ -66,20 +66,20 @@
 <p>We would write:</p>
 
 <pre class='cx'>
-<code>public void setTitle(String newTitle)</code>
-<code>{</code>
-<code>//set the title variable to the new title</code>
-<code>  title = newTitle;</code>
-<code>}</code>
+<code class='ex'>public void setTitle(String newTitle)</code>
+<code class='ex'>{</code>
+<code class='ex'>//set the title variable to the new title</code>
+<code class='ex'>  title = newTitle;</code>
+<code class='ex'>}</code>
 </pre>
 
 <p>and</p>
 
 <pre class='cx'>
-<code>public int getNumPages()</code>
-<code>{</code>
-<code> return numPages;</code>
-<code>}</code>
+<code class='ex'>public int getNumPages()</code>
+<code class='ex'>{</code>
+<code class='ex'> return numPages;</code>
+<code class='ex'>}</code>
 </pre>
 
 <p>These types of methods are common. They&rsquo;re called &ldquo;getters and setters&rdquo; (or, more formally, <em>accessors </em>and <em>mutators</em>). Notice how the public methods can be used by another class to find out and/or change the values of the private fields (more on that in the next section).</p>
@@ -89,11 +89,11 @@
 <p>What else might we need to do other than get or set values from our <span class='mono'>Book</span>? Well, perhaps we would like a method to display information about it. We might write:</p>
 
 <pre class='cx'>
-<code>public void displayInfo()</code>
-<code>{</code>
-<code>  System.out.print("This book is called " + title);</code>
-<code>  System.out.println(" and has " + numPages + " pages.");</code>
-<code>}</code>
+<code class='ex'>public void displayInfo()</code>
+<code class='ex'>{</code>
+<code class='ex'>  System.out.print("This book is called " + title);</code>
+<code class='ex'>  System.out.println(" and has " + numPages + " pages.");</code>
+<code class='ex'>}</code>
 </pre>
 
 <h2>Private vs. public visibility</h2>
@@ -104,50 +104,50 @@
 <p>A method might be declared private, however, if its only purpose is to support another method in the same class (remember that private class members are visible anywhere within the class). Here&rsquo;s a <span class='mono'>printStars</span> methods that we might use to print a line of asterisks within the displayInfo method.</p>
 
 <pre class='cx'>
-<code>&hellip;</code>
-<code>public void displayInfo()</code>
-<code>{</code>
-<code>  printStars();</code>
-<code>  System.out.print("This book is called " + title);</code>
-<code>S  ystem.out.println(" and has " + numPages + " pages.");</code>
-<code>  printStars();</code>
-<code>}</code>
-<code></code>
-<code>/* method declared private because it is only being used by another method in the same class</code>
-<code>*/</code>
-<code>private void printStars(){</code>
-<code>  System.out.println("**************************");</code>
-<code>}</code>
-<code>...</code>
+<code class='ex'>&hellip;</code>
+<code class='ex'>public void displayInfo()</code>
+<code class='ex'>{</code>
+<code class='ex'>  printStars();</code>
+<code class='ex'>  System.out.print("This book is called " + title);</code>
+<code class='ex'>S  ystem.out.println(" and has " + numPages + " pages.");</code>
+<code class='ex'>  printStars();</code>
+<code class='ex'>}</code>
+<code class='ex'></code>
+<code class='ex'>/* method declared private because it is only being used by another method in the same class</code>
+<code class='ex'>*/</code>
+<code class='ex'>private void printStars(){</code>
+<code class='ex'>  System.out.println("**************************");</code>
+<code class='ex'>}</code>
+<code class='ex'>...</code>
 </pre>
 
 <h2>Overloading Methods</h2>
 <p>It&rsquo;s common to have two methods with the same name but different parameters. These are called <em>overloaded</em> methods.For example, in our <span class='mono'>Book</span> class, we might want to overload the constructor so we have a version that accepts arguments. We&rsquo;d write:</p>
 
 <pre class='cx'>
-<code>//constructor from earlier
-<code>public Book()</code>
-<code>{</code>
-<code>  title = "Untitled Book"; //set the title of the book. etc</code>
-<code>  numpages = 0;</code>
-<code>  isHardcover = true;</code>
-<code>}</code>
-<code></code>
-<code>//overloaded constructor</code>
-<code>public Book(String t, int n, boolean h)</code>
-<code>{</code>
-<code>  title = t;</code>
-<code>  numpages = n;</code>
-<code>  isHardcover = h;</code>
-<code>}</code>
+<code class='ex'>//constructor from earlier
+<code class='ex'>public Book()</code>
+<code class='ex'>{</code>
+<code class='ex'>  title = "Untitled Book"; //set the title of the book. etc</code>
+<code class='ex'>  numpages = 0;</code>
+<code class='ex'>  isHardcover = true;</code>
+<code class='ex'>}</code>
+<code class='ex'></code>
+<code class='ex'>//overloaded constructor</code>
+<code class='ex'>public Book(String t, int n, boolean h)</code>
+<code class='ex'>{</code>
+<code class='ex'>  title = t;</code>
+<code class='ex'>  numpages = n;</code>
+<code class='ex'>  isHardcover = h;</code>
+<code class='ex'>}</code>
 </pre>
 
 <p>How does the compiler know which version of an overloaded method to use? It all depends on what arguments are provided by the calling method. For example, given:</p>
 
 <pre class='cx'>
-<code>Book book1 = new Book();</code>
-<code>Book book2 = new Book(&ldquo;My Life&rdquo;, 125, true);</code>
-<code>Book book3 = new Book(35); //will cause an error</code>
+<code class='ex'>Book book1 = new Book();</code>
+<code class='ex'>Book book2 = new Book(&ldquo;My Life&rdquo;, 125, true);</code>
+<code class='ex'>Book book3 = new Book(35); //will cause an error</code>
 </pre>
 
 <p>The first line would invoke the first constructor, the second would invoke the second, and the third would not compile (would cause an error), because there is no version of the constructor that accepts a single int as a parameter.</p>
@@ -157,17 +157,17 @@
 <p>We might also overload the private printStars method, like so</p>
 
 <pre class='cx'>
-<code>private void printStars(){</code>
-<code>  System.out.println("**************************");</code>
-<code>}</code>
-<code></code>
-<code>//overloaded with a parameter for how many stars to print</code>
-<code>private void printStars(int number){</code>
-<code>  for (int x = 0; x &lt; number; x++){</code>
-<code>    System.out.print("*"); //print a single * and stay on this line</code>
-<code>    System.out.println();</code>
-<code>  }</code>
-<code>}</code>
+<code class='ex'>private void printStars(){</code>
+<code class='ex'>  System.out.println("**************************");</code>
+<code class='ex'>}</code>
+<code class='ex'></code>
+<code class='ex'>//overloaded with a parameter for how many stars to print</code>
+<code class='ex'>private void printStars(int number){</code>
+<code class='ex'>  for (int x = 0; x &lt; number; x++){</code>
+<code class='ex'>    System.out.print("*"); //print a single * and stay on this line</code>
+<code class='ex'>    System.out.println();</code>
+<code class='ex'>  }</code>
+<code class='ex'>}</code>
 </pre>
 
 <p>Now if we were to write <span class='mono'>printStars()</span>, we'll get the number of stars in the original method (there are 26), but if we were to write <span class='mono'>printStars(20)</span>, we would get a line of 20 stars, for example.</p>
@@ -180,16 +180,16 @@
 <p>Here&rsquo;s how a driver class might create and manipulate a <span class='mono'>Book</span> object:</p>
 
 <pre class='cx'>
-<code>public class BookRunner {</code>
-<code></code>
-<code>  public static void main(String[] args) {</code>
-<code></code>
-<code>    Book b = new Book();</code>
-<code>    b.setTitle("Gone With the Wind");</code>
-<code>    b.displayInfo();</code>
-<code>    System.out.println("Hardcover: " + b.getIsHardcover();</code>
-<code>  }</code>
-<code>}</code>
+<code class='ex'>public class BookRunner {</code>
+<code class='ex'></code>
+<code class='ex'>  public static void main(String[] args) {</code>
+<code class='ex'></code>
+<code class='ex'>    Book b = new Book();</code>
+<code class='ex'>    b.setTitle("Gone With the Wind");</code>
+<code class='ex'>    b.displayInfo();</code>
+<code class='ex'>    System.out.println("Hardcover: " + b.getIsHardcover();</code>
+<code class='ex'>  }</code>
+<code class='ex'>}</code>
 </pre>
 
 </div>

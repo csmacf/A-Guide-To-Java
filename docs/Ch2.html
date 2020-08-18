@@ -14,20 +14,20 @@
 <h2>For documentation</h2>
 <p>Anything preceded by two forward slashes // (up to the end of a line) or enclosed between /* and */ (which can span multiple lines) is ignored by the compiler. These are <em>comments</em>-- to be read by you and other programmers. Typically, all methods (other than main) are preceded by a multi-line comment explaining the purpose of the method. Other lines of code that would benefit from a brief explanation are given single-line comments either on the previous line (i.e., above the code, <em>not</em> below it) or on the space remaining after the line.</p>
 <pre class='cx'>
-  <code>/*</code>
-  <code>* This is a multiple-line comment.</code>
-  <code>* The extra asterisks at the beginning of these lines are not required,</code>
-  <code>* but they are helpful visually.</code>
-  <code>*/</code>
-  <code>public class First</code>
-  <code>{</code>
-  <code>  public static void main(String[] args)</code>
-  <code>  {</code>
-  <code>    //Print a message (this is a single-line comment explaining the line of code below</code>
-  <code>    System.out.println("Hello, World!"); //this is another single-line comment</code>
-  <code>    //System.out.println("This line won't run. It is commented out");</code>
-  <code>  }</code>
-  <code>}</code>
+  <code class='ex'>/*</code>
+  <code class='ex'>* This is a multiple-line comment.</code>
+  <code class='ex'>* The extra asterisks at the beginning of these lines are not required,</code>
+  <code class='ex'>* but they are helpful visually.</code>
+  <code class='ex'>*/</code>
+  <code class='ex'>public class First</code>
+  <code class='ex'>{</code>
+  <code class='ex'>  public static void main(String[] args)</code>
+  <code class='ex'>  {</code>
+  <code class='ex'>    //Print a message (this is a single-line comment explaining the line of code below</code>
+  <code class='ex'>    System.out.println("Hello, World!"); //this is another single-line comment</code>
+  <code class='ex'>    //System.out.println("This line won't run. It is commented out");</code>
+  <code class='ex'>  }</code>
+  <code class='ex'>}</code>
 </pre>
 <p>Note that there is third type of comment called a Javadoc comment that starts with /** (note the extra asterisk). Its purpose is to auto-generate documentation for code. This is not covered in this course, but I mention it because you will see if often in examples.</p>
 <h2>For debugging</h2>

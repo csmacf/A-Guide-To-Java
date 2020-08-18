@@ -20,25 +20,25 @@
 
 <p>The <span class='mono'>main.</span> method is called automatically (when it is present-- you will see later that not all classes have a <span class='mono'>main</span> method). All other methods have to be called (or invoked) by another method. Calling a method involves stating its name, followed by (). So, the <span class='mono'>main</span> method might call another method to perform a certain task, like so:</p>
 <pre class = 'cx'>
-<code>public class MethodDemo {</code>
-<code>  </code>
-<code>  public static void main(String[] args) {</code>
-<code>    printStars(); //runs the code in the printStars method</code>
-<code>    getUserName(); //runs the code in the getUserName method</code>
-<code>  }</code>
-<code>  //the main method is now complete</code>
-<code>  </code>
-<code>  public static void printStars(){</code>
-<code>    System.out.println("**************************");</code>
-<code>  }</code>
-<code>  	</code>
-<code>  public static void getUserName(){</code>
-<code>    Scanner keyboard = new Scanner(System.in);</code>
-<code>    System.out.println("Enter your name");</code>
-<code>    String name = keyboard.nextLine();</code>
-<code>    keyboard.close();</code>
-<code>  }</code>
-<code>}</code>
+<code class='ex'>public class MethodDemo {</code>
+<code class='ex'>  </code>
+<code class='ex'>  public static void main(String[] args) {</code>
+<code class='ex'>    printStars(); //runs the code in the printStars method</code>
+<code class='ex'>    getUserName(); //runs the code in the getUserName method</code>
+<code class='ex'>  }</code>
+<code class='ex'>  //the main method is now complete</code>
+<code class='ex'>  </code>
+<code class='ex'>  public static void printStars(){</code>
+<code class='ex'>    System.out.println("**************************");</code>
+<code class='ex'>  }</code>
+<code class='ex'>  	</code>
+<code class='ex'>  public static void getUserName(){</code>
+<code class='ex'>    Scanner keyboard = new Scanner(System.in);</code>
+<code class='ex'>    System.out.println("Enter your name");</code>
+<code class='ex'>    String name = keyboard.nextLine();</code>
+<code class='ex'>    keyboard.close();</code>
+<code class='ex'>  }</code>
+<code class='ex'>}</code>
 </pre>
 <h2>Execution Flow</h2>
 <p>How will the code in the previous example execute? A flowchart is a helpful visual aid to use here.  </p>
@@ -64,20 +64,20 @@
 <p>For example,</p>
 
 <pre class='cx'>
-<code>public static int methodA() //this method will return an int</code>
-<code>public static boolean methodB() //returns a boolean</code>
+<code class='ex'>public static int methodA() //this method will return an int</code>
+<code class='ex'>public static boolean methodB() //returns a boolean</code>
 </pre>
 
 <p>In our earlier example, we would replace the header</p>
 
 <pre class='cx'>
-<code>public static void getUserName()</code>
+<code class='ex'>public static void getUserName()</code>
 </pre>
 
 <p>with</p>
 
 <pre class='cx'>
-<code>public static String getUserName()</code>
+<code class='ex'>public static String getUserName()</code>
 </pre>
 
 <p>We are now required to use the <span class='mono'>return</span> keyword, followed by a value appropriate to the return type in the header. Here is how we might rewrite the <span class='mono'>getUserName</span> example to include a return value.</p>
@@ -92,16 +92,16 @@
 <p>Let&rsquo;s look at an example:</p>
 
 <pre class='cx'>
-<code>public static void setAge(int age)</code>
+<code class='ex'>public static void setAge(int age)</code>
 </pre>
 
 <p>is a method designed to set the value of someone&rsquo;s age (which we&rsquo;ll then store in a variable called <span class='mono'>userAge</span>). In order for this method to make sense, we&rsquo;d need to know what age value to use. We write <span class='mono'>int age</span> in parentheses, meaning an integer needs to be provided when we call this method.</p>
 
 <pre class='cx'>
-<code>public static void setAge(int age) //age will hold the value passed to this method</p>
-<code>{</code>
-<code>userAge = age;</code>
-<code>}</code>
+<code class='ex'>public static void setAge(int age) //age will hold the value passed to this method</p>
+<code class='ex'>{</code>
+<code class='ex'>userAge = age;</code>
+<code class='ex'>}</code>
 </pre>
 
 <p>To call the setAge method, we now would write something like</p>
@@ -113,8 +113,8 @@
 </code>or</p>
 
 <pre class='cx'>
-<code>int newAge = 47;</code>
-<code>setAge(newAge);</code>
+<code class='ex'>int newAge = 47;</code>
+<code class='ex'>setAge(newAge);</code>
 </pre>
 
 <p>Note that we don&rsquo;t write the type when calling the method (e.g, it&rsquo;s <em>not</em> <span class='mono'>setAge(int 19)</span>.</p>
@@ -123,10 +123,10 @@
 <p>In Java, a method can only return (at most) one value, but it can have multiple parameters. You must specify both the type and an identifier for each parameter (even two of the same type). For example, you might have:</p>
 
 <pre class='cx'>
-<code>public static double findSum(int a, int b, double c)</code>
-<code>{</code>
-<code>return (a+b+c);</code>
-<code>}</code>
+<code class='ex'>public static double findSum(int a, int b, double c)</code>
+<code class='ex'>{</code>
+<code class='ex'>return (a+b+c);</code>
+<code class='ex'>}</code>
 </pre>
 <p><br /><br /></p>
 <p>Notice how this method has three parameters and returns a double value (the sum, in this case).</p>
@@ -134,7 +134,7 @@
 <p>To use this method, we might write</p>
 
 <pre class='cx'>
-<code>double x = findSum(5, 9, 2.8);</code>
+<code class='ex'>double x = findSum(5, 9, 2.8);</code>
 </pre>
 
 <p>Note how we are storing the result of the method call into a double variable (x), which matches the return type.</p>

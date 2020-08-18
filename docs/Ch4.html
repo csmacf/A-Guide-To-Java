@@ -39,7 +39,7 @@
 
 <p>State the type and the name, as follows:</p>
 <pre class='cx'>
-  <code>int age;</code>
+  <code class='ex'>int age;</code>
   </pre>
 <p>Note the semicolon (;) at the end of this line. In Java (and many other languages), all <em>statements</em> (essentially, lines of code that perform some action) are ended with a semicolon.</p>
 
@@ -47,19 +47,19 @@
 
 <p>Like method identifiers, variable names usually begin lowercase. As with other identifiers, use camel case for names with multiple words.</p>
 <pre class = 'cx'>
-<code>double timeOfDay;</code>
-<code>boolean isLegalAge;</code>
+<code class='ex'>double timeOfDay;</code>
+<code class='ex'>boolean isLegalAge;</code>
 </pre>
 <p>You can declare multiple variables of the same type on one line, as in:</p>
 
 <pre class = 'cx'>
-<code>double width, height, length; //declares three double variables</code>
+<code class='ex'>double width, height, length; //declares three double variables</code>
 </pre>
 
 <p>Although Strings are not primitive data types, they can be declared using the same syntax, as in:</p>
 
 <pre class = 'cx'>
-<code>String bookTitle;</code>
+<code class='ex'>String bookTitle;</code>
 </pre>
 
 
@@ -67,28 +67,28 @@
 <p><em>Assignment</em> is the act of storing a value (or <em>literal</em>) in a variable. The = sign does not mean &ldquo;equals&rdquo; (like it does in mathematics); It means &ldquo;put the value on the right into the variable on the left&rdquo; as in:</p>
 
 <pre class = 'cx'>
-<code>//set age to 7</code>
-<code>age = 7;</code>
-<code>//set name to Sally</code>
-<code>name = "Sally";</code>
+<code class='ex'>//set age to 7</code>
+<code class='ex'>age = 7;</code>
+<code class='ex'>//set name to Sally</code>
+<code class='ex'>name = "Sally";</code>
 </pre>
 
 <p>Note that in Java, assignment is done right to left. Also note that assignment does not have to happen directly upon declaration.</p>
 <p>You can declare and assign at the same time, as in:</p>
 <pre class = 'cx'>
-<code>//declare a variable called height to hold a double, and store 65.2 into it</code>
-<code>double height = 65.2;</code>
-<code></code>
-<code>//declare a variable called height to hold a String, and store "Jill" into it</code>
-<code>String name = "Jill";</code>
+<code class='ex'>//declare a variable called height to hold a double, and store 65.2 into it</code>
+<code class='ex'>double height = 65.2;</code>
+<code class='ex'></code>
+<code class='ex'>//declare a variable called height to hold a String, and store "Jill" into it</code>
+<code class='ex'>String name = "Jill";</code>
 </pre>
 
 <p>You can even declare multiple variables of the same type on the same line, assigning values to some (or all), as in:</p>
 
 
 <pre class = 'cx'>
-<code>//declare three char variables and assign z to one of them</code>
-<code>char first, middle = 'z', last;</code>
+<code class='ex'>//declare three char variables and assign z to one of them</code>
+<code class='ex'>char first, middle = 'z', last;</code>
 </pre>
 
 <p>Note that the first time you store a value into a variable, this is called <em>initializing </em>the variable (because you&rsquo;re setting the initial value of the variable).</p>
@@ -97,8 +97,8 @@
 
 
 <pre class='cx'>
-<code>char initial = 'c';</code>
-<code>String message = "Welcome home!"; //note the double versus single quotes </code>
+<code class='ex'>char initial = 'c';</code>
+<code class='ex'>String message = "Welcome home!"; //note the double versus single quotes </code>
 </pre>
 
 <div class = 'tip'><p>Be careful when copying and pasting single or double quote symbols into your code. Most text editors use &ldquo;smart quotes&rdquo; (which curl to the left and right). These will not work correctly in code. If you run into this problem, simply retype any quote characters from text that you&rsquo;ve pasted.</p></div>
@@ -107,9 +107,9 @@
 
 
 <pre class = 'cx'>
-<code>int age;</code>
-<code>...</code>
-<code>age = 7; //not int age = 7, because age has already been declared</code>
+<code class='ex'>int age;</code>
+<code class='ex'>...</code>
+<code class='ex'>age = 7; //not int age = 7, because age has already been declared</code>
 </pre>
 
 
@@ -117,9 +117,9 @@
 <p>Some variables hold values that should not be changed after initial assignment. For example, you might have an application that uses the sales tax rate for your state. This should be set <em>once </em>(when it is first declared) and not change elsewhere. Such variables are called <em>constants</em> and are declared using the <span class='mono'>final</span> keyword.  By convention, names of constants are all UPPERCASE, with underscores used to separate multiple words.</p>
 
 <pre class = 'cx'>
-<code>final double TAX_RATE = 0.07;</code>
-<code>final int NUMBER_OF_ROOMS = 20;</code>
-<code>final double PI = 3.14159;</code>
+<code class='ex'>final double TAX_RATE = 0.07;</code>
+<code class='ex'>final int NUMBER_OF_ROOMS = 20;</code>
+<code class='ex'>final double PI = 3.14159;</code>
 </pre>
 
 <p>If you try to change the value of a variable declared final after initial assignment, you will get an error.</p>
@@ -143,8 +143,8 @@
 
 
 <pre class = 'cx'>
-<code>int daysInMonth = 30;</code>
-<code>String message = "There are" + (2 * (daysInMonth - 5)) + " days left";</code>
+<code class='ex'>int daysInMonth = 30;</code>
+<code class='ex'>String message = "There are" + (2 * (daysInMonth - 5)) + " days left";</code>
 </pre>
 <ol>
 <li>would be evaluated in this order:</li>
@@ -160,31 +160,31 @@
 <p>If an int value is to be stored into a double variable, it needs to be converted to a double. Java will do this automatically. This is called an <em>implicit conversion</em> (because you don&rsquo;t have to state it in your code). Why is this OK? Since the int type has less precision than the double type, it can be &ldquo;widened&rdquo; into a double without changing its value.</p>
 <p>Consider:</p>
 <pre class='cx'>
-<code>int x = 7;</code>
-<code>double y = x; //y will now have a value of 7.0. </code>
+<code class='ex'>int x = 7;</code>
+<code class='ex'>double y = x; //y will now have a value of 7.0. </code>
 </pre>
 
 <p>If a double and an int are used in the same math operation, the int will first be cast implicitly to a double and the result of the operation will be a double.</p>
 
 <pre class='cx'>
-<code>int a = 10;</code>
-<code>double b = 4.0;</code>
-<code>System.out.println(a/b); // will evaluate 10.0/4.0 and print the result, 2.5</code>
+<code class='ex'>int a = 10;</code>
+<code class='ex'>double b = 4.0;</code>
+<code class='ex'>System.out.println(a/b); // will evaluate 10.0/4.0 and print the result, 2.5</code>
 </pre>
 
 <p>Note that if both the values above were stored as ints, no casting would occur and the result would also be an int. This is a common error for beginning Java programmers, as shown in this example.</p>
 
 <pre class='cx'>
-<code>int a = 10;</code>
-<code>int b = 4;</code>
-<code>System.out.println(a/b); // will evaluate 10/4 and print 2, not 2.5</code>
+<code class='ex'>int a = 10;</code>
+<code class='ex'>int b = 4;</code>
+<code class='ex'>System.out.println(a/b); // will evaluate 10/4 and print 2, not 2.5</code>
 </pre>
 
 <p>If you want to store a double into an int, you must <em>explicitly</em> cast it, by writing the type to convert to in parentheses, as in:</p>
 
 <pre class='cx'>
-<code>double y= 3.8;</code>
-<code>int x = (int) y; //convert y&rsquo;s value into an int. 3.8 is narrowed to 3.</code>
+<code class='ex'>double y= 3.8;</code>
+<code class='ex'>int x = (int) y; //convert y&rsquo;s value into an int. 3.8 is narrowed to 3.</code>
 </pre>
 
 <p>Note that since you are now &ldquo;narrowing&rdquo; (i.e. going from more to less precision) the value of x will be 3 and the 0.8 will be discarded. An explicit cast is necessary here because you are (potentially) actually changing the value.</p>

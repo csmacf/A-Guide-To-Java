@@ -22,7 +22,7 @@
 <p>For example, creating a Scanner object called myScanner looks like</p>
 
 <pre class = 'cx'>
-<code>Scanner myScanner = new Scanner(System.in);</code>
+<code class='ex'>Scanner myScanner = new Scanner(System.in);</code>
 </pre>
 
 <p>We now have a functioning Scanner (a software scanner-- not a physical machine) to use in our code. <span class='mono'>System.in</span> is called a <em>parameter</em>; parameters provide input to a method. In this case, it tells the Scanner that it should read from the computer keyboard (as opposed to a text file, for example, which could alternatively be a parameter). If we need another Scanner object, we can go ahead and create that, as well, from the same class. Note that an object is also called an <em>instance </em>of a class.</p>
@@ -43,38 +43,38 @@
 <li >Close the Scanner when finished</li>
 </ol>
 <pre class = 'cx'>
-<code>//1. Import the Scanner class</code>
-<code>import java.util.Scanner;</code>
-<code></code>
-<code>public class ScannerDemo</code>
-<code>{</code>
-<code>  public static void main (String [] args)</code>
-<code>  {</code>
-<code>    //2. Create a new Scanner object</code>
-<code>    Scanner sc = new Scanner(System.in);</code>
-<code>    </code>
-<code>    //prompt user for a number</code>
-<code>    System.out.println("Enter a number");</code>
-<code>    </code>
-<code>    //3. Scan in user entry</code>
-<code>    int a = sc.nextInt(); //use nextInt() for integers</code>
-<code>    </code>
-<code>    //always use a blank nextLine() after nextInt() or nextDouble()</code>
-<code>    sc.nextLine(); </code>
-<code>    </code>
-<code>    System.out.println("Enter your name");</code>
-<code>    </code>
-<code>    //use the same Scanner object to get more input</code>
-<code>    String name = sc.nextLine(); //use nextLine() for Strings</code>
-<code>    </code>
-<code>    System.out.println(name + ", you entered " + a);</code>
-<code>    </code>
-<code>    //4. Close the Scanner</code>
-<code>    sc.close();</code>
-<code>    </code>
-<code>  }</code>
-<code>  </code>
-<code>}</code>
+<code class='ex'>//1. Import the Scanner class</code>
+<code class='ex'>import java.util.Scanner;</code>
+<code class='ex'></code>
+<code class='ex'>public class ScannerDemo</code>
+<code class='ex'>{</code>
+<code class='ex'>  public static void main (String [] args)</code>
+<code class='ex'>  {</code>
+<code class='ex'>    //2. Create a new Scanner object</code>
+<code class='ex'>    Scanner sc = new Scanner(System.in);</code>
+<code class='ex'>    </code>
+<code class='ex'>    //prompt user for a number</code>
+<code class='ex'>    System.out.println("Enter a number");</code>
+<code class='ex'>    </code>
+<code class='ex'>    //3. Scan in user entry</code>
+<code class='ex'>    int a = sc.nextInt(); //use nextInt() for integers</code>
+<code class='ex'>    </code>
+<code class='ex'>    //always use a blank nextLine() after nextInt() or nextDouble()</code>
+<code class='ex'>    sc.nextLine(); </code>
+<code class='ex'>    </code>
+<code class='ex'>    System.out.println("Enter your name");</code>
+<code class='ex'>    </code>
+<code class='ex'>    //use the same Scanner object to get more input</code>
+<code class='ex'>    String name = sc.nextLine(); //use nextLine() for Strings</code>
+<code class='ex'>    </code>
+<code class='ex'>    System.out.println(name + ", you entered " + a);</code>
+<code class='ex'>    </code>
+<code class='ex'>    //4. Close the Scanner</code>
+<code class='ex'>    sc.close();</code>
+<code class='ex'>    </code>
+<code class='ex'>  }</code>
+<code class='ex'>  </code>
+<code class='ex'>}</code>
 </pre>
 
 <p>Sample output</p>
@@ -96,13 +96,13 @@
 <p>Since Strings are objects, we <em>should </em>have to write (assuming we want to create a String with the literal value "Charlie"):</p>
 
 <pre class = 'cx'>
-<code>String name = new String("Charlie");</code>
+<code class='ex'>String name = new String("Charlie");</code>
 </pre>
 
 <p>However, since this is so commonly used, the shortcut</p>
 
 <pre class = 'cx'>
-<code>String name = "Charlie";</code>
+<code class='ex'>String name = "Charlie";</code>
 </pre>
 
 <p>achieves the same thing (as if String were a primitive type-- but it&rsquo;s not!). You will learn more later about methods that apply to strings.</p>
@@ -113,33 +113,33 @@
 
 <pre class = 'cx'>
 
-<code>import java.util.Random;</code>
-<code></code>
-<code>public class RandomDemo {</code>
-<code>  </code>
-<code>  public static void main(String[] args) {</code>
-<code>    	</code>
-<code>    //create a random number generator</code>
-<code>    Random gen = new Random();</code>
-<code>    </code>
-<code>    //print a random integer between 0 and 4</code>
-<code>    System.out.println(gen.nextInt(5));</code>
-<code>    	</code>
-<code>    //print a random double between 0 and 1</code>
-<code>    System.out.println(gen.nextDouble()); //note the empty () for nextDouble</code>
-<code>    	</code>
-<code>    //print a random double between 0 and 8</code>
-<code>    System.out.println(8*Math.random());</code>
-<code>    </code>
-<code>    //print a random integer between 0 and 9</code>
-<code>    System.out.println(gen.nextInt(10));</code>
-<code>    </code>
-<code>    //print a random integer between 1 and 10</code>
-<code>    System.out.println(gen.nextInt(10)+1);</code>
-<code>    </code>
-<code>    //print a random integer between 100 and 110</code>
-<code>    //note there are 11 integers from 100 to 110</code>
-<code>    System.out.println(gen.nextInt(11)+100);</code>
+<code class='ex'>import java.util.Random;</code>
+<code class='ex'></code>
+<code class='ex'>public class RandomDemo {</code>
+<code class='ex'>  </code>
+<code class='ex'>  public static void main(String[] args) {</code>
+<code class='ex'>    	</code>
+<code class='ex'>    //create a random number generator</code>
+<code class='ex'>    Random gen = new Random();</code>
+<code class='ex'>    </code>
+<code class='ex'>    //print a random integer between 0 and 4</code>
+<code class='ex'>    System.out.println(gen.nextInt(5));</code>
+<code class='ex'>    	</code>
+<code class='ex'>    //print a random double between 0 and 1</code>
+<code class='ex'>    System.out.println(gen.nextDouble()); //note the empty () for nextDouble</code>
+<code class='ex'>    	</code>
+<code class='ex'>    //print a random double between 0 and 8</code>
+<code class='ex'>    System.out.println(8*Math.random());</code>
+<code class='ex'>    </code>
+<code class='ex'>    //print a random integer between 0 and 9</code>
+<code class='ex'>    System.out.println(gen.nextInt(10));</code>
+<code class='ex'>    </code>
+<code class='ex'>    //print a random integer between 1 and 10</code>
+<code class='ex'>    System.out.println(gen.nextInt(10)+1);</code>
+<code class='ex'>    </code>
+<code class='ex'>    //print a random integer between 100 and 110</code>
+<code class='ex'>    //note there are 11 integers from 100 to 110</code>
+<code class='ex'>    System.out.println(gen.nextInt(11)+100);</code>
 </pre>
 
 <p>In general to get a random integer between a and b, use nextInt(b-a+1)+b</p>
@@ -154,11 +154,11 @@
 <p>Some commonly used methods of the Math class (shown by example) are:</p>
 
 <pre class = 'cx'>
-<code>Math.pow(5,3) //raises 5 to the 3rd power = 125.  </code>
-<code>Math.random() //generates a random double n, 0 ≤ n < 1, such as 0.57483</code>
-<code>Math.round(63.812) //rounds to the nearest integer, 64</code>
-<code>Math.sqrt(10) //finds the square root of 10 ≈ 3.16</code>
-<code>Math.PI //the value 3.1415926… note no () after PI</code>
+<code class='ex'>Math.pow(5,3) //raises 5 to the 3rd power = 125.  </code>
+<code class='ex'>Math.random() //generates a random double n, 0 ≤ n < 1, such as 0.57483</code>
+<code class='ex'>Math.round(63.812) //rounds to the nearest integer, 64</code>
+<code class='ex'>Math.sqrt(10) //finds the square root of 10 ≈ 3.16</code>
+<code class='ex'>Math.PI //the value 3.1415926… note no () after PI</code>
 </pre>
 
 <p>The methods above are the ones you should know for this course.</p>
