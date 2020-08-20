@@ -1,0 +1,115 @@
+<!doctype HTML>
+<html>
+<head>
+  <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/sticky-footer/">
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <link href="sticky-footer.css" rel="stylesheet">
+    <!-- My custom style -->
+<link rel="stylesheet" href="style.css" type="text/css">
+<link href="https://fonts.googleapis.com/css2?family=Vast+Shadow&display=swap" rel="stylesheet">
+</head>
+<body>
+<!-- Begin page content -->
+    <main role="main" class="container-fluid">
+        <header class="header">
+          <div class="jumbotron book-title">
+            <h2> <img src="img/coffee-cup.png" width = '32px' alt = "Coffee cup" style="vertical-align:middle">
+           A Guide to Java</h2>
+         </div>
+        </header>
+        <!-- add chapter number-->
+    </br><br>
+      <h2> Chapter <span id = 'chap-num'>3</span></h2>
+      <!-- CONTENT here-->
+      <h1>Printing</h1>
+<p>In computer programs, "printing" generally means displaying text on the console (the output window)-- not physically printing onto paper. There are two principal methods used for printing:</p>
+<p></p>
+<ul>
+<li><span class = 'mono'> System.out.println()</span> prints whatever is enclosed in the (), then moves to the next line (so if you then print something else subsequently, it will appear on the line below).</li>
+<li><span class = 'mono'>System.out.print() </span>prints whatever is in the () and stays on the same line. Output from the next print() or println() statement will begin on that same line.
+  <pre class = 'cx jumbotron'>
+
+<code class='ex'>System.out.print("Hello, World!"); </code>
+<code class='ex'>System.out.println(" It is I!"); //note the space at the beginning</code>
+<code class='ex'>System.out.println("I am on a new line.");</code>
+<code class='ex'>System.out.println(); //prints a blank line with no text</code>
+<code class='ex'>System.out.println("Goodbye");</code>
+</pre>
+  <div class='tip'>Note that the code above is not a complete class.  When providing examples, I will typically show only the part of the code that demonstrates a particular concept. </div>
+  <p>will output:</p>
+  <div class = 'console'>
+<p>Hello, World! It is I! </p>
+<p>I am on a new line. </p>
+<p> <br></p>
+<p>Goodbye</p>
+  </div>
+
+<p></p>
+<p>You might be wondering what <span class='mono'>System.out </span>refers to. <span class='mono'>System </span>is a class in Java that is already written. You will see that we often use code from pre-existing classes, such as <span class='mono'>System</span>, so we do not need to write everything ourselves from scratch.</p>
+<p>The examples above involve printing text to the console. In programming, text is called a <em>string</em> (think of a string of characters). A string can contain any number of characters.</p>
+<h1>Formatted Printing</h1>
+<h2>Escape Sequences</h2>
+<p><em>Escape</em> <em>sequences</em> are groups or characters that allow you to format output within a string. They begin with a backslash character.</p>
+<ul>
+<li >\n inserts a new line</li>
+<li >\" creates a double quote (") symbol <em>within</em> a string (and \' creates a single quote)</li>
+<li >\\ creates a backslash (note the need for the second backslash to indicate that an actual backslash character is desired)</li>
+<li >\t creates a tab</li>
+</ul>
+
+<p>For example,</p>
+
+<!--p class = 'mono'>System.out.println("This\nis how \"escape sequences\" work");</p>-->
+<pre class = 'cx jumbotron'> System.out.println("This\nis how \"escape sequences\" work");</pre>
+<p>produces</p>
+<div class = 'console'>
+<p>This</p>
+<p>is how "escape sequences" work</p>
+</div>
+<p>because the \n moves to a new line and the \" creates a double quote (note that if the " were written without the backslash, it would end the string prematurely).</p>
+<h2>The printf method</h2>
+<p>You will often want to format double values so that they round to a certain number of places. For that, you can use the <span class='mono'>printf </span>method of <span class='mono'>System.out</span>, as follows. Note that you first define the format as a string inside " ", then write a comma, then the value(s) to be printed (separated by commas for multiple values). The % symbol in this context indicates a placeholder, i.e., that a value is to be printed. For <span class='mono'>%f</span>, The number following the decimal point indicates the number of decimal places to round to, and the <span class='mono'>f</span> indicates a float (i.e., a number with a decimal point)</p>
+<pre class = 'cx jumbotron'>
+
+<code class='ex'>System.out.printf("%.2f", 42.34626); //2 is the number of decimal places </code>
+<code class='ex'>System.out.println(); //needed to go to the next line of the console </code>
+<code class='ex'>//You can combine fixed text (e.g. "Pi is about") with format specifiers, like so</code>
+<code class='ex'>System.out.printf("Pi is about: %.3f", 3.1415926);</code>
+</pre>
+<p>outputs</p>
+<div class ='console'>
+<p>42.35</p>
+<p>Pi is about: 3.142</p>
+</div>
+
+<p><span class='mono'>printf</span> can also specify integers (by using %d) and Strings (using %s). A new line is created with %n, rather than the \n escape sequence that print and println use.  Also notice in the example the use of more than one placeholder in the format string.</p>
+<pre class='cx'>
+<code class='ex'>//using other format specifiers</code>
+<code class='ex'>System.out.printf("Her name is %s%n and her number is %d", "Kiera",35);</code>
+</pre>
+<p>outputs</p>
+<div class='console'>
+<p>Her name is Kiera</p>
+<p>and her number is 35</p>
+</div>
+<p>More on printf is <a href="https://docs.oracle.com/javase/tutorial/java/data/numberformat.html">here</a>.</p>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="btn-group nav-btns" role="group" aria-label="Buttons">
+            <a type="button" class="btn btn-primary btn-lg" id = "prev-btn">Previous</a>
+            <a type="button" class="btn btn-primary btn-lg" id = "index-btn">Index</a>
+            <a type="button" class="btn btn-primary btn-lg" id = "next-btn">Next</a>
+       </div>
+      </div>
+    </footer>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src = 'navigation.js'></script>
+</body>

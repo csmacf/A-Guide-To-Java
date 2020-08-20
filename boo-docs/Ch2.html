@@ -1,0 +1,66 @@
+<!doctype HTML>
+<html>
+<head>
+  <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/sticky-footer/">
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <link href="sticky-footer.css" rel="stylesheet">
+    <!-- My custom style -->
+<link rel="stylesheet" href="style.css" type="text/css">
+<link href="https://fonts.googleapis.com/css2?family=Vast+Shadow&display=swap" rel="stylesheet">
+</head>
+<body>
+<!-- Begin page content -->
+    <main role="main" class="container-fluid">
+        <header class="header">
+          <div class="jumbotron book-title">
+            <h2> <img src="img/coffee-cup.png" width = '32px' alt = "Coffee cup" style="vertical-align:middle">
+           A Guide to Java</h2>
+         </div>
+        </header>
+        <!-- add chapter number-->
+    </br><br>
+      <h2> Chapter <span id = 'chap-num'>2</span></h2>
+      <h1>Comments</h1>
+<h2>For documentation</h2>
+<p>Anything preceded by two forward slashes // (up to the end of a line) or enclosed between /* and */ (which can span multiple lines) is ignored by the compiler. These are <em>comments</em>-- to be read by you and other programmers. Typically, all methods (other than main) are preceded by a multi-line comment explaining the purpose of the method. Other lines of code that would benefit from a brief explanation are given single-line comments either on the previous line (i.e., above the code, <em>not</em> below it) or on the space remaining after the line.</p>
+<div class= "jumbotron">
+<pre class='cx'>
+  <code class='ex'>/*</code>
+  <code class='ex'>* This is a multiple-line comment.</code>
+  <code class='ex'>* The extra asterisks at the beginning of these lines are not required,</code>
+  <code class='ex'>* but they are helpful visually.</code>
+  <code class='ex'>*/</code>
+  <code class='ex'>public class First</code>
+  <code class='ex'>{</code>
+  <code class='ex'>  public static void main(String[] args)</code>
+  <code class='ex'>  {</code>
+  <code class='ex'>    //Print a message (this is a single-line comment explaining the line of code below</code>
+  <code class='ex'>    System.out.println("Hello, World!"); //this is another single-line comment</code>
+  <code class='ex'>    //System.out.println("This line won't run. It is commented out");</code>
+  <code class='ex'>  }</code>
+  <code class='ex'>}</code>
+</pre></div>
+<p>Note that there is third type of comment called a <em>Javadoc</em> comment that starts with /** (note the extra asterisk). Its purpose is to auto-generate documentation for code. This is not covered in this course, but I mention it because you will see if often in examples.</p>
+<h2>For debugging</h2>
+<p>Commenting can be beneficial in <em>debugging</em> (i.e., identifying errors in) code, as well. You can prevent specific lines of code from running (while testing your code) by putting // </strong>at their beginning; this is often referred to as &ldquo;commenting out&rdquo; the code. If you are not sure whether a particular line of code is causing a problem, you can comment it out to see if the code runs fine otherwise. For example, the last line of code in the previous example is commented out and will not run (until the slashes are removed).</p>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="btn-group nav-btns" role="group" aria-label="Buttons">
+            <a type="button" class="btn btn-primary btn-lg" id = "prev-btn">Previous</a>
+            <a type="button" class="btn btn-primary btn-lg" id = "index-btn">Index</a>
+            <a type="button" class="btn btn-primary btn-lg" id = "next-btn">Next</a>
+</div>
+      </div>
+    </footer>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src = 'navigation.js'></script>
+</body>
+</html>
