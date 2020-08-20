@@ -10,14 +10,15 @@
     <link href="sticky-footer.css" rel="stylesheet">
     <!-- My custom style -->
 <link rel="stylesheet" href="style.css" type="text/css">
+<link href="https://fonts.googleapis.com/css2?family=Vast+Shadow&display=swap" rel="stylesheet">
 </head>
 <body>
 <!-- Begin page content -->
     <main role="main" class="container-fluid">
         <header class="header">
-          <div class="jumbotron">
-            <img src="img/coffee-cup.png" width = '24px' alt = "Coffee cup" style="inline:inline">
-           <h2>A Guide to Java</h2>
+          <div class="jumbotron book-title">
+            <h2> <img src="img/coffee-cup.png" width = '32px' alt = "Coffee cup" style="vertical-align:middle">
+           A Guide to Java</h2>
          </div>
         </header>
       <h2> Chapter <span id = 'chap-num'>1</span></h2>
@@ -25,7 +26,7 @@
       <p>Java is a high-level programming language, meaning what you write (called <em>source code</em>) is far removed from the 1s and 0s that a computer understands (called <em>machine code</em>). <em>Compilers</em> and <em>interpreters</em> are both tools that convert from source code to machine code. A compiler translates all the code at once, creating a new file that runs on the operating system of the computer. Interpreters, by contrast, translate code line by line.</p>
       <p>Most programming languages tend to be strictly compiled or interpreted, but running Java applications actually involves both processes. First, your source code (contained in a .<em>java</em> file) is compiled into <em>byte code</em> (creating a .<em>class</em> file). At this point, you can no longer read the code. The <em>Java Virtual Machine (JVM</em>) then translates the byte code into machine code for the operating system on your device. This means that you need to have the correct JVM installed on your computer for Java code to run. It is because of the JVM that Java is cross-platform.</p>
 
-      <img class="aligncenter wp-image-22 size-full" src="https://pressbooks.com/app/uploads/sites/127599/2020/06/A-Guide-to-Java-4th-Ed-e1592014390274.png" alt="Java compiler and interpreter" width="694" height="178" />
+      <img src="../img/compiler-interpreter.png" alt="Java compiler and interpreter" width="80%"/>
 
       <p>If the compiler runs into a problem translating the source code, this results in a <em>compile-time error</em>. If the interpreter runs into trouble, you will get a <em>run-time error.</em> Always read the description of errors in the console (the output window)! Sometimes you won't understand all the terms, but you will usually be able to get at least a hint as to what the issue is.</p>
       <img src="../img/reading-errors.png" alt = "Reading code errors" width = 80%></img>
@@ -72,7 +73,7 @@
 
     <footer class="footer">
       <div class="container">
-        <div class="btn-group" role="group" aria-label="Buttons">
+        <div class="btn-group nav-btns" role="group" aria-label="Buttons">
             <a type="button" class="btn btn-primary btn-lg" id = "prev-btn">Previous</a>
             <a type="button" class="btn btn-primary btn-lg" id = "index-btn">Index</a>
             <a type="button" class="btn btn-primary btn-lg" id = "next-btn">Next</a>
