@@ -89,8 +89,11 @@ code.ex:before{
 .mono{
 	font-family: Consolas, monospace;
 	font-weight: darker;
-}
 
+}
+.grey{
+  background-color: #F0F3F3;
+}
 .tip{
 	background-color: #dad786;
 	padding: 4px;
