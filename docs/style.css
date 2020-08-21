@@ -17,12 +17,13 @@ body {
   /* Set the fixed height of the footer here */
   height: 60px;
   line-height: 60px; /* Vertically center the text there */
-  background-color: #f5f5f5;
+  background-color: #DAAD86;
+}
+.btn{
+  border-color: #774b24;
+  border-style: solid;
 }
 
-.nav-btns{
-  float: right;
-}
 .header {
   position: fixed;
   top: 0;
@@ -30,7 +31,7 @@ body {
   /* Set the fixed height of the footer here */
   height: 60px;
   line-height: 60px; /* Vertically center the text there */
-  background-color: #f5f5f5;
+  background-color: #DAAD86;
 }
 em{
 	font-weight: bolder;
@@ -54,6 +55,25 @@ white-space: -moz-pre-wrap;
 code.ex{
     counter-increment: line;
 
+}
+.toc{
+  background-color: #DAAD86;
+  padding: 5px;
+  font-size: 24px;
+  text-align: center;
+  width:100%;
+  font-family: monospace;
+
+}
+a.ch-index:link{
+  color: black;
+}
+a.ch-index:visited{
+  color: grey;
+}
+
+a.ch-index:hover{
+  font-weight: bolder;
 }
 
 .jumbotron{

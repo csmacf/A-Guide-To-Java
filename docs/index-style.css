@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+
+
+body {
+  background-color: #774b24;
+  font-family: 'Open Sans', sans-serif;
+
+}
+
+.book-title{
+  background-color: #DAAD86;
+  padding: 5px;
+  font-family: 'Vast Shadow', cursive;
+  font-size: 32px;
+  /*border-bottom-color: black;
+  border-bottom-width: medium;
+  border-bottom-style:groove;
+  */ 
+}
+
+.toc{
+  margin-left: 20px;
+  border-style: inset;
+  border-color: black;
+  border-width: thick;
+  border-radius: 20px;
+  background-color: #DAAD86;
+  padding: 5px;
+  font-size: 24px;
+  text-align: center;
+  width:50%;
+  font-family: monospace;
+
+}
+a.ch-index:link{
+  color: black;
+}
+a.ch-index:visited{
+  color: grey;
+}
+
+a.ch-index:hover{
+  font-weight: bolder;
+}

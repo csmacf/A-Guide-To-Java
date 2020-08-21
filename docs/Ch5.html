@@ -14,7 +14,7 @@
 </head>
 <body>
 <!-- Begin page content -->
-    <main role="main" class="container-fluid">
+
         <header class="header">
           <div class="jumbotron book-title">
             <h2> <img src="img/coffee-cup.png" width = '32px' alt = "Coffee cup" style="vertical-align:middle">
@@ -22,7 +22,8 @@
          </div>
         </header>
         <!-- add chapter number-->
-        <br><br>
+      <main role="main" class="container-fluid">
+          <br><br>
       <h2> Chapter <span id = 'chap-num'>5</span></h2>
       <h1>Using Library Classes</h1>
       <p>Good news! You don&rsquo;t have to write everything yourself. Often, you use code contained in classes written by someone else (such as the System class mentioned earlier). Specifically, the <em>Java Class Library</em> is a set of classes that perform important functions, such as capturing user input (the Scanner class) and generating random numbers (the Random class). To use these classes, you (typically) first <em>import</em> the class (thereby gaining access to the code), then create <em>objects </em>and use their methods (i.e., code that gives the class/objects functionality).</p>
@@ -106,17 +107,73 @@
 
       <p>Since Strings are objects, we <em>should </em>have to write (assuming we want to create a String with the literal value "Charlie"):</p>
 
-      <pre class = 'cx jumbotron'>
-      <code class='ex'>String name = new String("Charlie");</code>
-      </pre>
+      <p = 'mono grey'>String name = new String("Charlie");</p>
+
 
       <p>However, since this is so commonly used, the shortcut</p>
+      <p = 'mono grey'>String name = "Charlie";</p>
 
-      <pre class = 'cx jumbotron'>
-      <code class='ex'>String name = "Charlie";</code>
-      </pre>
-
-      <p>achieves the same thing (as if String were a primitive type-- but it&rsquo;s not!). You will learn more later about methods that apply to strings.</p>
+      <p>achieves the same thing (as if String were a primitive type-- but it&rsquo;s not!).</p>
+      <h3>String methods</h3>
+<p>Within the String class, there are several useful methods that can be applied. </p>
+<p>Some of these methods involve the <em>index</em> of a character in the String. This means simply the location of each character in the String. Note that the first index is numbered 0, not 1, as shown below for the String literal &ldquo;Hello.&rdquo;</p>
+<table>
+<tbody>
+<tr>
+<td>
+<p>char</p>
+</td>
+<td>
+<p>H</p>
+</td>
+<td>
+<p>e</p>
+</td>
+<td>
+<p>l</p>
+</td>
+<td>
+<p>l</p>
+</td>
+<td>
+<p>o</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>index</p>
+</td>
+<td>
+<p>0</p>
+</td>
+<td>
+<p>1</p>
+</td>
+<td>
+<p>2</p>
+</td>
+<td>
+<p>3</p>
+</td>
+<td>
+<p>4</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class='tip'>
+<p>Counting from 0 instead of 1 is referred to as <em>zero-indexed</em>.  It is a common error to be "off by one" because of this, so be careful.</p>
+</div>
+<p>Here is a listing of some important String methods. A complete reference can be found <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html">here</a>.&nbsp;</p>
+<ul>
+<li><span class='mono grey'>toUpperCase()</span> returns a version of the String in all uppercase</li>
+<li><span class='mono grey'>toLowerCase() </span> returns a version of the String in all lowercase</li>
+<li><span class='mono grey'>length()</span>  returns the number of characters in a String (including spaces)</li>
+<li><span class='mono grey'>charAt(int i) </span> returns the character at index i.</li>
+<li><span class='mono grey'>indexOf(char c)</span>  returns the first index where c is found (even if c occurs more than once in the String) or -1 if c is not found. To be clear, we do not mean the actual char &lsquo;c&rsquo; here; c is a variable to hold <em>any</em> char.</li>
+<li><span class='mono grey'>substring(int i)</span>  returns a part of the String starting at index i to the end.</li>
+<li><span class='mono grey'>substring(int i, int j)</span>  returns a part of the String starting at index i and going up to (but not including) j. </li>
+</ul>
 
       <h2>Random</h2>
       <p>The Random class is used to generate random numbers. Just like Scanner, you import the Random class, then create a Random object. This object is <em>not</em> a random number-- it is a <em>random number generator that can be used to generate as many random numbers as needed.</em> The methods <span class='mono'>nextInt(int a)</span> and <span class='mono'>nextDouble() </span> are used to generate random numbers. Note that <span class='mono'>nextInt(int a)</span> generates an integer (from 0 to a-1) and <span class='mono'>nextDouble() </span> generates a double n, between 0 and 1 (including 0, but not 1)</p>
@@ -182,9 +239,9 @@
     <footer class="footer">
       <div class="container">
         <div class="btn-group nav-btns" role="group" aria-label="Buttons">
-            <a type="button" class="btn btn-primary btn-lg" id = "prev-btn">Previous</a>
-            <a type="button" class="btn btn-primary btn-lg" id = "index-btn">Index</a>
-            <a type="button" class="btn btn-primary btn-lg" id = "next-btn">Next</a>
+            <a type="button" class="btn  btn-lg" id = "prev-btn">Previous</a>
+            <a type="button" class="btn  btn-lg" id = "index-btn">Index</a>
+            <a type="button" class="btn  btn-lg" id = "next-btn">Next</a>
        </div>
       </div>
     </footer>

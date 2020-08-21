@@ -1,0 +1,119 @@
+<!doctype HTML>
+<html>
+<head>
+  <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/sticky-footer/">
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <link href="sticky-footer.css" rel="stylesheet">
+    <!-- My custom style -->
+<link rel="stylesheet" href="style.css" type="text/css">
+<link href="https://fonts.googleapis.com/css2?family=Vast+Shadow&display=swap" rel="stylesheet">
+</head>
+<body>
+<!-- Begin page content -->
+
+        <header class="header">
+          <div class="jumbotron book-title">
+            <h2> <img src="img/coffee-cup.png" width = '32px' alt = "Coffee cup" style="vertical-align:middle">
+           A Guide to Java</h2>
+         </div>
+        </header>
+        <!-- add chapter number-->
+        <main role="main" class="container-fluid">
+          <br><br>
+      <h2> Chapter <span id = 'chap-num'>10</span></h2>
+      <!-- CONTENT here-->
+      <h1>Arrays</h1>
+      <h2>Using Arrays</h2>
+      <p>Arrays hold lists of primitive data or objects. So far, if you&rsquo;ve wanted to store, say, a set of ten Strings, you&rsquo;ve needed ten separate variables (e.g., <span class='mono'>nameOne, nameTwo, nameThree, </span>etc.). An array allows you to store all of those Strings under a <em>single</em> name (e.g. <span class='mono'>names</span>) This makes it much easier to work with groups of things. </p>
+      <p>When declaring an array, you must specify the type of data it will hold and the number of elements (size). Here&rsquo;s how you&rsquo;d declare and instantiate an array called <span class='mono'>nums</span> that holds 8 integers:</p>
+      <p class='mono grey'>int[] nums = new int[8];</p>
+      <p>(If you&rsquo;re wondering, that <span class='mono'>String[]</span> that you incorporate in each <span class='mono'>main <span>method is actually an array of Strings. While we don&rsquo;t do it in this course, when running a Java application from the command line, <a href="https://stackoverflow.com/questions/890966/what-is-string-args-parameter-in-main-method-java">one can pass String parameters into the <span class='mono'>main</span> method</a>)</p>
+      <p>You can also initialize an array by providing initial values in { } (called an <em>initialization list</em>), like so:</p>
+      <pre class='cx jumbotron'>
+      <code class='ex'>//the length of this array would be automatically set to 4</code>
+      <code class='ex'>String[] names = {"Alice", "Bob", "Carly", "David"};</code>
+
+    </pre>
+      <p>Elements are accessed via their index (position in the array) by writing arrayName[index]. In this case, we refer to the index as a <em>subscript</em>. Like Strings, arrays are zero-indexed, meaning the first element is at index 0, not 1. In the example above, <span class='mono'>names[1]</span> contains &ldquo;Bob&rdquo; and <span class='mono'>names[3]</span> contains &ldquo;David.&rdquo; Writing <span class='mono'>names[5]</span> would generate an &ldquo;index out of bounds&rdquo; exception, because there is no index 5 in the array. </p>
+      <p>Note that is it is typical to say, <em>&ldquo;names sub one&rdquo; </em>for <span class='mono'>names[1]</span>.</p>
+      <p>To set or change the value of an element in an array, access it the same way, as in <span class='mono grey'>names[2]=&rdquo;Nick&rdquo;;</span></p>
+      <div class='tip'>
+      <p>Important notes:</p>
+      <ul>
+      <li>In Java, the length of an array cannot be changed once it&rsquo;s created. </li>
+      <li>Length is a (public) <em>property </em>of the array, not a method, so to find the length of the array above, we would write names.length, not names.length(). </li>
+      <li>The index of the last element in an array is always the length of the array minus one (e.g. names.length - 1), because an array with 4 elements, for example, has <em>indices</em> (plural of index) 0 through 3.</li>
+      </ul>
+    </div>
+      <h3>Multi-dimensional Arrays</h3>
+      <p>You can also create multi-dimensional arrays in Java. These are essentially &ldquo;arrays of arrays.&rdquo; </p>
+      <p>Look at the example below, that might hold low and high temps for each day over a 3-day period.</p>
+
+      <p class='mono grey'>double[][] temperatures = {{38.0, 97.1}, {41.3, 88.4}, {38.2, 85.2}};</p>
+
+      <p>To access the high temperature on the third day (i.e., the second element in the third array, you would write <span class='mono'>temperatures [2][1]</span> (which would 85.2 in this case). Note that the arrays within the arrays do not have to be the same length, but often they are. You can also create arrays of more than two dimensions.</p>
+      <h3>Traversing an array</h3>
+      <p>A <span class='mono'>for </span> loop is typically used to <em>traverse</em> (go through) an array, usually to write values into the array or read values from the array. The example below would store 100 even numbers (2, 4, 6, &hellip;, 200) in an array called <span class='mono'>evens</span>. Note how the variable <span class='mono'>i</span> starts at 0 and will go to 99 (one less than the array&rsquo;s length).</p>
+      <pre class='cx jumbotron'>
+      <code class='ex'>int[] evens = new int[100];</code>
+      <code class='ex'>for (int i=0; i&lt; evens.length; i++){</code>
+      <code class='ex'>evens[i] = 2*(i+1);</code>
+      <code class='ex'>}</code>
+      </pre>
+      <p>Let&rsquo;s analyze the code above: </p>
+      <p>When i=0, 2*(i+1) = 2*(1) = 2</p>
+      <p>When i=1, 2*(i+1) = 2*(2) = 4</p>
+      <p>When i=2, 2*(i+1) = 2*(3) = 6 </p>
+      <p>&hellip;</p>
+      <p>When i=99, 2*(i+1) = 2*(100) = 200. </p>
+      <p>A <em>for-each loop</em> (also called an <em>enhanced for loop</em>is another way to work through an array. It accomplishes the same thing with a bit less code. The syntax is:</p>
+
+      <p class='mono grey'>for(<em>type variable</em> : <em>array</em>)</p>
+
+
+      <p>In the previous example, you could replace</p>
+      <p class='mono grey'>for (int i=0; i&lt; evens.length; i++)</p>
+      <p>with</p>
+
+      <p class='mono grey'>for (int i : evens)</p>
+
+      <p>and it would work the same.</p>
+      <h2>ArrayList Class</h2>
+      <p>There is a library class in Java called <span class='mono'>ArrayList</span> that has several useful features, including:</p>
+      <ol>
+      <li>ArrayLists can be resized. Adding an element to an ArrayList automatically increases its size by one (and deleting an element decreases its size).</li>
+      <li>New values can be inserted into any position in an ArrayList and any pre-existing elements will &ldquo;move up&rdquo; to make way for the new element. </li>
+      </ol>
+      <p>ArrayLists can only contain objects-- not primitive types (although you can use <a href="http://www.w3resource.com/java-tutorial/java-wrapper-classes.php">wrapper classes</a> if you need to convert a primitive type into an object).</p>
+      <p>Because <span class='mono'>ArrayList </span>is a class, ArrayList instances are objects. To create a new ArrayList, write</p>
+      <p><span class='mono grey'>ArrayList a = new ArrayList()</span>, where a is its name (identifier).</p>
+      <p>Some important methods for ArrayLists are:</p>
+      <ul>
+      <li><span class='mono grey'>add (Object obj)</span> inserts an element at the end</li>
+      <li><span class='mono grey'>add(int index, Object obj) </span> inserts an element at index</li>
+      <li><span class='mono grey'>set (int index, Object obj) </span> replaces existing element</li>
+      <li><span class='mono grey'>get (int index) </span>gets the element at index</li>
+      <li><span class='mono grey'>remove (int index) </span>removes the element at index</li>
+      <li><span class='mono grey'>size ()  </span>gets the number of element*</li>
+    </ul>
+      <p>Note that <span class='mono'>size()</span> is a method in the ArrayList class, as compared to the length </span>property of an array.</p>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="btn-group nav-btns" role="group" aria-label="Buttons">
+            <a type="button" class="btn  btn-lg" id = "prev-btn">Previous</a>
+            <a type="button" class="btn  btn-lg" id = "index-btn">Index</a>
+            <a type="button" class="btn  btn-lg" id = "next-btn">Next</a>
+       </div>
+      </div>
+    </footer>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src = 'navigation.js'></script>
+</body>
