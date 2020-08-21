@@ -30,7 +30,7 @@
 <p>Computers store data in memory. To access the data, you need to find where it is stored. For this, we use <em>variables</em>.  In programming, a variable joins a name (<em>identifier</em>) to a memory address. For variables holding numerical, character, boolean (meaning true/false) of string data, the actual value stored is called a <em>literal</em>. A variable can only hold one value at a time, but you can change what that value is.</p>
 <p>You may remember variables from math class, where the identifiers were typically single letters. In programming, you can (and should) use full words that make clear what the variable represents (so, for example, salary is a better identifier than s if you are storing a salary amount).</p>
 
-<h2>6.1 Data Types</h2>
+<h2>Data Types</h2>
 <p>What types of data can you store? Sometimes, you will want to store a number, sometimes a single letter or other character, sometimes a word, and other times more complicated data types. In some programming languages, a particular variable can hold any type of value, and can even change type. For example, a single variable might hold the integer 8 at first, then later hold the character w. This is <em>not</em> true in Java.</p>
 
 <p>Java is a <em>strongly typed</em><em> language</em>, meaning each variable is of a specific type, and cannot change type. You can change the <em>value</em> of the data stored in a variable but not the <em>type</em> of data.</p>
@@ -47,16 +47,16 @@
 <p>...as well as <a href="https://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html">byte, short, long, and float</a>; however, you will work only with the list above in this course.</p>
 
 <p>Note that strings are <em>not</em> a primitive type. Rather, they are associated with a class called String (like the System class we discussed earlier). Don't worry about that yet; classes and reference types are explained later. Do know, however, that the S in String is uppercase when used in programs.</p>
-<h2>6.2 Declaring variables</h2>
+<h2>Declaring variables</h2>
 <p>Before using a variable, you have to <em>declare</em> it. Think of declaring as saying, <em>&ldquo;Hey! I&rsquo;m going to use a variable. It&rsquo;s going to be of this type and have this name...&rdquo;</em></p>
 
 <p>State the type and the name, as follows:</p>
-<pre class='cx jumbotron'>
-  <code class='ex'>int age;</code>
-  </pre>
+
+  <p class='mono grey'>int age;</p>
+
 <p>Note the semicolon (;) at the end of this line. In Java (and many other languages), all <em>statements</em> (essentially, lines of code that perform some action) are ended with a semicolon.</p>
 
-<div class='tip'><p>You might be wondering why <span class = 'mono grey'>public static void main(String[] args)</span> has no semicolon. It&rsquo;s because this is a method header (or declaration), signalling the start of a block of code.  Essentially, lines of code that start a block of statements use { } instead of a semicolon. These include method headers as well as <span class='mono'>if, while</span> and <span class='mono'>for </span> blocks that you will learn about soon.</p></div>
+<div class='tip'><p>You might be wondering why <span class = 'mono'>public static void main(String[] args)</span> has no semicolon. It&rsquo;s because this is a method <em>header</em> (or declaration), signalling the start of a block of code.  Essentially, lines of code that start a block of statements use { } instead of a semicolon. These include method headers as well as <span class='mono'>if, while</span> and <span class='mono'>for </span> blocks that you will learn about soon.</p></div>
 
 <p>Like method identifiers, variable names usually begin lowercase. As with other identifiers, use camel case for names with multiple words.</p>
 <pre class = 'cx jumbotron'>
@@ -97,15 +97,12 @@
 </pre>
 
 <p>You can even declare multiple variables of the same type on the same line, assigning values to some (or all), as in:</p>
-
-
 <pre class = 'cx jumbotron'>
 <code class='ex'>//declare three char variables and assign z to one of them</code>
 <code class='ex'>char first, middle = 'z', last;</code>
 </pre>
 
 <p>Note that the first time you store a value into a variable, this is called <em>initializing </em>the variable (because you&rsquo;re setting the initial value of the variable).</p>
-
 <p>When assigning a char literal, the value must be enclosed in single quotes. When assigning a String literal, it is enclosed in double quotes. In some languages (such as JavaScript), you can use single and double quotes interchangeably-- this is not the case in Java.</p>
 
 

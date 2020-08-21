@@ -10,6 +10,12 @@ body {
   margin-bottom: 60px;
   font-family: 'Open Sans', sans-serif;
 }
+h1{
+  color:#dad786;
+}
+h2{
+  color:#774b24;
+}
 .footer {
   position: fixed;
   bottom: 0;
