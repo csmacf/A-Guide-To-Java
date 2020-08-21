@@ -62,6 +62,27 @@ code.ex{
     counter-increment: line;
 
 }
+
+
+code.ex::before{
+
+    content: counter(line, decimal-leading-zero);
+    /* Border to separate line numbers from code
+    border-right-style: dashed;
+    border-right-width: thin; */
+    padding-right: 1em;
+    color: #774b24;
+    
+}
+
+code.ex:after{
+	content: "\0000a";
+}
+
+code.ex:before{
+    -webkit-user-select: none;
+}
+
 .toc{
   background-color: #DAAD86;
   padding: 5px;
@@ -93,23 +114,6 @@ a.ch-index:hover{
   box-shadow: 2px 2px grey;
   font-family: monospace;
   padding: 0.5em;
-}
-
-code.ex:before{
-    content: counter(line, decimal-leading-zero);
-    /* Border to separate line numbers from code
-    border-right-style: dashed;
-    border-right-width: thin; */
-    padding-right: 1em;
-
-}
-
-code.ex:after{
-	content: "\0000a";
-}
-
-code.ex:before{
-    -webkit-user-select: none;
 }
 
 .mono{
