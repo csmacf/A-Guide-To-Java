@@ -1,172 +1,195 @@
-<!DOCTYPE html>
+<!doctype HTML>
 <html>
 <head>
- <meta charset="utf-8">
- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link href = 'style.css' type = 'text/css' rel = 'stylesheet'>
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/sticky-footer/">
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <link href="sticky-footer.css" rel="stylesheet">
+    <!-- My custom style -->
+<link rel="stylesheet" href="style.css" type="text/css">
+<link href="https://fonts.googleapis.com/css2?family=Vast+Shadow&display=swap" rel="stylesheet">
 </head>
 <body>
-<div class = 'title-header title-font'>A Guide to Java</div>
-<div class = 'main-div'>
-  <!-- insert chapter number-->
-<h2> Chapter <span id = 'chap-num'>5</span></h2>
-<!-- Chapter content here -->
-<h1>Using Library Classes</h1>
-<p>Good news! You don&rsquo;t have to write everything yourself. Often, you use code contained in classes written by someone else (such as the System class mentioned earlier). Specifically, the <em>Java Class Library</em> is a set of classes that perform important functions, such as capturing user input (the Scanner class) and generating random numbers (the Random class). To use these classes, you (typically) first <em>import</em> the class (thereby gaining access to the code), then create <em>objects </em>and use their methods (i.e., code that gives the class/objects functionality).</p>
-<p>We&rsquo;ll explore objects in much more depth later, but for now think of it this way-- a class is like a set of plans for building an object-- like a bicycle, to use a "real world" example. You only need <em>one </em>set of plans to create <em>many</em> bicycles. In order to actually <em>use </em>a bicycle, however, the plans are not enough; you need to build an actual bicycle.</p>
-<p>In code, this idea requires the use of the <span class='mono'>new </span>keyword with the syntax
-<span class='mono'>ClassName variableName = new ClassName([optional parameters]);</span></p>
+<!-- Begin page content -->
+    <main role="main" class="container-fluid">
+        <header class="header">
+          <div class="jumbotron book-title">
+            <h2> <img src="img/coffee-cup.png" width = '32px' alt = "Coffee cup" style="vertical-align:middle">
+           A Guide to Java</h2>
+         </div>
+        </header>
+        <!-- add chapter number-->
+        <br><br>
+      <h2> Chapter <span id = 'chap-num'>5</span></h2>
+      <h1>Using Library Classes</h1>
+      <p>Good news! You don&rsquo;t have to write everything yourself. Often, you use code contained in classes written by someone else (such as the System class mentioned earlier). Specifically, the <em>Java Class Library</em> is a set of classes that perform important functions, such as capturing user input (the Scanner class) and generating random numbers (the Random class). To use these classes, you (typically) first <em>import</em> the class (thereby gaining access to the code), then create <em>objects </em>and use their methods (i.e., code that gives the class/objects functionality).</p>
+      <p>We&rsquo;ll explore objects in much more depth later, but for now think of it this way-- a class is like a set of plans for building an object-- like a bicycle, to use a "real world" example. You only need <em>one </em>set of plans to create <em>many</em> bicycles. In order to actually <em>use </em>a bicycle, however, the plans are not enough; you need to build an actual bicycle.</p>
+      <p>In code, this idea requires the use of the <span class='mono'>new </span>keyword with the syntax
+      <span class='mono grey'>ClassName variableName = new ClassName([optional parameters]);</span></p>
 
-<p>For example, creating a Scanner object called myScanner looks like</p>
+      <p>For example, creating a Scanner object called myScanner looks like</p>
 
-<pre class = 'cx'>
-<code class='ex'>Scanner myScanner = new Scanner(System.in);</code>
-</pre>
+      <pre class = 'cx jumbotron'>
+      <code>Scanner myScanner = new Scanner(System.in);</code>
+      </pre>
 
-<p>We now have a functioning Scanner (a software scanner-- not a physical machine) to use in our code. <span class='mono'>System.in</span> is called a <em>parameter</em>; parameters provide input to a method. In this case, it tells the Scanner that it should read from the computer keyboard (as opposed to a text file, for example, which could alternatively be a parameter). If we need another Scanner object, we can go ahead and create that, as well, from the same class. Note that an object is also called an <em>instance </em>of a class.</p>
+      <p>We now have a functioning Scanner (a software scanner-- not a physical machine) to use in our code. <span class='mono'>System.in</span> is called a <em>parameter</em>; parameters provide input to a method. In this case, it tells the Scanner that it should read from the computer keyboard (as opposed to a text file, for example, which could alternatively be a parameter). If we need another Scanner object, we can go ahead and create that, as well, from the same class. Note that an object is also called an <em>instance </em>of a class.</p>
 
-<div class='tip'><p>Full documentation for any Java class is readily available by internet search (I recommend searching <em>&ldquo;Oracle Java&rdquo;</em> followed by the class name, because Java is maintained by Oracle).</p></div>
-<h2>Scanner</h2>
-<p>The Scanner class allows you to accept input from the user of a program. Here is a four-step process for using a Scanner (numbered so you can see them in the example):</p>
-<ol>
-<li >Import the Scanner class</li>
-<li >Create a new Scanner object (call it whatever you want), using System.in as the parameter .</li>
-<li >Use the Scanner methods to read in input.</li>
-<ol>
-<li >nextLine()-- reads the remainder of the current line as a String and skips to the next line (use this to read Strings and after any use of nextInt(), nextDouble(), or next()</li>
-<li >nextInt()-- reads in the next integer</li>
-<li >nextDouble()-- reads in the next double</li>
-<li >next()-- reads in the next String</li>
-</ol>
-<li >Close the Scanner when finished</li>
-</ol>
-<pre class = 'cx'>
-<code class='ex'>//1. Import the Scanner class</code>
-<code class='ex'>import java.util.Scanner;</code>
-<code class='ex'></code>
-<code class='ex'>public class ScannerDemo</code>
-<code class='ex'>{</code>
-<code class='ex'>  public static void main (String [] args)</code>
-<code class='ex'>  {</code>
-<code class='ex'>    //2. Create a new Scanner object</code>
-<code class='ex'>    Scanner sc = new Scanner(System.in);</code>
-<code class='ex'>    </code>
-<code class='ex'>    //prompt user for a number</code>
-<code class='ex'>    System.out.println("Enter a number");</code>
-<code class='ex'>    </code>
-<code class='ex'>    //3. Scan in user entry</code>
-<code class='ex'>    int a = sc.nextInt(); //use nextInt() for integers</code>
-<code class='ex'>    </code>
-<code class='ex'>    //always use a blank nextLine() after nextInt() or nextDouble()</code>
-<code class='ex'>    sc.nextLine(); </code>
-<code class='ex'>    </code>
-<code class='ex'>    System.out.println("Enter your name");</code>
-<code class='ex'>    </code>
-<code class='ex'>    //use the same Scanner object to get more input</code>
-<code class='ex'>    String name = sc.nextLine(); //use nextLine() for Strings</code>
-<code class='ex'>    </code>
-<code class='ex'>    System.out.println(name + ", you entered " + a);</code>
-<code class='ex'>    </code>
-<code class='ex'>    //4. Close the Scanner</code>
-<code class='ex'>    sc.close();</code>
-<code class='ex'>    </code>
-<code class='ex'>  }</code>
-<code class='ex'>  </code>
-<code class='ex'>}</code>
-</pre>
+      <div class='tip'><p>Full documentation for any Java class is readily available by internet search (I recommend searching <em>&ldquo;Oracle Java&rdquo;</em> followed by the class name, because Java is maintained by Oracle).</p></div>
+      <h2>Scanner</h2>
+      <p>The Scanner class allows you to accept input from the user of a program. Here is a four-step process for using a Scanner (numbered so you can see them in the example):</p>
+      <ol>
+      <li >Import the Scanner class</li>
+      <li >Create a new Scanner object (call it whatever you want), using System.in as the parameter .</li>
+      <li >Use the Scanner methods to read in input.</li>
+      <ol>
+      <li >nextLine()-- reads the remainder of the current line as a String and skips to the next line (use this to read Strings and after any use of nextInt(), nextDouble(), or next()</li>
+      <li >nextInt()-- reads in the next integer</li>
+      <li >nextDouble()-- reads in the next double</li>
+      <li >next()-- reads in the next String</li>
+      </ol>
+      <li >Close the Scanner when finished</li>
+      </ol>
+      <pre class = 'cx jumbotron'>
+      <code class='ex'>//1. Import the Scanner class</code>
+      <code class='ex'>import java.util.Scanner;</code>
+      <code class='ex'></code>
+      <code class='ex'>public class ScannerDemo</code>
+      <code class='ex'>{</code>
+      <code class='ex'>  public static void main (String [] args)</code>
+      <code class='ex'>  {</code>
+      <code class='ex'>    //2. Create a new Scanner object</code>
+      <code class='ex'>    Scanner sc = new Scanner(System.in);</code>
+      <code class='ex'>    </code>
+      <code class='ex'>    //prompt user for a number</code>
+      <code class='ex'>    System.out.println("Enter a number");</code>
+      <code class='ex'>    </code>
+      <code class='ex'>    //3. Scan in user entry</code>
+      <code class='ex'>    int a = sc.nextInt(); //use nextInt() for integers</code>
+      <code class='ex'>    </code>
+      <code class='ex'>    //always use a blank nextLine() after nextInt() or nextDouble()</code>
+      <code class='ex'>    sc.nextLine(); </code>
+      <code class='ex'>    </code>
+      <code class='ex'>    System.out.println("Enter your name");</code>
+      <code class='ex'>    </code>
+      <code class='ex'>    //use the same Scanner object to get more input</code>
+      <code class='ex'>    String name = sc.nextLine(); //use nextLine() for Strings</code>
+      <code class='ex'>    </code>
+      <code class='ex'>    System.out.println(name + ", you entered " + a);</code>
+      <code class='ex'>    </code>
+      <code class='ex'>    //4. Close the Scanner</code>
+      <code class='ex'>    sc.close();</code>
+      <code class='ex'>    </code>
+      <code class='ex'>  }</code>
+      <code class='ex'>  </code>
+      <code class='ex'>}</code>
+      </pre>
 
-<p>Sample output</p>
+      <p>Sample output</p>
 
-<div class = 'console'>
-<p>Enter a number</p>
-<p>12</p>
-<p>Enter your name</p>
-<p>Charlie</p>
-<p>Charlie, you entered 12</p>
-</div>
-<p>Note that there is no nextChar() method for Scanner. If you want to read in a single character, use nextLine() to read it as a String, instead. You&rsquo;ll learn later how to change that to a char.</p>
-<div class='tip'><h3>Scanner troubleshooting</h3>
-<p>There is a problem when using the nextInt(), nextDouble(), or next() method before using the nextLine() method. These methods retrieve the next integer, double, or String, respectively, but they do not advance to the next line. If you then attempt to use the nextLine() method, you will only capture the Enter key character from the current line To avoid that issue, add an extra nextLine()method call to retrieve the abandoned Enter key character after using these methods.</p></div>
+      <div class = 'console'>
+      <p>Enter a number</p>
+      <p>12</p>
+      <p>Enter your name</p>
+      <p>Charlie</p>
+      <p>Charlie, you entered 12</p>
+      </div>
+      <p>Note that there is no nextChar() method for Scanner. If you want to read in a single character, use nextLine() to read it as a String, instead. You&rsquo;ll learn later how to change that to a char.</p>
+      <div class='tip'><h3>Scanner troubleshooting</h3>
+      <p>There is a problem when using the nextInt(), nextDouble(), or next() method before using the nextLine() method. These methods retrieve the next integer, double, or String, respectively, but they do not advance to the next line. If you then attempt to use the nextLine() method, you will only capture the Enter key character from the current line To avoid that issue, add an extra nextLine()method call to retrieve the abandoned Enter key character after using these methods.</p></div>
 
-<h2>String</h2>
-<p>Note that although you&rsquo;ve already been using strings in a manner similar to how you use primitive objects, a String is actually an instance of a class. Because this class is so commonly used, it is part of every project by default, so you do not need to import it (this is also why you don&rsquo;t need to import System).</p>
+      <h2>String</h2>
+      <p>Note that although you&rsquo;ve already been using strings in a manner similar to how you use primitive objects, a String is actually an instance of a class. Because this class is so commonly used, it is part of every project by default, so you do not need to import it (this is also why you don&rsquo;t need to import System).</p>
 
-<p>Since Strings are objects, we <em>should </em>have to write (assuming we want to create a String with the literal value "Charlie"):</p>
+      <p>Since Strings are objects, we <em>should </em>have to write (assuming we want to create a String with the literal value "Charlie"):</p>
 
-<pre class = 'cx'>
-<code class='ex'>String name = new String("Charlie");</code>
-</pre>
+      <pre class = 'cx jumbotron'>
+      <code class='ex'>String name = new String("Charlie");</code>
+      </pre>
 
-<p>However, since this is so commonly used, the shortcut</p>
+      <p>However, since this is so commonly used, the shortcut</p>
 
-<pre class = 'cx'>
-<code class='ex'>String name = "Charlie";</code>
-</pre>
+      <pre class = 'cx jumbotron'>
+      <code class='ex'>String name = "Charlie";</code>
+      </pre>
 
-<p>achieves the same thing (as if String were a primitive type-- but it&rsquo;s not!). You will learn more later about methods that apply to strings.</p>
+      <p>achieves the same thing (as if String were a primitive type-- but it&rsquo;s not!). You will learn more later about methods that apply to strings.</p>
 
-<h2>Random</h2>
-<p>The Random class is used to generate random numbers. Just like Scanner, you import the Random class, then create a Random object. This object is <em>not</em> a random number-- it is a <em>random number generator that can be used to generate as many random numbers as needed.</em> The methods <span class='mono'>nextInt(int a)</span> and <span class='mono'>nextDouble() </span> are used to generate random numbers. Note that <span class='mono'>nextInt(int a)</span> generates an integer (from 0 to a-1) and <span class='mono'>nextDouble() </span> generates a double n, between 0 and 1 (including 0, but not 1)</p>
-<p>By multiplying and/or adding to the random number generated, you can get outputs in different ranges, as shown in the example below.</p>
+      <h2>Random</h2>
+      <p>The Random class is used to generate random numbers. Just like Scanner, you import the Random class, then create a Random object. This object is <em>not</em> a random number-- it is a <em>random number generator that can be used to generate as many random numbers as needed.</em> The methods <span class='mono'>nextInt(int a)</span> and <span class='mono'>nextDouble() </span> are used to generate random numbers. Note that <span class='mono'>nextInt(int a)</span> generates an integer (from 0 to a-1) and <span class='mono'>nextDouble() </span> generates a double n, between 0 and 1 (including 0, but not 1)</p>
+      <p>By multiplying and/or adding to the random number generated, you can get outputs in different ranges, as shown in the example below.</p>
 
-<pre class = 'cx'>
+      <pre class = 'cx jumbotron'>
 
-<code class='ex'>import java.util.Random;</code>
-<code class='ex'></code>
-<code class='ex'>public class RandomDemo {</code>
-<code class='ex'>  </code>
-<code class='ex'>  public static void main(String[] args) {</code>
-<code class='ex'>    	</code>
-<code class='ex'>    //create a random number generator</code>
-<code class='ex'>    Random gen = new Random();</code>
-<code class='ex'>    </code>
-<code class='ex'>    //print a random integer between 0 and 4</code>
-<code class='ex'>    System.out.println(gen.nextInt(5));</code>
-<code class='ex'>    	</code>
-<code class='ex'>    //print a random double between 0 and 1</code>
-<code class='ex'>    System.out.println(gen.nextDouble()); //note the empty () for nextDouble</code>
-<code class='ex'>    	</code>
-<code class='ex'>    //print a random double between 0 and 8</code>
-<code class='ex'>    System.out.println(8*Math.random());</code>
-<code class='ex'>    </code>
-<code class='ex'>    //print a random integer between 0 and 9</code>
-<code class='ex'>    System.out.println(gen.nextInt(10));</code>
-<code class='ex'>    </code>
-<code class='ex'>    //print a random integer between 1 and 10</code>
-<code class='ex'>    System.out.println(gen.nextInt(10)+1);</code>
-<code class='ex'>    </code>
-<code class='ex'>    //print a random integer between 100 and 110</code>
-<code class='ex'>    //note there are 11 integers from 100 to 110</code>
-<code class='ex'>    System.out.println(gen.nextInt(11)+100);</code>
-</pre>
+      <code class='ex'>import java.util.Random;</code>
+      <code class='ex'></code>
+      <code class='ex'>public class RandomDemo {</code>
+      <code class='ex'>  </code>
+      <code class='ex'>  public static void main(String[] args) {</code>
+      <code class='ex'>    	</code>
+      <code class='ex'>    //create a random number generator</code>
+      <code class='ex'>    Random gen = new Random();</code>
+      <code class='ex'>    </code>
+      <code class='ex'>    //print a random integer between 0 and 4</code>
+      <code class='ex'>    System.out.println(gen.nextInt(5));</code>
+      <code class='ex'>    	</code>
+      <code class='ex'>    //print a random double between 0 and 1</code>
+      <code class='ex'>    System.out.println(gen.nextDouble()); //note the empty () for nextDouble</code>
+      <code class='ex'>    	</code>
+      <code class='ex'>    //print a random double between 0 and 8</code>
+      <code class='ex'>    System.out.println(8*Math.random());</code>
+      <code class='ex'>    </code>
+      <code class='ex'>    //print a random integer between 0 and 9</code>
+      <code class='ex'>    System.out.println(gen.nextInt(10));</code>
+      <code class='ex'>    </code>
+      <code class='ex'>    //print a random integer between 1 and 10</code>
+      <code class='ex'>    System.out.println(gen.nextInt(10)+1);</code>
+      <code class='ex'>    </code>
+      <code class='ex'>    //print a random integer between 100 and 110</code>
+      <code class='ex'>    //note there are 11 integers from 100 to 110</code>
+      <code class='ex'>    System.out.println(gen.nextInt(11)+100);</code>
+      </pre>
 
-<p>In general to get a random integer between a and b, use nextInt(b-a+1)+b</p>
-<p>For example, nextInt(10) + 1 will yield an integer between 1 and 10 and</p>
-<p>nextInt(6) + 20 will give an integer between 20 and 25 (20, 21, 22, 23, 24, and 25 is 6 numbers, not 5).</p>
+      <p>In general to get a random integer between a and b, use nextInt(b-a+1)+b</p>
+      <p>For example, nextInt(10) + 1 will yield an integer between 1 and 10 and</p>
+      <p>nextInt(6) + 20 will give an integer between 20 and 25 (20, 21, 22, 23, 24, and 25 is 6 numbers, not 5).</p>
 
-<p>To get a random double in a range other than 0 to 1, multiply by the desired range size. For example, <span class='mono'>nextDouble()*15 </span>will yield a decimal between 0 and 15 (actually, 14.9999...). Note how the *15 is <em>outside</em> of the parentheses. Unlike nextInt, nextDouble does not take any arguments.</p>
+      <p>To get a random double in a range other than 0 to 1, multiply by the desired range size. For example, <span class='mono'>nextDouble()*15 </span>will yield a decimal between 0 and 15 (actually, 14.9999...). Note how the *15 is <em>outside</em> of the parentheses. Unlike nextInt, nextDouble does not take any arguments.</p>
 
-<h2>Math</h2>
-<p>Like String, you do not need to import the <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Math.html">Math</a> class-- it is made available by default. All Math methods and data are <em>static</em>. We&rsquo;ll learn later the full meaning of static, but for now it means that (unlike Scanner and Random) to use Math methods and data, you do not need to create a Math object.  Rather, just call the methods on the Math class itself, as in <span class='mono'>Math.pow()</span>, for example. <span class='mono'>Math.PI</span> is the value of &pi; (note that there are no parentheses after PI because it&rsquo;s data in a variable, not a method). <span class='mono'>Math.random()</span> does the same thing as nextDouble() in the Random class (i.e., generates a random double between 0 and 1, not icluding 1).</p>
+      <h2>Math</h2>
+      <p>Like String, you do not need to import the <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Math.html">Math</a> class-- it is made available by default. All Math methods and data are <em>static</em>. We&rsquo;ll learn later the full meaning of static, but for now it means that (unlike Scanner and Random) to use Math methods and data, you do not need to create a Math object.  Rather, just call the methods on the Math class itself, as in <span class='mono'>Math.pow()</span>, for example. <span class='mono'>Math.PI</span> is the value of &pi; (note that there are no parentheses after PI because it&rsquo;s data in a variable, not a method). <span class='mono'>Math.random()</span> does the same thing as nextDouble() in the Random class (i.e., generates a random double between 0 and 1, not icluding 1).</p>
 
-<p>Some commonly used methods of the Math class (shown by example) are:</p>
+      <p>Some commonly used methods of the Math class (shown by example) are:</p>
 
-<pre class = 'cx'>
-<code class='ex'>Math.pow(5,3) //raises 5 to the 3rd power = 125.  </code>
-<code class='ex'>Math.random() //generates a random double n, 0 ≤ n < 1, such as 0.57483</code>
-<code class='ex'>Math.round(63.812) //rounds to the nearest integer, 64</code>
-<code class='ex'>Math.sqrt(10) //finds the square root of 10 ≈ 3.16</code>
-<code class='ex'>Math.PI //the value 3.1415926… note no () after PI</code>
-</pre>
+      <pre class = 'cx jumbotron'>
+      <code class='ex'>Math.pow(5,3) //raises 5 to the 3rd power = 125.  </code>
+      <code class='ex'>Math.random() //generates a random double n, 0 ≤ n < 1, such as 0.57483</code>
+      <code class='ex'>Math.round(63.812) //rounds to the nearest integer, 64</code>
+      <code class='ex'>Math.sqrt(10) //finds the square root of 10 ≈ 3.16</code>
+      <code class='ex'>Math.PI //the value 3.1415926… note no () after PI</code>
+      </pre>
 
-<p>The methods above are the ones you should know for this course.</p>
-<p>A complete list of methods and data is <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Math.html">here</a>.</p>
-<p>As mentioned earlier Java does not have an operator for exponents (such as 5**3 in Python); you must use the <span class='mono'>pow() </span>method in the Math class.</p>
-<p>Also note that the round() method does not allow for rounding to a number of decimal places-- only to the nearest integer.</p>
-</div>
-<div class = 'chap-nav'></div>
-<script src = 'navigation.js'></script>
+      <p>The methods above are the ones you should know for this course.</p>
+      <p>A complete list of methods and data is <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Math.html">here</a>.</p>
+      <p>As mentioned earlier Java does not have an operator for exponents (such as 5**3 in Python); you must use the <span class='mono'>pow() </span>method in the Math class.</p>
+      <p>Also note that the round() method does not allow for rounding to a number of decimal places-- only to the nearest integer.</p><!-- CONTENT here-->
+
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="btn-group nav-btns" role="group" aria-label="Buttons">
+            <a type="button" class="btn btn-primary btn-lg" id = "prev-btn">Previous</a>
+            <a type="button" class="btn btn-primary btn-lg" id = "index-btn">Index</a>
+            <a type="button" class="btn btn-primary btn-lg" id = "next-btn">Next</a>
+       </div>
+      </div>
+    </footer>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src = 'navigation.js'></script>
 </body>
-</html>
