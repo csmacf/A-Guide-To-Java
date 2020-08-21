@@ -20,7 +20,7 @@ if(chapter < 2){
 }
   //add handlers
   $( "#index-button" ).click(function() {
-    window.location.href = "TOC.html";
+    window.location.href = "index.html";
 });
 
 $( "#next-button" ).click(function() {
