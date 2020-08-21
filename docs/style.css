@@ -1,29 +1,75 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
 
-
-body{
-	background-color: #FEF9E7;
-	font-family: 'Open Sans', sans-serif;
-
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-top: 60px;
+  margin-bottom: 60px;
+  font-family: 'Open Sans', sans-serif;
+}
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  line-height: 60px; /* Vertically center the text there */
+  background-color: #f5f5f5;
 }
 
+.nav-btns{
+  float: right;
+}
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  line-height: 60px; /* Vertically center the text there */
+  background-color: #f5f5f5;
+}
 em{
 	font-weight: bolder;
 }
-pre{
-	overflow-x: auto;
+
+.book-title{
+  background-color: #DAAD86;
+  padding: 5px;
+  font-family: 'Vast Shadow', cursive;
+  font-size: 32px;
+}
+
+pre.cx{
+overflow-x: auto;
 white-space: pre-wrap;
 white-space: -moz-pre-wrap;
             white-space: -pre-wrap;
             white-space: -o-pre-wrap;
             word-wrap: break-word;
 }
-code{
+code.ex{
     counter-increment: line;
 
 }
 
-code:before{
+.jumbotron{
+  padding: 10px;
+}
+
+.console{
+	border: thin solid;
+  line-height: 1em;
+  background-color: #F0F3F3;
+  box-shadow: 2px 2px grey;
+  font-family: monospace;
+  padding: 0.5em;
+}
+
+code.ex:before{
     content: counter(line, decimal-leading-zero);
     /* Border to separate line numbers from code
     border-right-style: dashed;
@@ -32,97 +78,28 @@ code:before{
 
 }
 
-code:after{
+code.ex:after{
 	content: "\0000a";
 }
 
-code:before{
+code.ex:before{
     -webkit-user-select: none;
-}
-button {
-  background-color: white;
-  color: black;
-	font-family: Consolas, monospace;
-	font-size: 20px;
-  border: 2px solid #000;
-	margin: 10px;
-	border-radius: 8px;
-}
-
-.main-div{
-	top:24px;
-	margin-left:5%;
-	margin-right: 5%;
-	background-color: white;
-	padding: 5%;
-	border-style: ridge;
-	border-color: #7D6608;
-	border-radius: 12px;
 }
 
 .mono{
 	font-family: Consolas, monospace;
-	font-weight: bold;
-}
+	font-weight: darker;
 
-.single-output{
-	font-family: Consolas, monospace;
-	font-weight: normal;
 }
-.cx{
-  border: thin solid;
-  line-height: 1em;
-
-  /*For adding line numbers to code*/
-  counter-reset: line;
-  background-color: #F4ECF7;
-  padding: 0.5em;
-  box-shadow: 2px 2px grey;
-  font-family: Consolas, monospace;
-  padding: 0.5em;
-}
-
-.console{
-	border: thin solid;
-  line-height: 1em;
+.grey{
   background-color: #F0F3F3;
-  box-shadow: 2px 2px grey;
-  font-family: Consolas, monospace;
-  padding: 0.5em;
-}
-.chap-num{
-	color: #F4ECF7;
-}
-
-.chap-nav{
-	  background-color: #7D6608;
-		position: fixed;
-	  left: 0;
-	  bottom: 0;
-	  width: 100%;
-	  text-align: center;
-}
-.title-header{
-	background-color: #7D6608;
-	position: fixed;
-	left: 0;
-	top: 0;
-	width: 100%;
-	text-align: center;
-
-}
-
-.title-font{
-	padding: 5px;
-	font-size: 16px;
-	text-shadow: 2px 2px #000;
-	color: #FFF;
-	font-family: Consolas, monospace;
 }
 .tip{
-	background-color: #FFDC00;
+	background-color: #dad786;
 	padding: 4px;
-	width: 80%;
-	margin-left: 10%;
+  font-style: italic;
 
+}
+
+.btn-primary{
 }
