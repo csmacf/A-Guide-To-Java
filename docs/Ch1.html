@@ -38,12 +38,12 @@
       <ul>
        	<li >Identifiers may contain letters, digits, underscores, and dollar signs.</li>
        	<li >They may not start with a digit or contain spaces.</li>
-       	<li >There are certain <em><a href="http://docs.oracle.com/javase/tutorial/java/nutsandbolts/_keywords.html">keywords</a></em> in Java (such as <code>this</code> and <code>while</code>) that may not be used as identifiers.</li>
+       	<li >There are certain <em><a href="http://docs.oracle.com/javase/tutorial/java/nutsandbolts/_keywords.html">keywords</a></em> in Java (such as <span class='mono'>this</span> and <span class='mono'>while</span>) that may not be used as identifiers.</li>
       </ul>
       <p>By convention, class names start with an uppercase letter. Identifiers with more than word are written in <em>camel case</em>, meaning there are no spaces and each new word in the name starts with a capital letter (e.g., CoffeeCup or IncomeTaxForm).</p>
       <p>Within a class, we also have <em>methods</em>.Think of these for now as smaller units of code.Unlike class names, method identifiers usually begin lowercase. Like class names, use camel case for names with multiple words (e.g., printTicket or setDeviceHeight).</p>
-      <p>A very important method is called <code>main</code> and has the <em>header</em> (or <em>declaration</em>)
-      <pre class='cx'>public static void main(String[] args)</pre>
+      <p>A very important method is called <span class='mono'>main</span> and has the <em>header</em> (or <em>declaration</em>)
+      <p class = 'mono grey'>public static void main(String[] args)</p>
       Don't worry about what that all means right now, but do know that you need to put your code within a main method (which, in turn, is within a class).<p>
 
       <p>Curly braces { } are used to begin and end blocks of code. Note how they are used both for the class and the main method here.</p>
@@ -51,10 +51,10 @@
       <pre class='cx'>
         <code class='ex'>public class First</code>
         <code class='ex'>{</code>
-        <code class='ex'>   public static void main(String[] args)</code>
-        <code class='ex'>   {</code>
+        <code class='ex'>  public static void main(String[] args)</code>
+        <code class='ex'>  {</code>
         <code class='ex'>    System.out.println("Hello, World!");</code>
-        <code class='ex'>   }</code>
+        <code class='ex'>  }</code>
         <code class='ex'>}</code>
       </pre>
     </div>
@@ -67,7 +67,8 @@
       <p>Speaking of style, you might be wondering if the indentation (of the main method declaration relative to the class declaration, etc.) is required (as it is in the Python programming language, for example). It is not (nor is white space-- such as an extra blank line between lines of code), but it makes the code more readable by humans. The compiler would be just as happy with...</p>
       <pre class='cx jumbotron'><code class='ex'>public class First{public static void main(String[] args){System.out.println("Hello...</code></pre>
       <p>..., etc. or</p>
-      <pre class='cx jumbotron'> <code class='ex'>public class First{</code> <code class='ex'>public</code> <code class='ex'>static</code> <code class='ex'>void main(</code> <code class='ex'>   String[] args)     {</code> <code class='ex'>System.</code> <code class='ex'>out.println</code> <code class='ex'></code> <code class='ex'></code> <code class='ex'>("Hello, World!");</code> <code class='ex'>}</code> <code class='ex'></code> <code class='ex'>}</code></pre>
+      <pre class='cx jumbotron'> <code class='ex'>public class First{</code> <code class='ex'>public</code> <code class='ex'>static</code> <code class='ex'>void main(</code> <code class='ex'>   String[] args)     {</code> <code class='ex'>System.</code> <code class='ex'>out.println</code> <code class='ex'> </code> <code class='ex'> </code> <code class='ex'>("Hello, World!");</code> <code class='ex'>}</code> <code class='ex'> onloadedmetadata=
+      </code> <code class='ex'>} </code></pre>
       <p>...but please don't write your code that way!</p>
 
       <p>Particularly if you are collaborating on code with others, following a set of style rules is helpful. If you are interested in learning about best style practices for code, you can look at the <a href="https://google.github.io/styleguide/javaguide.html">Google reference</a>.</p>
