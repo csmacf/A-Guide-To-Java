@@ -11,10 +11,15 @@ body {
   font-family: 'Open Sans', sans-serif;
 }
 h1{
-  color:#dad786;
+  margin-top: 1em;
+  color:#000;
 }
 h2{
+  margin-top: 0.5em;
   color:#774b24;
+  border-style: solid;
+  border-color: #000;
+  border-width:
 }
 .footer {
   position: fixed;
@@ -50,6 +55,10 @@ em{
   font-size: 32px;
 }
 
+.book-title > h2{
+  border-style:none;
+}
+
 pre.cx{
 overflow-x: auto;
 white-space: pre-wrap;
@@ -72,7 +81,7 @@ code.ex::before{
     border-right-width: thin; */
     padding-right: 1em;
     color: #774b24;
-    
+
 }
 
 code.ex:after{
@@ -129,7 +138,4 @@ a.ch-index:hover{
 	padding: 4px;
   font-style: italic;
 
-}
-
-.btn-primary{
 }
