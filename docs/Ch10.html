@@ -17,17 +17,17 @@
 
         <header class="header">
           <div class="jumbotron book-title">
-            <h2> <img src="img/coffee-cup.png" width = '32px' alt = "Coffee cup" style="vertical-align:middle">
-           A Guide to Java</h2>
+            <img src="img/coffee-cup.png" width = '32px' alt = "Coffee cup" style="vertical-align:middle">
+           A Guide to Java
          </div>
         </header>
         <!-- add chapter number-->
-        <main role="main" class="container">
+        <main role="main" class="container-fluid">
           <br><br>
       <h2> Chapter <span id = 'chap-num'>10</span></h2>
       <!-- CONTENT here-->
       <h1>Arrays</h1>
-      <h2>Using Arrays</h2>
+      <h3>Using Arrays</h3>
       <p>Arrays hold lists of primitive data or objects. So far, if you&rsquo;ve wanted to store, say, a set of ten Strings, you&rsquo;ve needed ten separate variables (e.g., <span class='mono'>nameOne, nameTwo, nameThree, </span>etc.). An array allows you to store all of those Strings under a <em>single</em> name (e.g. <span class='mono'>names</span>) This makes it much easier to work with groups of things. </p>
       <p>When declaring an array, you must specify the type of data it will hold and the number of elements (size). Here&rsquo;s how you&rsquo;d declare and instantiate an array called <span class='mono'>nums</span> that holds 8 integers:</p>
       <p class='mono grey'>int[] nums = new int[8];</p>
@@ -42,7 +42,7 @@
       <p>Note that is it is typical to say, <em>&ldquo;names sub one&rdquo; </em>for <span class='mono'>names[1]</span>.</p>
       <p>To set or change the value of an element in an array, access it the same way, as in <span class='mono grey'>names[2]=&rdquo;Nick&rdquo;;</span></p>
       <div class='tip'>
-      <p>Important notes:</p>
+
       <ul>
       <li>In Java, the length of an array cannot be changed once it&rsquo;s created. </li>
       <li>Length is a (public) <em>property </em>of the array, not a method, so to find the length of the array above, we would write names.length, not names.length(). </li>
@@ -82,7 +82,7 @@
       <p class='mono grey'>for (int i : evens)</p>
 
       <p>and it would work the same.</p>
-      <h2>ArrayList Class</h2>
+      <h3>ArrayList Class</h3>
       <p>There is a library class in Java called <span class='mono'>ArrayList</span> that has several useful features, including:</p>
       <ol>
       <li>ArrayLists can be resized. Adding an element to an ArrayList automatically increases its size by one (and deleting an element decreases its size).</li>

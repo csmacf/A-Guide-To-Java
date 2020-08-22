@@ -17,12 +17,12 @@
 
         <header class="header">
           <div class="jumbotron book-title">
-            <h2> <img src="img/coffee-cup.png" width = '32px' alt = "Coffee cup" style="vertical-align:middle">
-           A Guide to Java</h2>
+            <img src="img/coffee-cup.png" width = '32px' alt = "Coffee cup" style="vertical-align:middle">
+           A Guide to Java
          </div>
         </header>
         <!-- add chapter number-->
-      <main role="main" class="container">
+      <main role="main" class="container-fluid">
           <br><br>
       <h2> Chapter <span id = 'chap-num'>5</span></h2>
       <h1>Using Library Classes</h1>
@@ -40,7 +40,7 @@
       <p>We now have a functioning Scanner (a software scanner-- not a physical machine) to use in our code. <span class='mono'>System.in</span> is called a <em>parameter</em>; parameters provide input to a method. In this case, it tells the Scanner that it should read from the computer keyboard (as opposed to a text file, for example, which could alternatively be a parameter). If we need another Scanner object, we can go ahead and create that, as well, from the same class. Note that an object is also called an <em>instance </em>of a class.</p>
 
       <div class='tip'><p>Full documentation for any Java class is readily available by internet search (I recommend searching <em>&ldquo;Oracle Java&rdquo;</em> followed by the class name, because Java is maintained by Oracle).</p></div>
-      <h2>Scanner</h2>
+      <h3>Scanner</h3>
       <p>The Scanner class allows you to accept input from the user of a program. Here is a four-step process for using a Scanner (numbered so you can see them in the example):</p>
       <ol>
       <li >Import the Scanner class</li>
@@ -102,7 +102,7 @@
       <div class='tip'><h3>Scanner troubleshooting</h3>
       <p>There is a problem when using the nextInt(), nextDouble(), or next() method before using the nextLine() method. These methods retrieve the next integer, double, or String, respectively, but they do not advance to the next line. If you then attempt to use the nextLine() method, you will only capture the Enter key character from the current line To avoid that issue, add an extra nextLine()method call to retrieve the abandoned Enter key character after using these methods.</p></div>
 
-      <h2>String</h2>
+      <h3>String</h3>
       <p>Note that although you&rsquo;ve already been using strings in a manner similar to how you use primitive objects, a String is actually an instance of a class. Because this class is so commonly used, it is part of every project by default, so you do not need to import it (this is also why you don&rsquo;t need to import System).</p>
 
       <p>Since Strings are objects, we <em>should </em>have to write (assuming we want to create a String with the literal value "Charlie"):</p>
@@ -175,7 +175,7 @@
 <li><span class='mono grey'>substring(int i, int j)</span>  returns a part of the String starting at index i and going up to (but not including) j. </li>
 </ul>
 
-      <h2>Random</h2>
+      <h3>Random</h3>
       <p>The Random class is used to generate random numbers. Just like Scanner, you import the Random class, then create a Random object. This object is <em>not</em> a random number-- it is a <em>random number generator that can be used to generate as many random numbers as needed.</em> The methods <span class='mono'>nextInt(int a)</span> and <span class='mono'>nextDouble() </span> are used to generate random numbers. Note that <span class='mono'>nextInt(int a)</span> generates an integer (from 0 to a-1) and <span class='mono'>nextDouble() </span> generates a double n, between 0 and 1 (including 0, but not 1)</p>
       <p>By multiplying and/or adding to the random number generated, you can get outputs in different ranges, as shown in the example below.</p>
 
@@ -216,7 +216,7 @@
 
       <p>To get a random double in a range other than 0 to 1, multiply by the desired range size. For example, <span class='mono'>nextDouble()*15 </span>will yield a decimal between 0 and 15 (actually, 14.9999...). Note how the *15 is <em>outside</em> of the parentheses. Unlike nextInt, nextDouble does not take any arguments.</p>
 
-      <h2>Math</h2>
+      <h3>Math</h3>
       <p>Like String, you do not need to import the <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Math.html">Math</a> class-- it is made available by default. All Math methods and data are <em>static</em>. We&rsquo;ll learn later the full meaning of static, but for now it means that (unlike Scanner and Random) to use Math methods and data, you do not need to create a Math object.  Rather, just call the methods on the Math class itself, as in <span class='mono'>Math.pow()</span>, for example. <span class='mono'>Math.PI</span> is the value of &pi; (note that there are no parentheses after PI because it&rsquo;s data in a variable, not a method). <span class='mono'>Math.random()</span> does the same thing as nextDouble() in the Random class (i.e., generates a random double between 0 and 1, not icluding 1).</p>
 
       <p>Some commonly used methods of the Math class (shown by example) are:</p>

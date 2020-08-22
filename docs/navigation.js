@@ -3,9 +3,9 @@ $(document).ready(function(){
   let chapter = 0;
   chapter = parseInt($('#chap-num').text());
   console.log(chapter);
-  //add chapter number to top div
-  $('div.title-header').append(" - Chapter " + chapter);
 
+ //add chapter number to header
+ $('.book-title').append(" - Ch " + chapter);
 
 if(chapter < 2){
   $('#prev-btn').addClass("disabled");

@@ -25,11 +25,12 @@ body {
   border-width: thick;
   border-radius: 20px;
   background-color: #DAAD86;
-  padding: 5px;
+  padding: 20px;
   font-size: 24px;
-  text-align: center;
-  width:50%;
+  text-align: left;
+  width:80%;
   font-family: monospace;
+  line-height: 0.5em;
 
 }
 a.ch-index:link{

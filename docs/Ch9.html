@@ -17,12 +17,12 @@
 
         <header class="header">
           <div class="jumbotron book-title">
-            <h2> <img src="img/coffee-cup.png" width = '32px' alt = "Coffee cup" style="vertical-align:middle">
-           A Guide to Java</h2>
+            <img src="img/coffee-cup.png" width = '32px' alt = "Coffee cup" style="vertical-align:middle">
+           A Guide to Java
          </div>
         </header>
         <!-- add chapter number-->
-        <main role="main" class="container">
+        <main role="main" class="container-fluid">
           <br><br>
       <h2> Chapter <span id = 'chap-num'>9</span></h2>
       <!-- CONTENT here-->
@@ -34,7 +34,7 @@
       <p>In OOP, only one class in a project implements a main method. All other classes serve as &ldquo;blueprints&rdquo; for creating <em>objects</em>(data types that are more complex than primitive types, like our <span class='mono'>Book</span>). Objects have both properties/data and actions. The class defines the <em>instance variables</em> (also called <em>fields, instance data, </em>or<em> data fields</em>) that hold values for the properties, and <em>methods</em> that define the actions for objects.</p>
 
       <p>Let&rsquo;s use our specific example of a book to illustrate this idea. The following sections explain how we might go about it.</p>
-      <h2>Instance variables</h2>
+      <h3>Instance variables</h3>
       <p>The first question to ask about our book is <em>what data does it have</em>? Well, a book has a title. It also has a certain number of pages. It might be hardcover or might not be. Let&rsquo;s define variables to hold all this information for a <span class='mono'>Book</span> object. Note that I&rsquo;ve not included author as a field, but I certainly could have. These kinds of decisions are up to you as the programmer.</p>
 
       <pre class='cx jumbotron'>
@@ -56,7 +56,7 @@
       <p>Instance variables can be of any type-- int (integer), double (decimal), String (text), boolean (true/ false), or even non-primitive types from other classes. Note that String is uppercase (because a String is itself an object from the String class); the others are lowercase. Note that they are not declared static. This is because each Book object that we create will have its own data (a different title, etc.). Static variables apply to the whole class rather than individual objects (recall the use of static methods and data in the Math class, for instance).</p>
 
       <p>This drawing may help you picture how an object is stored vs. a primitive type. Notice that the String variable in Book is itself an object of the String class, comprised of chars.</p>
-      <h2>Constructors</h2>
+      <h3>Constructors</h3>
       <p>Next comes the <em>constructor</em>. The constructor is similar to a method, in that it consists of commands. The role of the constructor generally is to assign values to the instance variables. In the following example, when a new <span class='mono'>Book</span> object is created, it has default data of "Untitled Book", 0, and true for title, numpages and isHardcover, respectively.</p>
 
       <p>The constructor header consists of the keyword <span class='mono'>public</span>, followed by the exact name of the class and a set of parentheses. It might look like this for our <span class='mono'>Book</span> class:</p>
@@ -74,7 +74,7 @@
 
       <p>So, once we&rsquo;ve written all the code for our <span class='mono'>Book</span> class, we&rsquo;ll be able to write <span class='mono'>Book b = new Book()</span> (typically in another class altogether) and we will have an <em>instance </em>of the Book class with the data set by the constructor.</p>
 
-      <h2>Other Methods</h2>
+      <h3>Other Methods</h3>
       <p>Now it&rsquo;s time to define actions we want to be able to perform on or with a Book object. For example, perhaps we want to be able to change its title or find out how long it is.</p>
       <p>We would write:</p>
 
@@ -109,7 +109,7 @@
       <code class='ex'>}</code>
       </pre>
 
-      <h2>Private vs. public visibility</h2>
+      <h3>Private vs. public visibility</h3>
       <p>Note that instance variables are usually declared with keyword private. What does this mean? Private means that these variables are only visible to the methods within their class. This is a concept called <em>information hiding</em> or <em>encapsulation</em>. Methods, on the other hand, are typically declared public so that they can be accessed by other classes.</p>
 
       <p>For example, using our Book class, suppose a method in another class creates a <span class='mono'>Book</span> instance called <span class='mono'>myBook</span>. That method could not then say <span class='mono'>myBook.title = &ldquo;Hamlet&rdquo;</span> (because it can&rsquo;t access the private <span class='mono'>title</span> variable), but it <em>could</em> say <span class='mono'>myBook.setTitle(&ldquo;Hamlet&rdquo;);</span> (because the method is public and therefore usable by the other class). To see this yourself, you can try writing the code above and note the error that the first line produces.</p>
@@ -134,7 +134,7 @@
       <code class='ex'>...</code>
       </pre>
 
-      <h2>Overloading Methods</h2>
+      <h3>Overloading Methods</h3>
       <p>It&rsquo;s common to have two methods with the same name but different parameters. These are called <em>overloaded</em> methods.For example, in our <span class='mono'>Book</span> class, we might want to overload the constructor so we have a version that accepts arguments. We&rsquo;d write:</p>
 
       <pre class='cx jumbotron'>
@@ -184,7 +184,7 @@
       </pre>
 
       <p>Now if we were to write <span class='mono'>printStars()</span>, we'll get the number of stars in the original method (there are 26), but if we were to write <span class='mono'>printStars(20)</span>, we would get a line of 20 stars, for example.</p>
-      <h2>Driver or Runner classes</h2>
+      <h3>Driver or Runner classes</h3>
       <p>In applications you write, you will have one class that controls the action, so to speak. These are like the classes you wrote in the beginning of the course-- before you arrived at this chapter and learned how to write your own classes.This class does not need to have a constructor (because it is not actually constructing any objects of its own type). Instead, is needs to have a main method with the (familiar, by now) header:</p>
 
       <p><span class='mono'>public static void main (String [] args)</span></p>

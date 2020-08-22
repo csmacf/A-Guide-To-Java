@@ -17,12 +17,12 @@
 
         <header class="header">
           <div class="jumbotron book-title">
-            <h2> <img src="img/coffee-cup.png" width = '32px' alt = "Coffee cup" style="vertical-align:middle">
-           A Guide to Java</h2>
+            <img src="img/coffee-cup.png" width = '32px' alt = "Coffee cup" style="vertical-align:middle">
+           A Guide to Java
          </div>
         </header>
         <!-- add chapter number-->
-        <main role="main" class="container">
+        <main role="main" class="container-fluid">
           <br><br>
       <h2> Chapter <span id = 'chap-num'>8</span></h2>
       <!-- CONTENT here-->
@@ -93,7 +93,7 @@
       <p>[give the condition to test each time the loop runs];</p>
       <p>[change the value of the variable after each execution of the loop])</p>
 
-      <div class='tip'><p>Important notes:</p>
+      <div class='tip'>
       <ul>
       <li>Use semicolons between each part (not commas).</li>
       <li>There is no semicolon after the parentheses (just as with while)</li>
@@ -114,7 +114,7 @@
       </pre>
 
       <p>Each part of the condition is optional, however you will typically use all three. For example, for(int a = 15;;) is valid. In this case, the variable would be set to 15 initially, and we would expect that the "missing" parts are handled in the code block.</p>
-      <h2><em>10.3 When to use While Vs. For.</em></h2>
+      <h3>10.3 When to use While Vs. For</h3>
       <p>For loops work better when you know how many times the loop will run and/or there is a fixed pattern (involving numbers or counters). For example, a for loop would be appropriate for running a block of code exactly 5 times, or for working with every even number from 10 to 20. These situations are referred to as counter controlled loops.</p>
 
       <pre class='cx jumbotron'>
@@ -139,7 +139,7 @@
       <code class='ex'>}</code>
       </pre>
 
-      <h2><em>Do while Loops</em></h2>
+      <h2>Do while Loops</h3>
       <p>If you want to be sure that a loop executes at least once, use a do-while loop. The loop body will run once and <em>then</em> the condition will be checked to determine if it should repeat. The syntax is:</p>
 
       <pre class='cx jumbotron'>
@@ -149,7 +149,7 @@
       <code class='ex'>} while([condition to test]); //note the semicolon here</code>
       </pre>
       <div class='tip'><p>Note the semicolon after the while statement in a <span class='mono'>do-while</span> loop.</p></div>
-      <h2><em>10.5 Break and Continue</em></h2>
+      <h3>Break and Continue</h3>
       <p>You can add code to break out of a loop if a certain condition is met within the loop body. The keyword <span class='mono'>break</span> exits the loop completely and moves onto the code following the loop. The <span class='mono'>continue</span> keyword breaks out of the <em>current iteration</em> of the loop and starts the next iteration (i.e., ignores any remaining statements in the loop body and starts the loop again).</p>
 
       <p><span class='mono'>break</span> and <span class='mono'>continue</span> can be used with any type of loop. Here is how each might be used:</p>
@@ -184,7 +184,7 @@
       <code class='ex'>//code to execute immediately after break or after the loop terminates</code>
       </pre>
 
-      <h2><em>Nested Loops</em></h2>
+      <h3>Nested Loops</h3>
       <p>Just as with if statements, loops can be nested inside one another. Here&rsquo;s an example:</p>
 
       <pre class='cx jumbotron'>
@@ -224,7 +224,7 @@
       </div>
       <div class='tip'>
       <p>You might wonder why the second line of output isn&rsquo;t &ldquo;i is 1 and j is 2.&rdquo; This is because the loop on the inside (the one involving the variable <span class='mono'>j</span>) runs through its entire course for each iteration of the outer loop (with the variable <span class='mono'>i</span>).</p></div>
-      <h2>Assignment Operators</h2>
+      <h3>Assignment Operators</h3>
       <p>In the previous sections, we&rsquo;ve seen the use of <span class='mono'>++</span> to add 1 to a variable. This is called <em>incrementing</em>. Here are a few more shortcuts. Note that these are never required (you can always write them the longer way), but you will encounter them frequently when reading code, so it is good to know them.</p>
 
       <p><span class='mono'>a++</span> is the same as <span class='mono'>a=a+1</span></p>
