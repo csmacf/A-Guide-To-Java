@@ -67,14 +67,11 @@
       <code class='ex'>System.out.println("You are old enough to vote”);</code>
       <code class='ex'></code>
       <code class='ex'>if (jerseyNumber == 13)    // {} optional here because only one statement</code>
-      <code class='ex'></code>
       <code class='ex'>{</code>
       <code class='ex'>  String label = "Thirteen";</code>
       <code class='ex'>}</code>
       <code class='ex'></code>
       <code class='ex'>if (floorNumber != 1)      // {} required here because of multiple statements</code>
-      <code class='ex'></code>
-      <code class='ex'></code>
       <code class='ex'>{</code>
       <code class='ex'>  System.out.println(“This is not the first floor”);</code>
       <code class='ex'>  System.out.println(“Please proceed to the first floor”);</code>
@@ -198,32 +195,32 @@
       <pre class = 'cx jumbotron'>
       <code class='ex'></code>
       <code class='ex'>if (temp >= 90)</code>
-      <code class='ex'>System.out.println("Very hot");</code>
+      <code class='ex'>  System.out.println("Very hot");</code>
       <code class='ex'></code>
       <code class='ex'>else if (temp >= 80) //No need to say (temp < 90), because we wouldn't get here otherwise.</code>
-      <code class='ex'>System.out.println("Hot"):</code>
+      <code class='ex'>  System.out.println("Hot"):</code>
       <code class='ex'></code>
       <code class='ex'>else if(temp >= 60)</code>
-      <code class='ex'>System.out.println("Mild");</code>
+      <code class='ex'>  System.out.println("Mild");</code>
       <code class='ex'></code>
       <code class='ex'>else // meaning (temp <60)</code>
-      <code class='ex'>System.out.println("Cool");</code>
+      <code class='ex'>  System.out.println("Cool");</code>
       </pre>
 
       <p>An important note about the code above-- you might be wondering why we don&rsquo;t write instead</p>
 
       <pre class = 'cx jumbotron'>
       <code class='ex'>if (temp >= 90)</code>
-      <code class='ex'>System.out.println("Very hot");</code>
+      <code class='ex'>  System.out.println("Very hot");</code>
       <code class='ex'></code>
       <code class='ex'>if (temp < 90 && temp >= 80) </code>
-      <code class='ex'>System.out.println("Hot"):</code>
+      <code class='ex'>  System.out.println("Hot"):</code>
       <code class='ex'></code>
       <code class='ex'>if(temp < 80 && temp >= 60)</code>
-      <code class='ex'>System.out.println("Mild");</code>
+      <code class='ex'>  System.out.println("Mild");</code>
       <code class='ex'></code>
       <code class='ex'>if (temp <60)</code>
-      <code class='ex'>System.out.println("Cool");</code>
+      <code class='ex'>  System.out.println("Cool");</code>
       </pre>
 
       <p>Even though this code would yield the same results as the original, it is inefficient. Why? Suppose the temperature is 92. We would want the code to print &ldquo;Very hot&rdquo; and be done with it. But, in the second version, it would still test all the other conditions. The advantage of &ldquo;else if&rdquo; is that once a condition is met, all other conditions are skipped.</p>
