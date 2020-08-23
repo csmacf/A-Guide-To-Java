@@ -33,6 +33,19 @@ body {
   line-height: 0.5em;
 
 }
+.license{
+  margin-top: 10px;
+  margin-left: 20px;
+  border-style: inset;
+  border-color: black;
+  border-width: thick;
+  border-radius: 20px;
+  background-color: #DAAD86;
+  padding: 10px;
+  text-align: center;
+  width:80%;
+  line-height: 0.5em;
+}
 a.ch-index:link{
   color: black;
 }
