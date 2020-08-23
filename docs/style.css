@@ -148,6 +148,9 @@ a.ch-index:hover{
   font-size: 1.5em;
 }
 
+#about{
+  
+}
 /*Phone styling*/
 @media only screen and (max-width: 800px) {
   body {
