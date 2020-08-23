@@ -56,10 +56,10 @@
 <h3>Escape Sequences</h3>
 <p><em>Escape</em> <em>sequences</em> are groups or characters that allow you to format output within a string. They begin with a backslash character.</p>
 <ul>
-<li >\n inserts a new line</li>
-<li >\" creates a double quote (") symbol <em>within</em> a string (and \' creates a single quote)</li>
-<li >\\ creates a backslash (note the need for the second backslash to indicate that an actual backslash character is desired)</li>
-<li >\t creates a tab</li>
+<li ><span class='mono'>f</span>\n</span>inserts a new line</li>
+<li ><span class='mono'>f</span>\"</span> creates a double quote (") symbol <em>within</em> a string (and \' creates a single quote)</li>
+<li ><span class='mono'>f</span>\\</span> creates a backslash (note the need for the second backslash to indicate that an actual backslash character is desired)</li>
+<li ><span class='mono'>f</span>\t</span> creates a tab</li>
 </ul>
 
 <p>For example,</p>
@@ -73,7 +73,7 @@
 </div>
 <p>because the \n moves to a new line and the \" creates a double quote (note that if the " were written without the backslash, it would end the string prematurely).</p>
 <h3>The printf method</h3>
-<p>You will often want to format double values so that they round to a certain number of places. For that, you can use the <span class='mono'>printf </span>method of <span class='mono'>System.out</span>, as follows. Note that you first define the format as a string inside " ", then write a comma, then the value(s) to be printed (separated by commas for multiple values). The % symbol in this context indicates a placeholder, i.e., that a value is to be printed. For <span class='mono'>%f</span>, The number following the decimal point indicates the number of decimal places to round to, and the <span class='mono'>f</span> indicates a float (i.e., a number with a decimal point)</p>
+<p>You will often want to format decimal values so that they round to a certain number of places. For that, you can use the <span class='mono'>printf </span>method of <span class='mono'>System.out</span>, as follows. Note that you first define the format as a string inside " ", then write a comma, then the value(s) to be printed (separated by commas for multiple values). The % symbol in this context indicates a placeholder, i.e., that a value is to be printed. For <span class='mono'>%f</span>, The number following the decimal point indicates the number of decimal places to round to, and the <span class='mono'>f</span> indicates a <span class='mono'>f</span>float</span> (i.e., a number with a decimal point)</p>
 <pre class = 'cx jumbotron'>
 
 <code class='ex'>System.out.printf("%.2f", 42.34626); //2 is the number of decimal places </code>
