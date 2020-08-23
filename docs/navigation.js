@@ -5,7 +5,7 @@ $(document).ready(function(){
   console.log(chapter);
 
  //add chapter number to header
- if(chatper>0)
+ if(chapter>0)
  $('.book-title').append(" - Ch " + chapter);
 
 if(chapter < 2){
