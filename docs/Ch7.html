@@ -104,6 +104,7 @@
 
       <p>The else statement is not required.</p>
       <p>There is no stated condition for else (meaning, do <em>not</em> write parentheses after else). It simply executes whenever the if condition is false.</p>
+  <p>There is also a shortcut called the <a href="https://www.baeldung.com/java-ternary-operator"><span class = 'mono'>ternary</span> operator</a>. We do not use this in our course, however, it offers a more concise way write branching code.</p>
 
       <h3>Nested If Statements</h3>
       <p>Sometimes, one condition is nested inside another. For example, consider</p>
@@ -224,8 +225,9 @@
       </pre>
 
       <p>Even though this code would yield the same results as the original, it is inefficient. Why? Suppose the temperature is 92. We would want the code to print &ldquo;Very hot&rdquo; and be done with it. But, in the second version, it would still test all the other conditions. The advantage of &ldquo;else if&rdquo; is that once a condition is met, all other conditions are skipped.</p>
-      <h3>Switch statements and ternary operators</h3>
-      <p>Two other ways to control program flow based on conditions are the<a href="https://docs.oracle.com/javase/tutorial/java/nutsandbolts/switch.html"> <span class = 'mono'>switch</span> statement</a> and the <a href="https://www.baeldung.com/java-ternary-operator"><span class = 'mono'>ternary</span> operator</a>. We do not use these in our course, however, they each offer another way to branch.</p>
+      <h3>Switch statements</h3>
+      <p>Another way to control program flow based on a set of conditions is the<a href="https://docs.oracle.com/javase/tutorial/java/nutsandbolts/switch.html"> <span class = 'mono'>switch</span> statement</a>. 
+        </p>
     </main>
 
     <footer class="footer">
