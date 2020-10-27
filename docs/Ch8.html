@@ -30,6 +30,7 @@
       <h1>Loops</h1>
       <p>A <em>loop</em> is a block of code that executes repeatedly as long as a given condition is true. For example, a quiz application might present a question, accept user input, then ask the user if they want to try another question-- continuing to present questions until the user chooses to stop.</p>
       <p>The important distinction between an &ldquo;if&rdquo; statement and a loop is that an if statement only checks a condition once; a loop <strong>keeps</strong> checking until it is no longer true.</p>
+      <p>A
       <h2><em>While loops</em></h2>
       <p>A <span class='mono'>while</span> loop executes a block of code repeatedly as long as a given condition is true (or until the condition becomes false).</p>
       <p>The syntax is:</p>
@@ -115,7 +116,7 @@
 
       <p>Each part of the condition is optional, however you will typically use all three. For example, for(int a = 15;;) is valid. In this case, the variable would be set to 15 initially, and we would expect that the "missing" parts are handled in the code block.</p>
       <h3>10.3 When to use While Vs. For</h3>
-      <p>For loops work better when you know how many times the loop will run and/or there is a fixed pattern (involving numbers or counters). For example, a for loop would be appropriate for running a block of code exactly 5 times, or for working with every even number from 10 to 20. These situations are referred to as counter controlled loops.</p>
+      <p>For loops work better when you know how many times the loop will run and/or there is a fixed pattern (involving numbers or counters). For example, a for loop would be appropriate for running a block of code exactly 5 times, or for working with every even number from 10 to 20. These situations are referred to as <em>counter controlled</em> loops. Sometimes the "counter variable" is used only for the purpose of counting (for example, repeating code 10 times); other times the variable is also used inside the loop (as in the example below on line 3).</p>
 
       <pre class='cx jumbotron'>
       <code class='ex'>//A counter controlled loop</code>
