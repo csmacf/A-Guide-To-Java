@@ -29,23 +29,22 @@
       <h1>Classes For Creating Objects</h1>
       <p>The examples of class that we&rsquo;ve seen so far all have a <span class='mono'>main</span> method that runs top to bottom (and may in turn call other methods in the same class or from library classes such as Scanner). Writing code in this way is called <em>procedural programming</em>. We will now look at another way to organize code, called <em>Object-oriented programming</em> (sometimes abbreviated <em>OOP</em>).</p>
 
-      <p>First, let's understand how object-oriented programming is helpful.  So far, we&rsquo;ve used variables to store data-- such as a person&rsquo;s age. This is a simple piece of information that can be stored in a primitive data type. But what if we want to store something more complex into a variable, say a book (perhaps Harper Lee&rsquo;s To Kill a Mockingbird or James Baldwin&rsquo;s Go Tell It On The Mountain)? Can&rsquo;t we think of a book as a piece of data just like an age is? The problem is that a &ldquo;book&rdquo; is actually made up of other pieces data-- it has an author, as well as a title, as well as other data. This is called a <em>composite</em>  or <em>compound data type</em>. In OOP, we can define what we mean by a <span class='mono'>Book</span> (including what data it contains and what we can do with a <span class='mono'>Book</span>) by writing a class.</p>
+      <p>First, let's understand how object-oriented programming is helpful.  So far, we&rsquo;ve used variables to store data-- such as a person&rsquo;s age. This is a simple piece of information that can be stored in a primitive data type. But what if we want to store something more complex into a variable, say a book (perhaps Harper Lee&rsquo;s <u>To Kill a Mockingbird</u> or James Baldwin&rsquo;s <u>Go Tell It On The Mountain</u>)? Can&rsquo;t we think of a book as a piece of data just like an age is? The problem is that a &ldquo;book&rdquo; is actually made up of other pieces data-- it has an author, as well as a title, as well as other data. This is called a <em>composite</em>  or <em>compound data type</em>. In OOP, we can define what we mean by a <span class='mono'>Book</span> (including what data it contains and what we can do with a <span class='mono'>Book</span>) by writing a class.</p>
 
-      <p>In OOP, only one class in a project implements a main method. All other classes serve as &ldquo;blueprints&rdquo; for creating <em>objects</em>(data types that are more complex than primitive types, like our <span class='mono'>Book</span>). Objects have both properties/data and actions. The class defines the <em>instance variables</em> (also called <em>fields, instance data, </em>or<em> data fields</em>) that hold values for the properties, and <em>methods</em> that define the actions for objects.</p>
+      <p>In OOP, only one class in a project implements a main method. All other classes serve as &ldquo;blueprints&rdquo; for creating <em>objects</em> (data types that are more complex than primitive types, like our <span class='mono'>Book</span>). Objects have both properties/data and actions. The class defines the <em>instance variables</em> (also called <em>fields, instance data, </em>or<em> data fields</em>) that hold values for the properties, and <em>methods</em> that define the actions for objects.</p>
 
       <p>Let&rsquo;s use our specific example of a book to illustrate this idea. The following sections explain how we might go about it.</p>
       <h3>Instance variables</h3>
-      <p>The first question to ask about our book is <em>what data does it have</em>? Well, a book has a title. It also has a certain number of pages. It might be hardcover or might not be. Let&rsquo;s define variables to hold all this information for a <span class='mono'>Book</span> object. Note that I&rsquo;ve not included author as a field, but I certainly could have. These kinds of decisions are up to you as the programmer.</p>
+      <p>The first question to ask about our book is <em>what data does it have</em>? Well, a book has a title. It also has a certain number of pages. It might be hardcover or might not be. Let&rsquo;s define variables to hold all this information for a <span class='mono'>Book</span> object. Note that I&rsquo;ve not included author as a field, nor have I included the actual text inside the book, but I certainly could have. These kinds of decisions are up to you as the programmer.</p>
 
       <pre class='cx jumbotron'>
       <code class='ex'>//First we declare the class (in a header). For now, declare classes as public.</code>
       <code class='ex'>//By convention, class names are capitalized</code>
       <code class='ex'></code>
-      <code class='ex'>public class Book</code>
-      <code class='ex'>{</code>
-      <code class='ex'>  //after a curly brace, we define our instance variables (or data fields, instance data)</code>
-      <code class='ex'>  //use camelCasing for variable names</code>
-      <code class='ex'>  //note that these variables are not static, because they will be different for each book</code>
+      <code class='ex'>public class Book{</code>
+      <code class='ex'>  //After a curly brace, we define our instance variables (or data fields, instance data),</code>
+      <code class='ex'>  //using camelCasing for variable names.</code>
+      <code class='ex'>  //Note that these variables are not static, because their values can be different for each book</code>
       <code class='ex'>  private String title;</code>
       <code class='ex'>  private int numPages;</code>
       <code class='ex'>  private boolean isHardcover;</code>
@@ -53,11 +52,12 @@
       <code class='ex'>}</code>
       </pre>
 
-      <p>Instance variables can be of any type-- int (integer), double (decimal), String (text), boolean (true/ false), or even non-primitive types from other classes. Note that String is uppercase (because a String is itself an object from the String class); the others are lowercase. Note that they are not declared static. This is because each Book object that we create will have its own data (a different title, etc.). Static variables apply to the whole class rather than individual objects (recall the use of static methods and data in the Math class, for instance).</p>
+      <p>Instance variables can be of any type-- <span class='mono'>int</span> (integer), <span class='mono'>double </span>(floating-point decimal), <span class='mono'>String </span>(text), <span class='mono'>boolean </span>(true/ false), or even non-primitive types from other classes (including classes we write). For example, a <span class='mono'>Book might have a field of type <span class='mono'>PublishData</span> , where <span class='mono'>PublishData</span>  is an instance of a class we write to create objects that hold information about publishing (date, ISBN, etc.). Note that String is uppercase (because a String is itself an object from the String class); the others are lowercase. Note also that the fields are not declared static. This is because each <span class='mono'>Book</span>  object that we create can have its own data (a different title, etc.). Static variables apply to the <em>whole</em> class rather than individual objects (recall the use of static methods and data in the Math class, for instance).</p>
 
       <p>This drawing may help you picture how an object is stored vs. a primitive type. Notice that the String variable in Book is itself an object of the String class, comprised of chars.</p>
+      <img src='img/storing-prim-vs-complex.png' width = '400px' alt = 'Storing data in a complex type'>
       <h3>Constructors</h3>
-      <p>Next comes the <em>constructor</em>. The constructor is similar to a method, in that it consists of commands. The role of the constructor generally is to assign values to the instance variables. In the following example, when a new <span class='mono'>Book</span> object is created, it has default data of "Untitled Book", 0, and true for title, numpages and isHardcover, respectively.</p>
+      <p>Next comes the <em>constructor</em>. The constructor is similar to a method, in that it consists of commands. The role of the constructor generally is to assign initial values to the instance variables. In the following example, when a new <span class='mono'>Book</span> object is created, it has default data of "Untitled Book", 0, and true for title, numpages and isHardcover, respectively.</p>
 
       <p>The constructor header consists of the keyword <span class='mono'>public</span>, followed by the exact name of the class and a set of parentheses. It might look like this for our <span class='mono'>Book</span> class:</p>
 
