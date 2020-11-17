@@ -27,8 +27,7 @@
       <h2> Chapter <span id = 'chap-num'>11</span></h2>
       <!-- CONTENT here-->
 <h1>String Methods</h1>
-<h1>String methods</h1>
-<h2>12.1 Commonly Used Methods</h2>
+<h3>Commonly Used Methods</h3>
 <p>Now that we have a better understanding of classes and objects, let&rsquo;s return to the String type that we&rsquo;ve used throughout. We&rsquo;ve noted before that strings are actually objects (instances of the String class). Within the String class, there are several useful methods that can be applied to strings. </p>
 <p>The location of each character in a String is called its <em>index</em>. Note that the first index is numbered 0, not 1, as shown below for the String literal &ldquo;Hello.&rdquo;</p>
 <img src='img/string-index.png' width = "80%" alt = "Indices of chars in a string">
@@ -47,21 +46,21 @@
 
 
 
-<code class='ex'String s = &ldquo;Hello&rdquo;;</p>
-<code class='ex's.toUpperCase(); // returns &ldquo;HELLO&rdquo;</p>
-<code class='ex's.toLowerCase(); // returns &ldquo;hello&rdquo;</p>
-<code class='ex's.length(); // returns 5</p>
-<code class='ex's.charAt(2); // returns &rsquo;l&rsquo; (not &lsquo;e&rsquo;)</p>
-<code class='ex's.indexOf(&lsquo;o&rsquo;); // returns 4, the first index where &lsquo;o&rsquo; is found</p>
-<code class='ex's.indexOf(&lsquo;l&rsquo;); // returns 2, the first index where &lsquo;l&rsquo; is found</p>
-<code class='ex's.indexOf(&lsquo;q&rsquo;); // returns -1, because &lsquo;q&rsquo; is not found</p>
-<code class='ex's.substring(1); // returns &ldquo;ello&rdquo;</p>
-<code class='ex's.substring(2,4); // returns &ldquo;ll&rdquo; (not &ldquo;llo&rdquo;)</p>
+<code class='ex'>String s = &ldquo;Hello&rdquo;;</code>
+<code class='ex'>s.toUpperCase(); // returns &ldquo;HELLO&rdquo;</code>
+<code class='ex'>s.toLowerCase(); // returns &ldquo;hello&rdquo;</code>
+<code class='ex'>s.length(); // returns 5</code>
+<code class='ex'>s.charAt(2); // returns &rsquo;l&rsquo; (not &lsquo;e&rsquo;)</code>
+<code class='ex'>s.indexOf(&lsquo;o&rsquo;); // returns 4, the first index where &lsquo;o&rsquo; is found</code>
+<code class='ex'>s.indexOf(&lsquo;l&rsquo;); // returns 2, the first index where &lsquo;l&rsquo; is found</code>
+<code class='ex'>s.indexOf(&lsquo;q&rsquo;); // returns -1, because &lsquo;q&rsquo; is not found</code>
+<code class='ex'>s.substring(1); // returns &ldquo;ello&rdquo;</code>
+<code class='ex'>s.substring(2,4); // returns &ldquo;ll&rdquo; (not &ldquo;llo&rdquo;)</code>
 
 
 
 </pre>
-<h2>12.2 Comparing strings</h2>
+<h3>Comparing strings</h3>
 <p>As we saw earlier, one important method for Strings is called <span class='mono'>equals</span>. It determines whether the characters in one String object match exactly the characters in another and returns true or false. Note that you cannot use <span class='mono'>==</span> to compare Strings (or any other reference type, i.e. &ldquo;non-primitive&rdquo; type). For reference types, <span class='mono'>==</span> determines whether two objects are in the <em>same memory location</em>, not whether they contain the same data. It is possible to have two Strings that have the same set of characters but are located in two different locations in memory. </p>
 <p>There is also a <span class='mono'>compareTo</span> method for Strings. It returns an <span class='mono'>int</span> representing the numerical difference between the first two characters that differ in a String (or 0 if the Strings have the exact same characters), based on their Unicode values (shown in the table below). </p>
 <p><br /><br /></p>
@@ -70,11 +69,11 @@
 
 
 
-<code class='ex'String s1 = "Africa", s2 = "africa", s3 = "Africa", s4 = "AFRICA";</p>
-<code class='ex'System.out.println(s1.equals(s2)) // prints false</p>
-<code class='ex'System.out.println(s1.equals(s3)) // prints true</p>
-<code class='ex'System.out.println(s1.compareTo(s4)) // prints -32 'f', 'F' have a difference of 32 (102-70)</p>
-<code class='ex'System.out.println(s1.compareTo(s3)) // prints 0</p>
+<code class='ex'>String s1 = "Africa", s2 = "africa", s3 = "Africa", s4 = "AFRICA";</code>
+<code class='ex'>System.out.println(s1.equals(s2)) // prints false</code>
+<code class='ex'>System.out.println(s1.equals(s3)) // prints true</code>
+<code class='ex'>System.out.println(s1.compareTo(s4)) // prints -32 'f', 'F' have a difference of 32 (102-70)</code>
+<code class='ex'>System.out.println(s1.compareTo(s3)) // prints 0</code>
 
 
 
