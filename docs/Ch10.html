@@ -22,85 +22,189 @@
          </div>
         </header>
         <!-- add chapter number-->
-        <main role="main" class="container-fluid">
+        <main role="main" class="container">
           <br><br>
-      <h2> Chapter <span id = 'chap-num'>10</span></h2>
+      <h2> Chapter <span id = 'chap-num'>10</span></h3>
       <!-- CONTENT here-->
-      <h1>Arrays</h1>
-      <h3>Using Arrays</h3>
-      <p>Arrays hold lists of primitive data or objects. So far, if you&rsquo;ve wanted to store, say, a set of ten Strings, you&rsquo;ve needed ten separate variables (e.g., <span class='mono'>nameOne, nameTwo, nameThree, </span>etc.). An array allows you to store all of those Strings under a <em>single</em> name (e.g. <span class='mono'>names</span>) This makes it much easier to work with groups of things. </p>
-      <p>When declaring an array, you must specify the type of data it will hold and the number of elements (size). Here&rsquo;s how you&rsquo;d declare and instantiate an array called <span class='mono'>nums</span> that holds 8 integers:</p>
-      <p class='mono grey'>int[] nums = new int[8];</p>
-      <p>(If you&rsquo;re wondering, that <span class='mono'>String[]</span> that you incorporate in each <span class='mono'>main <span>method is actually an array of Strings. While we don&rsquo;t do it in this course, when running a Java application from the command line, <a href="https://stackoverflow.com/questions/890966/what-is-string-args-parameter-in-main-method-java">one can pass String parameters into the <span class='mono'>main</span> method</a>)</p>
-      <p>You can also initialize an array by providing initial values in { } (called an <em>initialization list</em>), like so:</p>
+      <h3>Overloading Methods</h3>
+      <p>It&rsquo;s common to have two methods with the same name but different parameters. These are called <em>overloaded</em> methods.For example, in our <span class='mono'>Book</span> class, we might want to overload the constructor so we have a version that accepts arguments. We&rsquo;d write:</p>
+
       <pre class='cx jumbotron'>
-      <code class='ex'>//the length of this array would be automatically set to 4</code>
-      <code class='ex'>String[] names = {"Alice", "Bob", "Carly", "David"};</code>
-
-    </pre>
-      <p>Elements are accessed via their index (position in the array) by writing arrayName[index]. In this case, we refer to the index as a <em>subscript</em>. Like Strings, arrays are zero-indexed, meaning the first element is at index 0, not 1. In the example above, <span class='mono'>names[1]</span> contains &ldquo;Bob&rdquo; and <span class='mono'>names[3]</span> contains &ldquo;David.&rdquo; Writing <span class='mono'>names[5]</span> would generate an &ldquo;index out of bounds&rdquo; exception, because there is no index 5 in the array. </p>
-      <p>Note that is it is typical to say, <em>&ldquo;names sub one&rdquo; </em>for <span class='mono'>names[1]</span>.</p>
-      <p>To set or change the value of an element in an array, access it the same way, as in <span class='mono grey'>names[2]=&rdquo;Nick&rdquo;;</span></p>
-      <div class='tip'>
-
-      <ul>
-      <li>In Java, the length of an array cannot be changed once it&rsquo;s created. </li>
-      <li>Length is a (public) <em>property </em>of the array, not a method, so to find the length of the array above, we would write names.length, not names.length(). </li>
-      <li>The index of the last element in an array is always the length of the array minus one (e.g. names.length - 1), because an array with 4 elements, for example, has <em>indices</em> (plural of index) 0 through 3.</li>
-      </ul>
-    </div>
-      <h3>Multi-dimensional Arrays</h3>
-      <p>You can also create multi-dimensional arrays in Java. These are essentially &ldquo;arrays of arrays.&rdquo; </p>
-      <p>Look at the example below, that might hold low and high temps for each day over a 3-day period.</p>
-
-      <p class='mono grey'>double[][] temperatures = {{38.0, 97.1}, {41.3, 88.4}, {38.2, 85.2}};</p>
-
-      <p>To access the high temperature on the third day (i.e., the second element in the third array, you would write <span class='mono'>temperatures [2][1]</span> (which would 85.2 in this case). Note that the arrays within the arrays do not have to be the same length, but often they are. You can also create arrays of more than two dimensions.</p>
-      <h3>Traversing an array</h3>
-      <p>A <span class='mono'>for </span> loop is typically used to <em>traverse</em> (go through) an array, usually to write values into the array or read values from the array. The example below would store 100 even numbers (2, 4, 6, &hellip;, 200) in an array called <span class='mono'>evens</span>. Note how the variable <span class='mono'>i</span> starts at 0 and will go to 99 (one less than the array&rsquo;s length).</p>
-      <pre class='cx jumbotron'>
-      <code class='ex'>int[] evens = new int[100];</code>
-      <code class='ex'>for (int i=0; i&lt; evens.length; i++){</code>
-      <code class='ex'>evens[i] = 2*(i+1);</code>
+      <code class='ex'>//constructor from earlier</code>
+      <code class='ex'>public Book()</code>
+      <code class='ex'>{</code>
+      <code class='ex'>  title = "Untitled Book"; //set the title of the book. etc</code>
+      <code class='ex'>  numpages = 0;</code>
+      <code class='ex'>  isHardcover = true;</code>
+      <code class='ex'>}</code>
+      <code class='ex'></code>
+      <code class='ex'>//overloaded constructor</code>
+      <code class='ex'>public Book(String t, int n, boolean h)</code>
+      <code class='ex'>{</code>
+      <code class='ex'>  title = t;</code>
+      <code class='ex'>  numpages = n;</code>
+      <code class='ex'>  isHardcover = h;</code>
       <code class='ex'>}</code>
       </pre>
-      <p>Let&rsquo;s analyze the code above: </p>
-      <p>When i=0, 2*(i+1) = 2*(1) = 2</p>
-      <p>When i=1, 2*(i+1) = 2*(2) = 4</p>
-      <p>When i=2, 2*(i+1) = 2*(3) = 6 </p>
-      <p>&hellip;</p>
-      <p>When i=99, 2*(i+1) = 2*(100) = 200. </p>
-      <p>A <em>for-each loop</em> (also called an <em>enhanced for loop</em>is another way to work through an array. It accomplishes the same thing with a bit less code. The syntax is:</p>
 
-      <p class='mono grey'>for(<em>type variable</em> : <em>array</em>)</p>
+      <p>How does the compiler know which version of an overloaded method to use? It all depends on what arguments are provided by the calling method. For example, given:</p>
+
+      <pre class='cx jumbotron'>
+      <code class='ex'>Book book1 = new Book();</code>
+      <code class='ex'>Book book2 = new Book(&ldquo;My Life&rdquo;, 125, true);</code>
+      <code class='ex'>Book book3 = new Book(35); //will cause an error</code>
+      </pre>
+
+      <p>The first line would invoke the first constructor, the second would invoke the second, and the third would not compile (would cause an error), because there is no version of the constructor that accepts a single int as a parameter.</p>
+
+      <p>As stated earlier, most methods are declared public (so they can be called from other classes). If, however, the sole purpose of a method is to support another method in the same class; it is commonly declared private.</p>
+
+      <p>We might also overload the private printStars method, like so</p>
+
+      <pre class='cx jumbotron'>
+      <code class='ex'>private void printStars(){</code>
+      <code class='ex'>  System.out.println("**************************");</code>
+      <code class='ex'>}</code>
+      <code class='ex'></code>
+      <code class='ex'>//overloaded with a parameter for how many stars to print</code>
+      <code class='ex'>private void printStars(int number){</code>
+      <code class='ex'>  for (int x = 0; x &lt; number; x++){</code>
+      <code class='ex'>    System.out.print("*"); //print a single * and stay on this line</code>
+      <code class='ex'>    System.out.println();</code>
+      <code class='ex'>  }</code>
+      <code class='ex'>}</code>
+      </pre>
+
+      <p>Now if we were to write <span class='mono'>printStars()</span>, we'll get the number of stars in the original method (there are 26), but if we were to write <span class='mono'>printStars(20)</span>, we would get a line of 20 stars, for example.</p>
+
+      <h3>Static</h3>
+<p>Static variables and methods are created <em>once</em> for the class. They are not specific to individual instances (objects) of the class. Because of this, static methods cannot use instance variables (which are unique to each instance of the class).</p>
+<p>Static methods are invoked on the class itself, not a particular object of the class. A good example of the use of static variables and methods is the <span class='mono'>Math</span> class in Java. Rather than writing:</p>
+<pre class='cx jumbotron'>
+<code class='ex'>Math m = new Math();</code>
+<code class='ex'>m.sqrt(25); //find the square root of 25</code>
+</pre>
+<p>we instead write</p>
+<pre class='cx jumbotron'>
+<code class='ex'>Math.sqrt(25); //find the square root of 25</code>
+<code class='ex'>Math.PI; //the value of pi-- this is a static variable in the Math class</code>
+</pre>
+<p>To create static variables and/or methods, add the keyword <span class='mono'>static</span> to the declaration, as in:</p>
+<pre class='cx jumbotron'>
+<code class='ex'>public class StaticDemo{</code>
+<code class='ex'>  // non-static variables</code>
+<code class='ex'>   private int age;</code>
+<code class='ex'>   //static variables</code>
+<code class='ex'>   private static int count = 0;</code>
+<code class='ex'>   // constructor</code>
+<code class='ex'>   public StaticDemo(){</code>
+<code class='ex'>     age = 5;</code>
+<code class='ex'>     count = count + 1; //increase the count of objects created</code>
+<code class='ex'>   }</code>
+<code class='ex'>   // static method that displays the count</code>
+<code class='ex'>   public static void displayCount(){</code>
+<code class='ex'>     System.out.println(count);</code>
+<code class='ex'>   }</code>
+<code class='ex'>   // non-static methods</code>
+<code class='ex'>   public void setAge(int newAge){</code>
+<code class='ex'>     age = newAge;</code>
+<code class='ex'>   }</code>
+<code class='ex'>   public void displayAge(){</code>
+<code class='ex'>   System.out.println("The age of this person is " + age);</code>
+<code class='ex'> }</code>
+<code class='ex'>}</code>
+</pre>
+<p>In the example above, the static variable <span class='mono'>count</span> is used to count how many times the constructor has created an object. It&rsquo;s set to zero to begin, then increases by one each time the constructor executes. When a new object is created from this class, it does not get its &ldquo;own&rdquo; <span class='mono'>count </span>variable-- rather, it shares it with the other instances of the class.</p>
+<p>The static method <span class='mono'>getCount</count> returns the value of <span class='mono'>count</count>. Note that <span class='mono'>getCount()</span> would not be able to use the variable <span class='mono'>x</span> in this case, because <span class='mono'>x</span> is not itself static (meaning each object of the class will have a different value for <span class='mono'>x</span>). To call the <span class='mono'>getCount()</span> method, we&rsquo;d write <span class='mono'>StaticDemo.getCount()</span>.</p>
+<p>Beginning programmers often confuse <span class='mono'>static</span> with <span class='mono'>final</span>. These are not the same. The <span class='mono'>final</span> keyword means that--once assigned-- the value of a variable will not change. Static variables can change value; they are static in the sense that they are only declared once (for the whole class).</p>
+<p>Let&rsquo;s take a look at how the <span class='mono'>StaticDemo</span> class might be used by another class.</p>
+<pre class='cx jumbotron'>
+<code class='ex'>public class StaticRunner {</code>
+<code class='ex'>  public static void main(String[] args) {</code>
+<code class='ex'>    //create two instances of StaticDemo and set ages</code>
+<code class='ex'>    StaticDemo sd1 = new StaticDemo();</code>
+<code class='ex'>    sd1.setAge(26);</code>
+<code class='ex'>    StaticDemo sd2 = new StaticDemo();</code>
+<code class='ex'>    sd2.setAge(1);</code>
+<code class='ex'>    //ages are different for each (non-static)</code>
+<code class='ex'>    sd1.displayAge();</code>
+<code class='ex'>    sd2.displayAge();</code>
+<code class='ex'> </code>
+<code class='ex'>    //count is the same (static)-- we've created 2</code>
+<code class='ex'>    sd1.displayCount();</code>
+<code class='ex'>    sd2.displayCount();</code>
+<code class='ex'>    //static methods are usually called on the class itself</code>
+<code class='ex'>    StaticDemo.displayCount();</code>
+<code class='ex'>  }</code>
+<code class='ex'>}</code>
+</pre>
+<p>The output is:</p>
+<div class="console">
+<p>The age of this person is 26</p>
+<p>The age of this person is 1</p>
+<p>2</p>
+<p>2</p>
+<p>2</p>
+</div>
+<h3>The "this" keyword</h3>
+<p>The keyword <span class='mono'>this</span> is best understood by example. Suppose you have a class with a field called <span class='mono'>age</span> and you have a <span class='mono'>setAge</span> method.</p>
+<pre class='cx jumbotron'>
+<code class='ex'>public class Person{</code>
+<code class='ex'>  ...</code>
+<code class='ex'>  private int age;</code>
+<code class='ex'>  ...</code>
+<code class='ex'>  public void setAge(int a){</code>
+<code class='ex'>    age = a;</code>
+<code class='ex'>  }</code>
+<code class='ex'>...</code>
+<code class='ex'>}</code>
+</pre>
+<p>You might use the identifier <span class='mono'>newAge</span> for the method&rsquo;s parameter, because you&rsquo;ve already used the identifier <span class='mono'>age</span> to represent the instance variable. Recall that variables declared as parameters in a method are only visible (local) to that method-- as opposed to fields, that are visible to all methods in the class.</p>
+<p>But wouldn&rsquo;t it make more sense to call the parameter <span class='mono'>age</span> (because that&rsquo;s what it is, after all)?</p>
+<p>The problem with doing that is that the compiler needs to tell the two apart (the <em>local </em>variable for the method vs. the <em>instance </em>variable). This is accomplished with the &ldquo;this&rdquo; keyword, as follows:</p>
+<pre class='cx jumbotron'>
+<code class='ex'>public class Person{</code>
+<code class='ex'>  ...</code>
+<code class='ex'>  private int age;</code>
+<code class='ex'>  ...</code>
+<code class='ex'>  public void setAge(int age){</code>
+<code class='ex'>    this.age = age;</code>
+<code class='ex'>  }</code>
+<code class='ex'>...</code>
+<code class='ex'>}</code>
+</pre>
+<p>When a method&rsquo;s local variable and an instance variable have the same name (such as age above), the use of that name refers to the local variable. To refer instead to the instance variable, preface the identifier with <span class='mono'>this</span>. <span class='mono'>&nbsp;this.age</span> refers to the age field of the object to which the method is being applied (think of it as &ldquo;the age for <em>this </em>object&rdquo;). Note that some other languages use the keyword <em>self </em>to mean the same thing.</p>
+<p>Tip-- in most IDEs, you can get a sense for this by selecting (double-clicking) a variable. Typically, all other occurrences of that variable will then highlight. If you click either age variable above, you can see where else it is being used.&nbsp;</p>
+<p>this can also be used when a method has a parameter that is another object of the same type, as follows:</p>
+<pre class='cx jumbotron'>
+<code class='ex'>public class Person{</code>
+<code class='ex'>  ...</code>
+<code class='ex'>  public greetAnotherPerson(Person p){</code>
+<code class='ex'>  System.out.println("Hello, " + p.getName() + "! My name is "+ this.getName();</code>
+<code class='ex'>}</code>
+</pre>
 
 
-      <p>In the previous example, you could replace</p>
-      <p class='mono grey'>for (int i=0; i&lt; evens.length; i++)</p>
-      <p>with</p>
+<p>Note that the object using this method will be a Person, but the parameter for the method is also a(nother) Person object. To tell them apart, we use this to refer to the Person object to which the method is applied, as in&nbsp;</p>
+<pre class='cx jumbotron'>
+<code class='ex'>Person person1 = new Person();</code>
+<code class='ex'>Person person2 = new Person();</code>
+<code class='ex'>person1.greetAnotherPerson(person2); //&rdquo;this&rdquo; refers here to person1</code>
+</pre>
+<p>Note that the this keyword is only required when there&rsquo;s a potential conflict in identifiers. The use below is not necessary (but will work fine).</p>
+<pre class='cx jumbotron'>
+<code class='ex'>public class Person{</code>
+<code class='ex'>  ...</code>
+<code class='ex'>  private int age;</code>
+<code class='ex'>  ...</code>
+<code class='ex'>  public void printAge(){</code>
+<code class='ex'>    System.out.println(this.age); //same as System.out.println(age);</code>
+<code class='ex'>  }</code>
+<code class='ex'>  ...</code>
+<code class='ex'>}</code>
+</pre>
 
-      <p class='mono grey'>for (int i : evens)</p>
 
-      <p>and it would work the same.</p>
-      <h3>ArrayList Class</h3>
-      <p>There is a library class in Java called <span class='mono'>ArrayList</span> that has several useful features, including:</p>
-      <ol>
-      <li>ArrayLists can be resized. Adding an element to an ArrayList automatically increases its size by one (and deleting an element decreases its size).</li>
-      <li>New values can be inserted into any position in an ArrayList and any pre-existing elements will &ldquo;move up&rdquo; to make way for the new element. </li>
-      </ol>
-      <p>ArrayLists can only contain objects-- not primitive types (although you can use <a href="http://www.w3resource.com/java-tutorial/java-wrapper-classes.php">wrapper classes</a> if you need to convert a primitive type into an object).</p>
-      <p>Because <span class='mono'>ArrayList </span>is a class, ArrayList instances are objects. To create a new ArrayList, write</p>
-      <p><span class='mono grey'>ArrayList a = new ArrayList()</span>, where a is its name (identifier).</p>
-      <p>Some important methods for ArrayLists are:</p>
-      <ul>
-      <li><span class='mono grey'>add (Object obj)</span> inserts an element at the end</li>
-      <li><span class='mono grey'>add(int index, Object obj) </span> inserts an element at index</li>
-      <li><span class='mono grey'>set (int index, Object obj) </span> replaces existing element</li>
-      <li><span class='mono grey'>get (int index) </span>gets the element at index</li>
-      <li><span class='mono grey'>remove (int index) </span>removes the element at index</li>
-      <li><span class='mono grey'>size ()  </span>gets the number of element*</li>
-    </ul>
-      <p>Note that <span class='mono'>size()</span> is a method in the ArrayList class, as compared to the length </span>property of an array.</p>
     </main>
 
     <footer class="footer">

@@ -41,7 +41,8 @@
       <code class='ex'>//First we declare the class (in a header). For now, declare classes as public.</code>
       <code class='ex'>//By convention, class names are capitalized</code>
       <code class='ex'></code>
-      <code class='ex'>public class Book{</code>
+      <code class='ex'>public class Book</code>
+      <code class='ex'>{</code>
       <code class='ex'>  //After a curly brace, we define our instance variables (or data fields, instance data),</code>
       <code class='ex'>  //using camelCasing for variable names.</code>
       <code class='ex'>  //Note that these variables are not static, because their values can be different for each book</code>
@@ -52,9 +53,9 @@
       <code class='ex'>}</code>
       </pre>
 
-      <p>Instance variables can be of any type-- <span class='mono'>int</span> (integer), <span class='mono'>double </span>(floating-point decimal), <span class='mono'>String </span>(text), <span class='mono'>boolean </span>(true/ false), or even non-primitive types from other classes (including classes we write). For example, a <span class='mono'>Book might have a field of type <span class='mono'>PublishData</span> , where <span class='mono'>PublishData</span>  is an instance of a class we write to create objects that hold information about publishing (date, ISBN, etc.). Note that String is uppercase (because a String is itself an object from the String class); the others are lowercase. Note also that the fields are not declared static. This is because each <span class='mono'>Book</span>  object that we create can have its own data (a different title, etc.). Static variables apply to the <em>whole</em> class rather than individual objects (recall the use of static methods and data in the Math class, for instance).</p>
+      <p>Instance variables can be of any type-- <span class='mono'>int</span> (integer), <span class='mono'>double </span>(floating-point decimal), <span class='mono'>String </span>(text), <span class='mono'>boolean </span>(true/ false), or even non-primitive types from other classes (including classes we write). For example, a <span class='mono'>Book</span> might have a field of type <span class='mono'>PublishData</span> , where <span class='mono'>PublishData</span>  is an instance of a class we write to create objects that hold information about publishing (date, ISBN, etc.). Note that String is uppercase (because a String is itself an object from the String class); the others are lowercase. Note also that the fields are not declared static. This is because each <span class='mono'>Book</span>  object that we create can have its own data (a different title, etc.). Static variables apply to the <em>whole</em> class rather than individual objects (recall the use of static methods and data in the Math class, for instance).</p>
 
-      <p>This drawing may help you picture how an object is stored vs. a primitive type. Notice that the String variable in Book is itself an object of the String class, comprised of chars.</p>
+      <p>This illustration may help you picture how data is stored in an object vs. a primitive type. Notice that the String variable in Book is itself an object of the String class, comprised of chars.</p>
       <img src='img/storing-prim-vs-complex.png' width = '400px' alt = 'Storing data in a complex type'>
       <h3>Constructors</h3>
       <p>Next comes the <em>constructor</em>. The constructor is similar to a method, in that it consists of commands. The role of the constructor generally is to assign initial values to the instance variables. In the following example, when a new <span class='mono'>Book</span> object is created, it has default data of "Untitled Book", 0, and true for title, numpages and isHardcover, respectively.</p>
@@ -97,7 +98,7 @@
 
       <p>These types of methods are common. They&rsquo;re called &ldquo;getters and setters&rdquo; (or, more formally, <em>accessors </em>and <em>mutators</em>). Notice how the public methods can be used by another class to find out and/or change the values of the private fields (more on that in the next section).</p>
 
-      <p>Again, you might be wondering why these methods are missing the static keyword that we&rsquo;ve used earlier. This is because static methods (and variables) apply to the class itself, not to specific instances of the class. Methods that make use of instance data are not static (because, for example, getnumPages may return 86 for one Book object, but 259 for another). In other words, static methods always give the same result within a class, whereas non-static methods can behave differently based on the particular instance to which they are applied).</p>
+      <p>Again, you might be wondering why these methods are missing the static keyword that we&rsquo;ve used earlier. This is because static methods (and variables) apply to the class itself, not to specific instances of the class. Methods that make use of instance data are not static (because, for example, getnumPages may return 86 for one Book object, but 259 for another). In other words, static methods always give the same result within a class, whereas non-static methods can behave differently based on the data in the particular instance to which they are applied).</p>
 
       <p>What else might we need to do other than get or set values from our <span class='mono'>Book</span>? Well, perhaps we would like a method to display information about it. We might write:</p>
 
@@ -122,7 +123,7 @@
       <code class='ex'>{</code>
       <code class='ex'>  printStars();</code>
       <code class='ex'>  System.out.print("This book is called " + title);</code>
-      <code class='ex'>S  ystem.out.println(" and has " + numPages + " pages.");</code>
+      <code class='ex'>  System.out.println(" and has " + numPages + " pages.");</code>
       <code class='ex'>  printStars();</code>
       <code class='ex'>}</code>
       <code class='ex'></code>
@@ -134,56 +135,7 @@
       <code class='ex'>...</code>
       </pre>
 
-      <h3>Overloading Methods</h3>
-      <p>It&rsquo;s common to have two methods with the same name but different parameters. These are called <em>overloaded</em> methods.For example, in our <span class='mono'>Book</span> class, we might want to overload the constructor so we have a version that accepts arguments. We&rsquo;d write:</p>
-
-      <pre class='cx jumbotron'>
-      <code class='ex'>//constructor from earlier</code>
-      <code class='ex'>public Book()</code>
-      <code class='ex'>{</code>
-      <code class='ex'>  title = "Untitled Book"; //set the title of the book. etc</code>
-      <code class='ex'>  numpages = 0;</code>
-      <code class='ex'>  isHardcover = true;</code>
-      <code class='ex'>}</code>
-      <code class='ex'></code>
-      <code class='ex'>//overloaded constructor</code>
-      <code class='ex'>public Book(String t, int n, boolean h)</code>
-      <code class='ex'>{</code>
-      <code class='ex'>  title = t;</code>
-      <code class='ex'>  numpages = n;</code>
-      <code class='ex'>  isHardcover = h;</code>
-      <code class='ex'>}</code>
-      </pre>
-
-      <p>How does the compiler know which version of an overloaded method to use? It all depends on what arguments are provided by the calling method. For example, given:</p>
-
-      <pre class='cx jumbotron'>
-      <code class='ex'>Book book1 = new Book();</code>
-      <code class='ex'>Book book2 = new Book(&ldquo;My Life&rdquo;, 125, true);</code>
-      <code class='ex'>Book book3 = new Book(35); //will cause an error</code>
-      </pre>
-
-      <p>The first line would invoke the first constructor, the second would invoke the second, and the third would not compile (would cause an error), because there is no version of the constructor that accepts a single int as a parameter.</p>
-
-      <p>As stated earlier, most methods are declared public (so they can be called from other classes). If, however, the sole purpose of a method is to support another method in the same class; it is commonly declared private.</p>
-
-      <p>We might also overload the private printStars method, like so</p>
-
-      <pre class='cx jumbotron'>
-      <code class='ex'>private void printStars(){</code>
-      <code class='ex'>  System.out.println("**************************");</code>
-      <code class='ex'>}</code>
-      <code class='ex'></code>
-      <code class='ex'>//overloaded with a parameter for how many stars to print</code>
-      <code class='ex'>private void printStars(int number){</code>
-      <code class='ex'>  for (int x = 0; x &lt; number; x++){</code>
-      <code class='ex'>    System.out.print("*"); //print a single * and stay on this line</code>
-      <code class='ex'>    System.out.println();</code>
-      <code class='ex'>  }</code>
-      <code class='ex'>}</code>
-      </pre>
-
-      <p>Now if we were to write <span class='mono'>printStars()</span>, we'll get the number of stars in the original method (there are 26), but if we were to write <span class='mono'>printStars(20)</span>, we would get a line of 20 stars, for example.</p>
+      
       <h3>Driver or Runner classes</h3>
       <p>In applications you write, you will have one class that controls the action, so to speak. These are like the classes you wrote in the beginning of the course-- before you arrived at this chapter and learned how to write your own classes.This class does not need to have a constructor (because it is not actually constructing any objects of its own type). Instead, is needs to have a main method with the (familiar, by now) header:</p>
 
