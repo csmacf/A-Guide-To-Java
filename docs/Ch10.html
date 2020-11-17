@@ -28,7 +28,7 @@
       <!-- CONTENT here-->
       <h1>Doing More With Classes</h1>
       <h3>Overloading Methods</h3>
-      <p>It&rsquo;s common to have two methods with the same name but different parameters. These are called <em>overloaded</em> methods.For example, in our <span class='mono'>Book</span> class, we might want to overload the constructor so we have a version that accepts arguments. We&rsquo;d write:</p>
+      <p>It&rsquo;s common to have multiple methods (or constructors) with the same name but different parameters. These are called <em>overloaded</em> methods (or constructors).For example, in our <span class='mono'>Book</span> class, we might want to overload the constructor so we have a version that accepts arguments. We&rsquo;d write:</p>
 
       <pre class='cx jumbotron'>
       <code class='ex'>//constructor from earlier</code>
@@ -39,7 +39,7 @@
       <code class='ex'>  isHardcover = true;</code>
       <code class='ex'>}</code>
       <code class='ex'></code>
-      <code class='ex'>//overloaded constructor</code>
+      <code class='ex'>//overloaded "parameterized" constructor</code>
       <code class='ex'>public Book(String t, int n, boolean h)</code>
       <code class='ex'>{</code>
       <code class='ex'>  title = t;</code>
@@ -48,7 +48,7 @@
       <code class='ex'>}</code>
       </pre>
 
-      <p>How does the compiler know which version of an overloaded method to use? It all depends on what arguments are provided by the calling method. For example, given:</p>
+      <p>How does the compiler know which version of an overloaded method/constructor to use? It all depends on what arguments are provided by the calling method. For example, given:</p>
 
       <pre class='cx jumbotron'>
       <code class='ex'>Book book1 = new Book();</code>
@@ -57,8 +57,6 @@
       </pre>
 
       <p>The first line would invoke the first constructor, the second would invoke the second, and the third would not compile (would cause an error), because there is no version of the constructor that accepts a single int as a parameter.</p>
-
-      <p>As stated earlier, most methods are declared public (so they can be called from other classes). If, however, the sole purpose of a method is to support another method in the same class; it is commonly declared private.</p>
 
       <p>We might also overload the private printStars method, like so</p>
 
@@ -76,7 +74,7 @@
       <code class='ex'>}</code>
       </pre>
 
-      <p>Now if we were to write <span class='mono'>printStars()</span>, we'll get the number of stars in the original method (there are 26), but if we were to write <span class='mono'>printStars(20)</span>, we would get a line of 20 stars, for example.</p>
+      <p>Now if we were to write <span class='mono'>printStars()</span>, we'll get the number of stars in the original method (there are 26), but if we were to write <span class='mono'>printStars(20)</span>, we would get a line of 20 stars.</p>
 
       <h3>Static</h3>
 <p>Static variables and methods are created <em>once</em> for the class. They are not specific to individual instances (objects) of the class. Because of this, static methods cannot use instance variables (which are unique to each instance of the class).</p>
