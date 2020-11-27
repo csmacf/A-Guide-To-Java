@@ -56,13 +56,15 @@
 <code class='ex'>s.indexOf(&lsquo;q&rsquo;); // returns -1, because &lsquo;q&rsquo; is not found</code>
 <code class='ex'>s.substring(1); // returns &ldquo;ello&rdquo;</code>
 <code class='ex'>s.substring(2,4); // returns &ldquo;ll&rdquo; (not &ldquo;llo&rdquo;)</code>
-
-
-
 </pre>
+
+<div class='tip'>Note that these methods do not change the literal (the characters) in the original String (in fact, Strings are "immutable"--can't be changed-- in Java). So, in all examples above, the String s continues to hold the literal "Hello."  If you need to change the characters within a String, take a look at the <span class='mono'>StringBuilder</span> class in Java.
+</div>
+
+
 <h3>Comparing strings</h3>
 <p>As we saw earlier, one important method for Strings is called <span class='mono'>equals</span>. It determines whether the characters in one String object match exactly the characters in another and returns true or false. Note that you cannot use <span class='mono'>==</span> to compare Strings (or any other reference type, i.e. &ldquo;non-primitive&rdquo; type). For reference types, <span class='mono'>==</span> determines whether two objects are in the <em>same memory location</em>, not whether they contain the same data. It is possible to have two Strings that have the same set of characters but are located in two different locations in memory. </p>
-<p>There is also a <span class='mono'>compareTo</span> method for Strings. It returns an <span class='mono'>int</span> representing the numerical difference between the first two characters that differ in a String (or 0 if the Strings have the exact same characters), based on their Unicode values (shown in the table below). </p>
+<p>There is also a <span class='mono'>compareTo</span> method for Strings. It returns an <span class='mono'>int</span> representing the numerical difference between the first two characters that differ in a String (or 0 if the Strings have the exact same characters), based on their Unicode values (shown in <a target='_blank' href='https://en.wikipedia.org/wiki/List_of_Unicode_characters#Basic_Latin'>this table</a>-- see the decimal column for the integer values in base 10). </p>
 <p><br /><br /></p>
 <p>Some examples:</p>
 <pre class = 'cx jumbotron'>
@@ -72,7 +74,7 @@
 <code class='ex'>String s1 = "Africa", s2 = "africa", s3 = "Africa", s4 = "AFRICA";</code>
 <code class='ex'>System.out.println(s1.equals(s2)) // prints false</code>
 <code class='ex'>System.out.println(s1.equals(s3)) // prints true</code>
-<code class='ex'>System.out.println(s1.compareTo(s4)) // prints -32 'f', 'F' have a difference of 32 (102-70)</code>
+<code class='ex'>System.out.println(s1.compareTo(s4)) // prints -32 'f' and 'F' have a difference of 32 (102-70)</code>
 <code class='ex'>System.out.println(s1.compareTo(s3)) // prints 0</code>
 
 

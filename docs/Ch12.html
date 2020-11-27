@@ -28,10 +28,12 @@
       <!-- CONTENT here-->
       <h1>Arrays</h1>
       <h3>Using Arrays</h3>
-      <p>Arrays hold lists of primitive data or objects. So far, if you&rsquo;ve wanted to store, say, a set of ten Strings, you&rsquo;ve needed ten separate variables (e.g., <span class='mono'>nameOne, nameTwo, nameThree, </span>etc.). An array allows you to store all of those Strings under a <em>single</em> name (e.g. <span class='mono'>names</span>) This makes it much easier to work with groups of things. </p>
+      <p>Arrays hold lists of primitive data or objects. So far, if you&rsquo;ve wanted to store, say, a list of ten Strings, you&rsquo;ve needed ten separate variables (e.g., <span class='mono'>nameOne, nameTwo, nameThree, </span>etc.). An array allows you to store all of those Strings under a <em>single</em> identifier (e.g. <span class='mono'>names</span>) This makes it much easier to work with groups of things. </p>
       <p>When declaring an array, you must specify the type of data it will hold and the number of elements (size). Here&rsquo;s how you&rsquo;d declare and instantiate an array called <span class='mono'>nums</span> that holds 8 integers:</p>
       <p class='mono grey'>int[] nums = new int[8];</p>
-      <p>(If you&rsquo;re wondering, that <span class='mono'>String[]</span> that you incorporate in each <span class='mono'>main <span>method is actually an array of Strings. While we don&rsquo;t do it in this course, when running a Java application from the command line, <a href="https://stackoverflow.com/questions/890966/what-is-string-args-parameter-in-main-method-java">one can pass String parameters into the <span class='mono'>main</span> method</a>)</p>
+
+      <div class='tip'><p>(If you&rsquo;re wondering, that <span class='mono'>String[]</span> that you incorporate in each <span class='mono'>main <span>method signature is actually an array of Strings. While we don&rsquo;t do it in this course, when running a Java application, you can pass String parameters into the <span class='mono'>main</span> method)</p></div>
+
       <p>You can also initialize an array by providing initial values in { } (called an <em>initialization list</em>), like so:</p>
       <pre class='cx jumbotron'>
       <code class='ex'>//the length of this array would be automatically set to 4</code>
@@ -65,12 +67,15 @@
       <code class='ex'>}</code>
       </pre>
       <p>Let&rsquo;s analyze the code above: </p>
+      <div class='mono grey'>
       <p>When i=0, 2*(i+1) = 2*(1) = 2</p>
       <p>When i=1, 2*(i+1) = 2*(2) = 4</p>
       <p>When i=2, 2*(i+1) = 2*(3) = 6 </p>
       <p>&hellip;</p>
       <p>When i=99, 2*(i+1) = 2*(100) = 200. </p>
-      <p>A <em>for-each loop</em> (also called an <em>enhanced for loop</em>is another way to work through an array. It accomplishes the same thing with a bit less code. The syntax is:</p>
+    </div>
+    <h3>The enhanced for loop</h3>
+      <p>An <em>enhanced for loop</em> (also called a <em>for-each loop</em>) is another way to traverse (go through) an array. The syntax is:</p>
 
       <p class='mono grey'>for(<em>type variable</em> : <em>array</em>)</p>
 
@@ -81,7 +86,7 @@
 
       <p class='mono grey'>for (int i : evens)</p>
 
-      <p>and it would work the same.</p>
+      <p>and it would work the same. The name "for each" comes from thinking, "for each int in evens..."</p>
       <h3>ArrayList Class</h3>
       <p>There is a library class in Java called <span class='mono'>ArrayList</span> that has several useful features, including:</p>
       <ol>
@@ -101,6 +106,7 @@
       <li><span class='mono grey'>size ()  </span>gets the number of element*</li>
     </ul>
       <p>Note that <span class='mono'>size()</span> is a method in the ArrayList class, as compared to the length </span>property of an array.</p>
+      <p>ArrayList is one of many classes in the <a href='https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/doc-files/coll-reference.htmlJava' target='_blank'> Collections framework</a>, which provide interfaces and classes for other types of collections, as well, including <span class='mono'>Set</span> (where repeated elements only count once), <span class='mono'>Hashtable</span> (which stores key:value pairs), and more.)
     </main>
 
     <footer class="footer">

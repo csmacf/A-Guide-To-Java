@@ -27,16 +27,16 @@
       <h2> Chapter <span id = 'chap-num'>13</span></h2>
       <h1>Inheritance</h1>
 <p>Put simply, <em>Inheritance</em> allows you to reuse code that you have already written in another class.</p>
-<p>Suppose you have written an application in which you have created a class called <span class='mono'>Employee</span>. Perhaps you have created instance variables for <span class='mono'>name</span>, <span class='mono'>social security number</span>, and <span class='mono'>position</span>. You now wish to create another class called <span class='mono'>SalariedEmployee</span>. But a <span class='mono'>SalariedEmployee </span>is just an <span class='mono'>Employee</span> whose earnings are fixed. Will you have to start from scratch? Wouldn&rsquo;t it be convenient to use all of the code from the <span class='mono'>Employee</span> class within your new <span class='mono'>SalariedEmployee </span>class? Java allows you to do this, using the idea of inheritance.</p>
+<p>Suppose, for example, you have written an application in which you have created a class called <span class='mono'>Employee</span>. Perhaps you have created instance variables for the employee's name, social security number, and position. You now wish to create another class called <span class='mono'>SalariedEmployee</span>. But a <span class='mono'>SalariedEmployee </span>is just an <span class='mono'>Employee</span> whose earnings are fixed. Will you have to start from scratch? Wouldn&rsquo;t it be convenient to use all of the code from the <span class='mono'>Employee</span> class within your new <span class='mono'>SalariedEmployee </span>class? This is the purpose of inheritance.</p>
 <p>By writing</p>
 <p class='mono grey'>public class SalariedEmployee extends Employee</p>
-<p>we are saying &ldquo;create a class called <span class='mono'>SalariedEmployee</span> that <em>already has all the data and functionality</em> of the <span class='mono'>Employee</span>  class.&rdquo; So, a <span class='mono'>SalariedEmployee</span>  object would already have a name, social security, and position field. We would call the <span class='mono'>Employee</span>  class the <em>superclass </em>(or parent class or base class) and <span class='mono'>SalariedEmployee</span>  would be called a <em>subclass </em>(or child class or derived class, respectively).</p>
-<p>Any (non-private) method from the <span class='mono'>Employee</span>  class can be applied to a <span class='mono'>SalariedEmployee</span>  object. Any additional code that you write in the <span class='mono'>SalariedEmployee</span>  class will be specific to the class. For example, you would likely add a field called <span class='mono'>salary</span>  and a method called <span class='mono'>setSalary()</span> . These methods would <em>not</em> apply to an <span class='mono'>Employee</span> . You can also <em>override</em> methods from the <span class='mono'>Employee</span>  class. For example, suppose the <span class='mono'>Employee</span>  class has this method:</p>
+<p>we are saying (via the <span class='mono'>extends</span> keyword), &ldquo;create a class called <span class='mono'>SalariedEmployee</span> that <em>already has all the data and functionality</em> of the <span class='mono'>Employee</span>  class.&rdquo; So, a <span class='mono'>SalariedEmployee</span>  object would already have a name, social security, and position field. The <span class='mono'>Employee</span>  class in this scenario is called the <em>superclass </em>(or parent class or base class) and <span class='mono'>SalariedEmployee</span>  would be called a <em>subclass </em>(or child class or derived class, respectively).</p>
+<p>Any (non-private) method from the <span class='mono'>Employee</span>  class can be applied to a <span class='mono'>SalariedEmployee</span>  object. Any additional code that you write in the <span class='mono'>SalariedEmployee</span>  class will be specific to the class. For example, you would likely add a field called <span class='mono'>salary</span>  and a method called <span class='mono'>setSalary()</span> . These methods would <em>not</em> apply to an <span class='mono'>Employee</span>. You can also <em>override</em> methods from the <span class='mono'>Employee</span>  class. For example, suppose the <span class='mono'>Employee</span>  class has this (admittedly not very useful!) method:</p>
 <pre class='cx jumbotron'>
 <code class='ex'>public void sayTitle()</code>
 <code class='ex'>{</code>
 <code class='ex'>  System.out.println("I am an employee");</code>
-<code class='ex'>{</code>
+<code class='ex'>}</code>
 </pre>
 <p>and the <span class='mono'>SalariedEmployee</span>  has this method:</p>
 <pre class='cx jumbotron'>
@@ -45,7 +45,7 @@
 <code class='ex'>  System.out.println("I am a salaried employee");</code>
 <code class='ex'>{</code>
 </pre>
-<p>Because this method in the <span class='mono'>SalariedEmployee</span>  class has the exact same signature (heading) as the method in the <span class='mono'>Employee</span> , its code will <em>override</em> (i.e., supercede) the code in <span class='mono'>Employee</span> . In general, if the child and parent classes both have a method with the same header/declaration, the child method will be executed for any instance of the child class. To see how this works, consider the following code snippet (assume that the necessary constructors exist)</p>
+<p>Because this method in the <span class='mono'>SalariedEmployee</span>  class has the exact same signature (header) as the method in the <span class='mono'>Employee</span> , its code will <em>override</em> (i.e., supercede) the code in <span class='mono'>Employee</span> . In general, if the child and parent classes both have a method with the same header/signature, the child method will be executed for any instance of the child class. To see how this works, consider the following code snippet (assume that the necessary constructors exist)</p>
 <pre class='cx jumbotron'>
 <code class='ex'>Employee emp = new Employee();</code>
 <code class='ex'>SalariedEmployee salEmp = new SalariedEmployee();</code>
@@ -58,9 +58,9 @@
 <p>I am a salaried employee</p>
 </div>
 <p>You might also need a class for commissioned employees. Once again, a <span class='mono'>CommissionedEmployee</span>  is just a more specific type of <span class='mono'>Employee</span> , so the <span class='mono'>CommissionedEmployee</span>  could also extend the <span class='mono'>Employee</span>  class.</p>
-<p>Note that a class can have multiple children (subclasses), but each class can have only one superclass.</p>
+<p>Note that a class can have multiple children (subclasses), but each class can have only one superclass. However, that superclass may itself inherit code from another class, which may extend another, and so on.  For example, if Employee extends Person, CommissionedEmployee inherits not only from Employee, but also (indirectly) from Person.</p>
 <h3>The protected keyword</h3>
-<p>Private variables in the superclass are not visible from the child class, even though objects of the child class contain this data. One way to address this problem is for methods in the child class to use getter (accessor) methods in the parent class to access data. Another is to use the <span class='mono'>protected</span>  keyword. Anything set to <span class='mono'>protected</span>  in the superclass is visible by sub-classes (and other classes in the same package. A <em>package</em> is like a folder containing a group of classes)</p>
+<p>Private variables in the superclass are not visible from the child class, even though objects of the child class contain this data. One way to address this problem is for methods in the child class to use getter (accessor) methods in the parent class to access data. Another is to use the <span class='mono'>protected</span>  keyword. Anything set to <span class='mono'>protected</span>  in the superclass is visible by sub-classes (and other classes in the same package).</p>
 <h2>The super keyword</h3>
 <p><span class='mono'>super </span> is used in the child class to explicitly refer to a method of the parent class.</p>
 <p>There are two common uses for this:</p>
@@ -97,17 +97,17 @@
 <ul>
 <li>To call an overridden method in the superclass before making extensions/additions to it</li>
 </ul>
-<p>To call a method from the superclass, write <span class='mono'>super</span> .<em>method name.</em> See the following example. The <span class='mono'>toString</span>  method for <span class='mono'>Chair</span>  first calls the <span class='mono'>Furniture toString</span>  method, then adds a phrase to say whether or not it has arms.</p>
+<p>To call a method from the superclass, write <span class='mono'>super.[method name]</span>. See the following example. The <span class='mono'>toString</span>  method for <span class='mono'>Chair</span>  first calls the <span class='mono'>Furniture toString</span>  method, then adds a phrase to say whether or not it has arms.</p>
 <pre class='cx jumbotron'>
 <code class='ex'>//in the Furniture class</code>
 <code class='ex'>//returns a String with information about the Furniture object</code>
 <code class='ex'>public String toString(){</code>
-<code class='ex'>  return "This piece of Furniture weighs " + weight " + " pounds";</code>
+<code class='ex'>  return "This piece of furniture weighs " + weight " + " pounds";</code>
 <code class='ex'>}</code>
 </pre>
 <pre class='cx jumbotron'>
 <code class='ex'>//in the Chair class</code>
-<code class='ex'>//returns a String with information about the Furniture object</code>
+<code class='ex'>//returns a String with information about the Chair object</code>
 <code class='ex'>public String toString(){</code>
 <code class='ex'>  String arms;</code>
 <code class='ex'>  if (hasArms)</code>
@@ -116,13 +116,18 @@
 <code class='ex'>    arms = "does not"</code>
 <code class='ex'>  return (super.toString() + "and " + arms + " have arms"};</code>
 <code class='ex'>}</code>
-
-
-
 </pre>
+<p>Given an obect of type Chair, invoking its toString() method would produce something like:</p>
+<div class = 'console'>This piece of furnitrue weighs 31 pounts and does not have arms.</div>
+<p></p>
 <h3>The Object class</h3>
-<p>Ultimately, all classes extend the <span class='mono'>Object class.</span> </p>
-<p>For example, all classes have a <span class='mono'>toString</span>  method (see the example above for super) that returns a String for printing the object.</p>
+<p>We mentioned earlier that a superclass can itself extend another class, which in turn can extend another. Here's an example of this from the documentation for the JOptionPane class (which creates a pop-up dialog window).  </p>
+<img src='img/joptionpane-tree.png' width = '40%' alt='JOptionPane inheritance diagram'><p> Notice how <span class='mono'>JOptionPane</span> extends <span class='mono'>JComponent</span>, which extends <span class='mono'>Container</span>, which extends <span class='mono'>Component</span>. </p>
+<p>This means that not only can a JOptionPane object invoke all methods defined in the JOPtionPane class, but also all (non-private) methods in these other classes. The snippet below (also from the documentation) shows this</p>
+<img src='img/inheritance.png' width = '80%' alt='Ineritance of methods'>
+</p>At the very top (and this is true for all classes in Java) is <span class='mono'>Object</span>. A consequence of extending  <span class='mono'>Object</span> is that all classes inherit a <span class='mono'>toString</span>  method (used in the earlier example for the <span class='mono'>super</span> keyword) that returns a String for representing the object, which is used by System.out.println. The default behavior of the toString method is to print something like </p>
+<div class='console'><p>Object@1e81f4dc</p></div>
+<p>Overriding the toString method allows you to print something more descriptive.  There are other methods inherited from Object, as well, which are listed <a href='https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html'>here</a>.</p>
 <h3>Polymorphism</h3>
 <p>In the Chair class example above, note that creating a <span class='mono'>Chair</span>  object also creates a <span class='mono'>Furniture</span>  object (we say a <span class='mono'>Chair </span> "is a" <span class='mono'>Furniture</span>). So, one object can act as both a <span class='mono'>Chair</span> and a <span class='mono'>Furniture</span>. When we invoke a method on a <span class='mono'>Chair</span>  object, if that method is found in the <span class='mono'>Chair</span> class, that code will be applied. Otherwise, the code from the <span class='mono'>Furniture</span>  class is applied (or the <span class='mono'>Object</span>  class, if it's still not found there). This concept is called <em>polymorphism</em> because the same method has "many forms."</p>
 <h3>Abstract Classes</h3>
@@ -181,11 +186,9 @@
 <p>Comparing the implements keyword to <span class='mono'>extends</span> :</p>
 <p><span class='mono'>extends</span>  = has all the code from the (parent) class</p>
 <p><span class='mono'>implements</span>  = provides code required by the interface.</p>
-<h3>14.6.1 When to use which</h3>
-<p>Abstract class--</p>
-<p>Typically used for an object that is application-specific (only applies to the program you&rsquo;re working on), but is incomplete without its subclasses.</p>
-<p>Interface--</p>
-<p>Has suitable methods for your program but would be equally applicable in a variety of programs.</p>
+<h3>When to use which</h3>
+<p>An abstract class is typically used for an object that is application-specific (only applies to the program you&rsquo;re working on), but is incomplete without its subclasses.</p>
+<p>An interface has suitable methods for your program but would be equally applicable in a variety of programs.</p>
 <h3>UML Diagrams</h3>
 <p>Universal Modeling Language (UML) diagrams show the relationships among classes and interfaces in an application. You will see some variation in how these are constructed, but in general:</p>
 <p>Classes and interfaces are represented by rectangles. Within each rectangle, there is a section for:</p>

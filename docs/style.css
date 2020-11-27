@@ -130,11 +130,12 @@ a.ch-index:hover{
 
 .mono{
 	font-family: Consolas, monospace;
-	font-weight: darker;
+	font-weight: bolder;
 
 }
 .grey{
   background-color: #F0F3F3;
+  font-weight: lighter;
 }
 .tip{
 	background-color: #dad786;
@@ -149,7 +150,7 @@ a.ch-index:hover{
 }
 
 #about{
-  
+
 }
 /*Phone styling*/
 @media only screen and (max-width: 800px) {
