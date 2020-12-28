@@ -118,7 +118,7 @@
 <code class='ex'>}</code>
 </pre>
 <p>Given an obect of type Chair, invoking its toString() method would produce something like:</p>
-<div class = 'console'>This piece of furnitrue weighs 31 pounts and does not have arms.</div>
+<div class = 'console'>This piece of furniture weighs 31 pounts and does not have arms.</div>
 <p></p>
 <h3>The Object class</h3>
 <p>We mentioned earlier that a superclass can itself extend another class, which in turn can extend another. Here's an example of this from the documentation for the JOptionPane class (which creates a pop-up dialog window).  </p>
@@ -129,7 +129,8 @@
 <div class='console'><p>Object@1e81f4dc</p></div>
 <p>Overriding the toString method allows you to print something more descriptive.  There are other methods inherited from Object, as well, which are listed <a href='https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html'>here</a>.</p>
 <h3>Polymorphism</h3>
-<p>In the Chair class example above, note that creating a <span class='mono'>Chair</span>  object also creates a <span class='mono'>Furniture</span>  object (we say a <span class='mono'>Chair </span> "is a" <span class='mono'>Furniture</span>). So, one object can act as both a <span class='mono'>Chair</span> and a <span class='mono'>Furniture</span>. When we invoke a method on a <span class='mono'>Chair</span>  object, if that method is found in the <span class='mono'>Chair</span> class, that code will be applied. Otherwise, the code from the <span class='mono'>Furniture</span>  class is applied (or the <span class='mono'>Object</span>  class, if it's still not found there). This concept is called <em>polymorphism</em> because the same method has "many forms."</p>
+<p>In the Chair class example above, note that creating a <span class='mono'>Chair</span>  object also creates a <span class='mono'>Furniture</span>  object (we say a <span class='mono'>Chair </span> "is a" <span class='mono'>Furniture</span>). So, one object can act as both a <span class='mono'>Chair</span> and a <span class='mono'>Furniture</span>. When we invoke a method on a <span class='mono'>Chair</span>  object, if that method is found in the <span class='mono'>Chair</span> class, that code will be applied. Otherwise, the code from the <span class='mono'>Furniture</span>  class is applied (or the superclass of <span class='mono'>Furniture</mono>, if it's still not found there). This concept is called <em>polymorphism</em> because the same method has "many forms."</p>
+<div class='tip'><p>Inheritance creates what is called an "is-a" relationship between an instancd of the subclass and the superclass.  This should not be confused with the "has-a" relatinship created when one class creates an instance of another (for example, if the Furniture class had an instance variable of type AssemblyInsrtuctions-- where AssemblyInstructions is another class).</p></div>
 <h3>Abstract Classes</h3>
 <p>Abstract classes are designed to be parent classes, but not to be instantiated themselves. Some methods have code, but at least one method does not-- the child class is expected to provide the code. An abstract class is like a template for the child classes.</p>
 <p>In the example below, we see that the speak and move methods are declared in Pet, but no code is provided. Because of this, you cannot instantiate the Pet class. Note how the Cat class provides the code for the abstract methods from Pet. Cat is not abstract-- you can create a Cat object.</p>
@@ -191,15 +192,16 @@
 <p>An interface has suitable methods for your program but would be equally applicable in a variety of programs.</p>
 <h3>UML Diagrams</h3>
 <p>Universal Modeling Language (UML) diagrams show the relationships among classes and interfaces in an application. You will see some variation in how these are constructed, but in general:</p>
-<p>Classes and interfaces are represented by rectangles. Within each rectangle, there is a section for:</p>
-<p>The class name</p>
-<p>Data fields</p>
-<p>Important methods are listed</p>
-<p>&lt;&lt;&gt;&gt; indicates an interface or abstract class</p>
-<p>&ldquo;is-a&rdquo; relationships are shown by arrows with open arrowheads</p>
-<p>Implementation of an interface is indicated by an open dashed arrow</p>
-<p>&ldquo;has-a&rdquo; relationships are drawn as arrows with closed arrowheads</p>
-
+<ul><li>Classes and interfaces are represented by rectangles. Within each rectangle, there is a section for:
+<ul><li>The class name</li>
+<li>Data fields</li>
+<li>Important methods</li>
+</ul></li>
+<li>&lt;&lt; &gt;&gt; indicates an interface or abstract class</li>
+<li>&ldquo;is-a&rdquo; inheritance relationships are shown by arrows with open arrowheads</li>
+<li>Implementation of an interface is indicated by an open dashed arrow</li>
+<li>&ldquo;has-a&rdquo; (where one class uses another) relationships are drawn as arrows with closed arrowheads</li>
+</ul>
     </main>
 
     <footer class="footer">

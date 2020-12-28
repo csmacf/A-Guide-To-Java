@@ -53,7 +53,7 @@
       <code class='ex'>}</code>
       </pre>
 
-      <p>Instance variables can be of any type-- <span class='mono'>int</span> (integer), <span class='mono'>double </span>(floating-point decimal), <span class='mono'>String </span>(text), <span class='mono'>boolean </span>(true/ false), or even non-primitive types from other classes (including classes we write). For example, a <span class='mono'>Book</span> might have a field of type <span class='mono'>PublishData</span> , where <span class='mono'>PublishData</span>  is an instance of a class we write to create objects that hold information about publishing (date, ISBN, etc.). Note that String is uppercase (because a String is itself an object from the String class); the others are lowercase. Note also that the fields are not declared static. This is because each <span class='mono'>Book</span>  object that we create can have its own data (a different title, etc.). Static variables apply to the <em>whole</em> class rather than individual objects (recall the use of static methods and data in the Math class, for instance).</p>
+      <p>Instance variables can be of any type-- <span class='mono'>int</span> (integer), <span class='mono'>double </span>(floating-point decimal), <span class='mono'>String </span>(text), <span class='mono'>boolean </span>(true/ false), or even non-primitive types from other classes (including classes we write). For example, a <span class='mono'>Book</span> might have a field of type <span class='mono'>PublishData</span> , where <span class='mono'>PublishData</span>  is an instance of a class we write to create objects that hold information about publishing (date, ISBN, etc.). This is called a <em>composition</em> or <em>"has-a"</em> relationship, because Book "has a" Publisher. Note that String is uppercase (because a String is itself an object from the String class); the others are lowercase. Note also that the fields are not declared static. This is because each <span class='mono'>Book</span>  object that we create can have its own data (a different title, etc.). Static variables apply to the <em>whole</em> class rather than individual objects (recall the use of static methods and data in the Math class, for instance).</p>
 
       <p>This illustration may help you picture how data is stored in an object vs. a primitive type. Notice that the String variable in Book is itself an object of the String class, comprised of chars.</p>
       <img src='img/storing-prim-vs-complex.png' width = '400px' alt = 'Storing data in a complex type'>
@@ -135,7 +135,7 @@
       <code class='ex'>...</code>
       </pre>
 
-      
+
       <h3>Driver or Runner classes</h3>
       <p>In applications you write, you will have one class that controls the action, so to speak. These are like the classes you wrote in the beginning of the course-- before you arrived at this chapter and learned how to write your own classes.This class does not need to have a constructor (because it is not actually constructing any objects of its own type). Instead, is needs to have a main method with the (familiar, by now) header:</p>
 
