@@ -30,20 +30,40 @@
       <h1>Loops</h1>
       <p>A <em>loop</em> is a block of code that executes repeatedly as long as a given condition is true. For example, a quiz application might present a question, accept user input, then ask the user if they want to try another question-- continuing to present questions until the user chooses to stop.</p>
       <p>The important distinction between an &ldquo;if&rdquo; statement and a loop is that an if statement only checks a condition once; a loop <strong>keeps</strong> checking until it is no longer true.</p>
-      <p>A
-      <h2><em>While loops</em></h2>
-      <p>A <span class='mono'>while</span> loop executes a block of code repeatedly as long as a given condition is true (or until the condition becomes false).</p>
-      <p>The syntax is:</p>
+          <h2><em>While loops</em></h2>
+          <p>A <span class='mono'>while</span> loop executes a block of code repeatedly as long as a given condition is true (or until the condition becomes false).</p>
+           <p>The syntax is:</p>
       <pre class='cx jumbotron'>
       <code class='ex'>while (<em>condition</em>)</code>
       <code class='ex'>{</code>
       <code class='ex'><em>  [code to execute]</em></code>
       <code class='ex'>}</code>
       </pre>
-      <p>Example 1: this will keep multiplying x by 5 as long as the user enters yes.</p>
+          
+          <p>A <em>counter-controlled loop</em> (or <em>definite repitition loop</em>) is one that runs a fixed number of times. It is created by first initializing a <em>control variable</em> to a certain value, then repeatedly testing the control variable against another value.
+        Within the body of the loop, the value of the control variable is incremented (increased) or decremented (decreased).</p>
+    
+      
+     <p>Counter-controlled Loop Example: this will display all the integers from 1 to 10.</p>
 
       <pre class='cx jumbotron'>
-      <code class='ex'>String answer = "yes";</code>
+      <code class='ex'>int x=1; //the control variable</code>
+      <code class='ex'>while (x &lt;= 10)</code>
+      <code class='ex'>{</code>
+      <code class='ex'>  System.out.println(x);</code>
+      <code class='ex'>  x = x+1; //could also write x++ here</code>
+      <code class='ex'>}</code>
+      </pre>
+
+      <div class='tip'><p>Note- it is essential to change (or give the user the ability to change) the value of the control variable inside the loop body; otherwise, it will run forever!</p>
+      </div>
+          
+       <p>A <em>sentinel-controlled loop</em> (or <em>indefinite repitition loop</em>) uses a value called a sentinel to determine when to exit the loop. 
+          It is not known in advance how many times the loop will run.  Often the sentinel value comes from the user.</p>    
+      <p>Sentinel-controlled Loop Example: this will keep multiplying x by 5 as long as the user enters yes.</p>
+
+      <pre class='cx jumbotron'>
+      <code class='ex'>String answer = "yes"; //the sentinel</code>
       <code class='ex'>while (answer.equals("yes")) //note the use of .equals (rather than ==) for String</code>
       <code class='ex'>{</code>
       <code class='ex'>  x = 5*x;</code>
@@ -52,19 +72,7 @@
       <code class='ex'>}  //at this point, we go back to the beginning of the loop and check if answer is still &ldquo;yes&rdquo;</code>
       </pre>
 
-      <p>Example 2: this will display all the integers from 1 to 10.</p>
-
-      <pre class='cx jumbotron'>
-      <code class='ex'>int x=1;</code>
-      <code class='ex'>while (x &lt;= 10)</code>
-      <code class='ex'>{</code>
-      <code class='ex'>  System.out.println(x);</code>
-      <code class='ex'>  x = x+1; //could also write x++ here</code>
-      <code class='ex'>}</code>
-      </pre>
-
-      <div class='tip'><p>Note- it is essential to change (or give the user the ability to change) the value of the condition inside the loop; otherwise, it will run forever!</p>
-      </div>
+     
       <h2><em>For Loop</em></h2>
       <p>The <span class='mono'>for</span> keyword provides another way to create a loop. It combines the elements of a while loop into a single line. Here is Example 2 from above rewritten as a for loop.</p>
 
