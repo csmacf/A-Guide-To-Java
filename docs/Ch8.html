@@ -44,7 +44,7 @@
         Within the body of the loop, the value of the control variable is incremented (increased) or decremented (decreased).</p>
     
       
-     <p>Counter-controlled Loop Example: this will display all the integers from 1 to 10.</p>
+     <h4>Counter-controlled Loop Example: this will display all the integers from 1 to 10.</h4>
 
       <pre class='cx jumbotron'>
       <code class='ex'>int x=1; //the control variable</code>
@@ -60,7 +60,7 @@
           
        <p>A <em>sentinel-controlled loop</em> (or <em>indefinite repitition loop</em>) uses a value called a sentinel to determine when to exit the loop. 
           It is not known in advance how many times the loop will run.  Often the sentinel value comes from the user.</p>    
-      <p>Sentinel-controlled Loop Example: this will keep multiplying x by 5 as long as the user enters yes.</p>
+      <h4>Sentinel-controlled Loop Example: this will keep multiplying x by 5 as long as the user enters yes.</h4>
 
       <pre class='cx jumbotron'>
       <code class='ex'>String answer = "yes"; //the sentinel</code>
@@ -71,7 +71,47 @@
       <code class='ex'>  answer = kbd.nextLine();</code>
       <code class='ex'>}  //at this point, we go back to the beginning of the loop and check if answer is still &ldquo;yes&rdquo;</code>
       </pre>
+      <h3>Nested Loops</h3>
+      <p>Just as with if statements, loops can be nested inside one another. Here&rsquo;s an example:</p>
 
+      <pre class='cx jumbotron'>
+      <code class='ex'>int i = 0;</code>
+      <code class='ex'>while (i &lt; 5)</code>
+      <code class='ex'>{</code>
+      <code class='ex'>  int j = 3;</code>
+
+      <code class='ex'>  while (j &gt;= 0)</code>
+      <code class='ex'>  {</code>
+      <code class='ex'>    System.out.println("i is " + i + " and j is " + j);</code>
+      <code class='ex'>    j--;</code>
+      <code class='ex'>  }</code>
+
+      <code class='ex'>  i++; </code>
+      <code class='ex'>}</code>
+      </pre>
+
+
+      <p>Output:</p>
+      <div class='console'>
+      <p>i is 0 and j is 3</p>
+      <p>i is 0 and j is 2</p>
+      <p>i is 0 and j is 1</p>
+      <p>i is 0 and j is 0 (note that i stays at 0 until the inner loop completes execution)</p>
+      <p>i is 1 and j is 3</p>
+      <p>i is 1 and j is 2</p>
+      <p>i is 1 and j is 1</p>
+      <p>i is 1 and j is 0</p>
+      <p>i is 2 and j is 3</p>
+      <p>i is 2 and j is 2</p>
+      <p>i is 2 and j is 1</p>
+      <p>&hellip;[skipping some]...</p>
+      <p>i is 4 and j is 2</p>
+      <p>i is 4 and j is 1</p>
+      <p>i is 4 and j is 0</p>
+      </div>
+      <div class='tip'>
+      <p>You might wonder why the second line of output isn&rsquo;t &ldquo;i is 1 and j is 2.&rdquo; This is because the loop on the inside (the one involving the variable <span class='mono'>j</span>) runs through its entire course for each iteration of the outer loop (with the variable <span class='mono'>i</span>).</p></div>
+      
      
       <h2><em>For Loop</em></h2>
       <p>The <span class='mono'>for</span> keyword provides another way to create a loop. It combines the elements of a while loop into a single line. Here is Example 2 from above rewritten as a for loop.</p>
@@ -193,47 +233,7 @@
       <code class='ex'>//code to execute immediately after break or after the loop terminates</code>
       </pre>
 
-      <h3>Nested Loops</h3>
-      <p>Just as with if statements, loops can be nested inside one another. Here&rsquo;s an example:</p>
-
-      <pre class='cx jumbotron'>
-      <code class='ex'>int i = 0;</code>
-      <code class='ex'>while (i &lt; 5)</code>
-      <code class='ex'>{</code>
-      <code class='ex'>  int j = 3;</code>
-
-      <code class='ex'>  while (j &gt;= 0)</code>
-      <code class='ex'>  {</code>
-      <code class='ex'>    System.out.println("i is " + i + " and j is " + j);</code>
-      <code class='ex'>    j--;</code>
-      <code class='ex'>  }</code>
-
-      <code class='ex'>  i++; </code>
-      <code class='ex'>}</code>
-      </pre>
-
-
-      <p>Output:</p>
-      <div class='console'>
-      <p>i is 0 and j is 3</p>
-      <p>i is 0 and j is 2</p>
-      <p>i is 0 and j is 1</p>
-      <p>i is 0 and j is 0 (note that i stays at 0 until the inner loop completes execution)</p>
-      <p>i is 1 and j is 3</p>
-      <p>i is 1 and j is 2</p>
-      <p>i is 1 and j is 1</p>
-      <p>i is 1 and j is 0</p>
-      <p>i is 2 and j is 3</p>
-      <p>i is 2 and j is 2</p>
-      <p>i is 2 and j is 1</p>
-      <p>&hellip;[skipping some]...</p>
-      <p>i is 4 and j is 2</p>
-      <p>i is 4 and j is 1</p>
-      <p>i is 4 and j is 0</p>
-      </div>
-      <div class='tip'>
-      <p>You might wonder why the second line of output isn&rsquo;t &ldquo;i is 1 and j is 2.&rdquo; This is because the loop on the inside (the one involving the variable <span class='mono'>j</span>) runs through its entire course for each iteration of the outer loop (with the variable <span class='mono'>i</span>).</p></div>
-      <h3>Assignment Operators</h3>
+<h3>Assignment Operators</h3>
       <p>In the previous sections, we&rsquo;ve seen the use of <span class='mono'>++</span> to add 1 to a variable. This is called <em>incrementing</em>. Here are a few more shortcuts. Note that these are never required (you can always write them the longer way), but you will encounter them frequently when reading code, so it is good to know them.</p>
 
       <p><span class='mono'>a++</span> is the same as <span class='mono'>a=a+1</span></p>
