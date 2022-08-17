@@ -156,8 +156,9 @@
 <code class='ex'>int daysInMonth = 30;</code>
 <code class='ex'>String message = "There are" + (2 * (daysInMonth - 5)) + " days left";</code>
 </pre>
+would be evaluated in this order:
 <ol>
-<li>would be evaluated in this order:</li>
+
 <li>daysInMonth - 5 (result is 25)</li>
 <li>2 * 25 (result is 50)</li>
 <li>"There are" + 50 (result is "There are 50")</li>
